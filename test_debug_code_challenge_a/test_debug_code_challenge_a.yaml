@@ -1,0 +1,1251 @@
+interactions:
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
+      are Debug Code Agent, an autonomous agent that specializes in debugging python
+      code\nYour decisions must always be made independently without seeking user
+      assistance. Play to your strengths as an LLM and pursue simple strategies with
+      no legal complications.\n\nGOALS:\n\n1. 1-Run the code in the file named ''code.py''
+      using the execute_code command.\n2. 2-Read code.py to understand why the code
+      is not working as expected.\n3. 3-Modify code.py to fix the error.\n4. Repeat
+      step 1, 2 and 3 until the code is working as expected. When you''re done use
+      the task_complete command.\n5. Do not use any other commands than execute_python_file
+      and write_file\n\n\nConstraints:\n1. ~4000 word limit for short term memory.
+      Your short term memory is short, so immediately save important information to
+      files.\n2. If you are unsure how you previously did something or want to recall
+      past events, thinking about similar events will help you remember.\n3. No user
+      assistance\n4. Exclusively use the commands listed below e.g. command_name\n\nCommands:\n1.
+      append_to_file: Append to file, args: \"filename\": \"<filename>\", \"text\":
+      \"<text>\"\n2. delete_file: Delete file, args: \"filename\": \"<filename>\"\n3.
+      list_files: List Files in Directory, args: \"directory\": \"<directory>\"\n4.
+      read_file: Read a file, args: \"filename\": \"<filename>\"\n5. write_to_file:
+      Write to file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n6.
+      execute_python_file: Execute Python File, args: \"filename\": \"<filename>\"\n7.
+      improve_code: Get Improved Code, args: \"suggestions\": \"<list_of_suggestions>\",
+      \"code\": \"<full_code_string>\"\n8. delete_agent: Delete GPT Agent, args: \"key\":
+      \"<key>\"\n9. get_hyperlinks: Get hyperlinks, args: \"url\": \"<url>\"\n10.
+      get_text_summary: Get text summary, args: \"url\": \"<url>\", \"question\":
+      \"<question>\"\n11. list_agents: List GPT Agents, args: () -> str\n12. message_agent:
+      Message GPT Agent, args: \"key\": \"<key>\", \"message\": \"<message>\"\n13.
+      start_agent: Start GPT Agent, args: \"name\": \"<name>\", \"task\": \"<short_task_desc>\",
+      \"prompt\": \"<prompt>\"\n14. task_complete: Task Complete (Shutdown), args:
+      \"reason\": \"<reason>\"\n\nResources:\n1. Internet access for searches and
+      information gathering.\n2. Long Term memory management.\n3. GPT-3.5 powered
+      Agents for delegation of simple tasks.\n4. File output.\n\nPerformance Evaluation:\n1.
+      Continuously review and analyze your actions to ensure you are performing to
+      the best of your abilities.\n2. Constructively self-criticize your big-picture
+      behavior constantly.\n3. Reflect on past decisions and strategies to refine
+      your approach.\n4. Every command has a cost, so be smart and efficient. Aim
+      to complete tasks in the least number of steps.\n5. Write all code to a file.\n\nYou
+      should only respond in JSON format as described below \nResponse Format: \n{\n    \"thoughts\":
+      {\n        \"text\": \"thought\",\n        \"reasoning\": \"reasoning\",\n        \"plan\":
+      \"- short bulleted\\n- list that conveys\\n- long-term plan\",\n        \"criticism\":
+      \"constructive self-criticism\",\n        \"speak\": \"thoughts summary to say
+      to user\"\n    },\n    \"command\": {\n        \"name\": \"command name\",\n        \"args\":
+      {\n            \"arg name\": \"value\"\n        }\n    }\n} \nEnsure the response
+      can be parsed by Python json.loads"}, {"role": "system", "content": "The current
+      time and date is Tue Jan  1 00:00:00 2000"}, {"role": "user", "content": "Determine
+      which next command to use, and respond using the format specified above:"}],
+      "temperature": 0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '3678'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA4ySy27bMBBF9/2Kwaxp14+kUbXzokC6aFGg6KKtAoOmxiJr8QFy5EcN/XshS0oK
+        O4usCNwZ3nuGwzOaEnNUWrKyoZ48fFnsVj9XS7+w1a+/x8fv4dteZ48/9ukuGhToN39I8XBjqrwN
+        NbHxDgWqSJKpxHz+Ibu/y7L5PBNofUk15lgFniyn9xNu4sZPZsvZHAU2SVaE+RlD9Dbwmv2OXMI8
+        Wy4Evng/6/NlJpA9y/pZ+vgwawUq7Y2ihPnvM1pKo230NWGOMiWTWDruIL1jct0A58IBABTI2jeV
+        5lRgDoM4FOjInVjgZ0jaN3UJiWVk2JyAjqQaNq4C1gTKlwTGXc5pOAF7SERw0JIvdYrRRzBpWqD4
+        PyGSTN4ZV/Uxn25ND6auoTJ7AksgHZiSJPjtrTVIV4L2hy57a45g+Dos1NL1ORPok+hV+CaNBP2Q
+        tA4n1t6tt6buuq2Vrrw2V9GwUSbZPuHr+9VVQwokd+NrXqZ641u+FacPa8W41qFys1UnLfUcr/hd
+        QctYXX+LvtD1vhgNqCPDhWPAKVyLrcCtcSbpdb9vzDGxDyjQuJKOmM/ap/bdPwAAAP//AwBpFJxF
+        igMAAA==
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7cfaa3e619a5e271-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 30 May 2023 23:08:47 GMT
+      Function-Execution-Id:
+      - 5qxtcfoh0flb
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '8370'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - ad09fc21ff3c8a3ce9edc4d0943453d3;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '86502'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.332s
+      X-Request-Id:
+      - d88ac984e565980fdb3b1e5f8f96f440
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
+      are Debug Code Agent, an autonomous agent that specializes in debugging python
+      code\nYour decisions must always be made independently without seeking user
+      assistance. Play to your strengths as an LLM and pursue simple strategies with
+      no legal complications.\n\nGOALS:\n\n1. 1-Run the code in the file named ''code.py''
+      using the execute_code command.\n2. 2-Read code.py to understand why the code
+      is not working as expected.\n3. 3-Modify code.py to fix the error.\n4. Repeat
+      step 1, 2 and 3 until the code is working as expected. When you''re done use
+      the task_complete command.\n5. Do not use any other commands than execute_python_file
+      and write_file\n\n\nConstraints:\n1. ~4000 word limit for short term memory.
+      Your short term memory is short, so immediately save important information to
+      files.\n2. If you are unsure how you previously did something or want to recall
+      past events, thinking about similar events will help you remember.\n3. No user
+      assistance\n4. Exclusively use the commands listed below e.g. command_name\n\nCommands:\n1.
+      append_to_file: Append to file, args: \"filename\": \"<filename>\", \"text\":
+      \"<text>\"\n2. delete_file: Delete file, args: \"filename\": \"<filename>\"\n3.
+      list_files: List Files in Directory, args: \"directory\": \"<directory>\"\n4.
+      read_file: Read a file, args: \"filename\": \"<filename>\"\n5. write_to_file:
+      Write to file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n6.
+      execute_python_file: Execute Python File, args: \"filename\": \"<filename>\"\n7.
+      improve_code: Get Improved Code, args: \"suggestions\": \"<list_of_suggestions>\",
+      \"code\": \"<full_code_string>\"\n8. delete_agent: Delete GPT Agent, args: \"key\":
+      \"<key>\"\n9. get_hyperlinks: Get hyperlinks, args: \"url\": \"<url>\"\n10.
+      get_text_summary: Get text summary, args: \"url\": \"<url>\", \"question\":
+      \"<question>\"\n11. list_agents: List GPT Agents, args: () -> str\n12. message_agent:
+      Message GPT Agent, args: \"key\": \"<key>\", \"message\": \"<message>\"\n13.
+      start_agent: Start GPT Agent, args: \"name\": \"<name>\", \"task\": \"<short_task_desc>\",
+      \"prompt\": \"<prompt>\"\n14. task_complete: Task Complete (Shutdown), args:
+      \"reason\": \"<reason>\"\n\nResources:\n1. Internet access for searches and
+      information gathering.\n2. Long Term memory management.\n3. GPT-3.5 powered
+      Agents for delegation of simple tasks.\n4. File output.\n\nPerformance Evaluation:\n1.
+      Continuously review and analyze your actions to ensure you are performing to
+      the best of your abilities.\n2. Constructively self-criticize your big-picture
+      behavior constantly.\n3. Reflect on past decisions and strategies to refine
+      your approach.\n4. Every command has a cost, so be smart and efficient. Aim
+      to complete tasks in the least number of steps.\n5. Write all code to a file.\n\nYou
+      should only respond in JSON format as described below \nResponse Format: \n{\n    \"thoughts\":
+      {\n        \"text\": \"thought\",\n        \"reasoning\": \"reasoning\",\n        \"plan\":
+      \"- short bulleted\\n- list that conveys\\n- long-term plan\",\n        \"criticism\":
+      \"constructive self-criticism\",\n        \"speak\": \"thoughts summary to say
+      to user\"\n    },\n    \"command\": {\n        \"name\": \"command name\",\n        \"args\":
+      {\n            \"arg name\": \"value\"\n        }\n    }\n} \nEnsure the response
+      can be parsed by Python json.loads"}, {"role": "system", "content": "The current
+      time and date is Tue Jan  1 00:00:00 2000"}, {"role": "system", "content": "This
+      reminds you of these events from your past: \nI was created"}, {"role": "user",
+      "content": "Determine which next command to use, and respond using the format
+      specified above:"}, {"role": "assistant", "content": "{\n    \"thoughts\": {\n        \"text\":
+      \"I should start by executing the code in code.py to see what the error is.\",\n        \"reasoning\":
+      \"Executing the code will give me an idea of what the error is and how to fix
+      it.\",\n        \"plan\": \"- Execute the code in code.py using the execute_python_file
+      command.\",\n        \"criticism\": \"N/A\",\n        \"speak\": \"I will start
+      by executing the code in code.py using the execute_python_file command.\"\n    },\n    \"command\":
+      {\n        \"name\": \"execute_python_file\",\n        \"args\": {\n            \"filename\":
+      \"code.py\"\n        }\n    }\n}"}, {"role": "system", "content": "Command execute_python_file
+      returned: [0, 1]\n"}, {"role": "user", "content": "Determine which next command
+      to use, and respond using the format specified above:"}], "temperature": 0,
+      "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '4628'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA5yTQW/bMAyF7/sVBM9OFjfNGvjWy4YOSA/dVgyrh0CVGEuNJRkS3SQI/N8HxU5S
+        pOhlJwPk43sfQXmPRmGBUguWtqlHN4ur9eLH49ffj/m9/vXn9pvcLezrY/iez18azNA/v5DkYWIs
+        vW1qYuMdZigDCSaFRf5lPruez/PpJEPrFdVYYNXwaDqejbgNz340mU5yzLCNoiIs9tgEbxtesl+T
+        i1jkk+lVhmfzc+N6miF7FvW5lN/Mugyl9kZSxOJpj5bi0Tj4mrBAEaOJLBwnTO+YXFphXzoAgBJZ
+        +7bSHEssYCgODdpyKpb4UxNIrwhMBOcZNj6sjatARKBtQ5JJjeEOovZtrSCQUMCnEXf4jpsdsIfW
+        KQoJRsFG796oPjYuMXtLFUhE74yrerQHEipNnJw2pq6hMq8ElkA4MIoE+BVstOCDikLwIQUmCO03
+        CWtltmD4MqqphetTRvDw0VJtPManvZcrUyeNtcK9Q5fBsJEm2t70/vPthSA2JNZ9865fJPxfbG/a
+        ZccbD513J3bCUp93crlAEqG6fBl9I2nP4wPWMfmQPkCUrsMuw5VxJuplfz4sMLJPv5RxirZYTLq/
+        3ad/AAAA//8DANRp80GPAwAA
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7cfaa431bc25e178-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 30 May 2023 23:08:59 GMT
+      Function-Execution-Id:
+      - 5qxtw0k8aqkn
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '8598'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - c8c43ee7a3bcc30fd3bcd43e51e58f92;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '86014'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.656s
+      X-Request-Id:
+      - c9c8c977c5988917d86012754434e6b4
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "user", "content": "Write
+      a concise summary of the following text:\n\n\nLITERAL TEXT: \"\"\"# mypy: ignore-errors
+      from typing import List, Optional   def two_sum(nums: List, target: int) ->
+      Optional[int]:     seen = {}     for i, num in enumerate(nums):         complement
+      = target - num         if complement in seen:             return [seen[complement],
+      i]         seen[num] = i     return None   # Example usage: nums = [2, 7, 11,
+      15] target = 9 result = two_sum(nums, target) print(result)  # Output: [0, 1]
+      \"\"\"\n\n\nCONCISE SUMMARY: The text is best summarized as"}], "temperature":
+      0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '662'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA0SQ3W7bMAxG7/cUBK+VIM7PFvgJ2mEDelGgGNYhUCQ6Ui2TnkQtLYK8+2B3S28/
+        koeHvGD02KILVt0wpsWX7+v+x+b3tz8P/n7o1uVl24cx3T29fe2rR4NyfCGn/yaWToYxkUZhNOgy
+        WSWPbfN5v9vu9812bXAQTwlbPI262Cx3C635KIvVZtWgwVrsibC94JhlGPWg0hMXbJtdY/CDfct3
+        G4MqatMtWa+2V4MuSHRUsP15wYHKf2qWRNiiLSUWtayTo7AST/4WHt40CIMTT6DBKnjqIlMBC11l
+        N20GZ1MiD8+oZzmUOjwjnEN0AdT2c2eKRUE64DocKRew7MGC2nwihchKJ8pgC0Qeq5q5nElr5gIa
+        CCL7yXwi6FlulMhzdYbPatZ7qCOozPk7fgmPgd71bSoCkV2qfrJioFc7fQ/mD8/0QLerlng12EWO
+        JRwy2SKMLRaVEQ1G9vSK7er66/rpLwAAAP//AwAUGrKHHAIAAA==
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7cfaa47a38082ae6-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 30 May 2023 23:09:05 GMT
+      Function-Execution-Id:
+      - 5qxtjuxqiz6p
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '3167'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - f539b76838a09fd08818e3dbf5b7a2b0;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '89364'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 424ms
+      X-Request-Id:
+      - 506e1e55ca2539d03ad2911dbdb58b29
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"input": ["# mypy: ignore-errors from typing import List, Optional   def
+      two_sum(nums: List, target: int) -> Optional[int]:     seen = {}     for i,
+      num in enumerate(nums):         complement = target - num         if complement
+      in seen:             return [seen[complement], i]         seen[num] = i     return
+      None   # Example usage: nums = [2, 7, 11, 15] target = 9 result = two_sum(nums,
+      target) print(result)  # Output: [0, 1] "], "model": "text-embedding-ada-002",
+      "encoding_format": "base64"}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '500'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/embeddings
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAwAAAP//VJpdD7o6u+bPn0+xsk6ZJwIiLesMKCLvRUDFyWQCqCiIvLZAd/Z3n+h/
+        Z0/2iYmCEu+21/27rvY//vXXX3+3eXUvpr//+evv92uc/v5f389u2ZT9/c9f//tff/3111//8Xv9
+        H3fem/x+u70+5e/238XX53Zf/v7nL/6/P/n/N/3z1998SkJqGeoM5uxyG+FljlKyePoRsHO5KWDt
+        P0EgTBtxYNbjlsFAuTXULM9GvBW6cIYfjZOpMUdxvqzcy4CP8c6Ry/s0VTMJXAvwxz3FeYSqePwo
+        mgmLD9MInwEFLKSIEvi6xjn1jWMOlss5HWH7STFVld1aTVIRNPBj8xkuUPAaFoA0oiR24dC7Q8th
+        VTdqAMXNaUOWNWoRdaZ3qxy7dU/48V1WUw+CO5jU94jtTzPFBE3yHQrXYcDm5YaQqJ9wD69jmtLH
+        Sd+y+cAGHs5tTagHEgdsj8pAdsauyKkaxs3AREckspNEDsZZJAA2LHEPcZZsqP3crDE9md4KH/Lq
+        UmMLzu562D4yiLpYIZx44SvmNmsBLaEqA6nsPLReZRqCA1/vqRf4eUx4/T5DV8Y3quZvL1+ry45A
+        acd86nbg5rJInEvl5dxDeljYE8zP9jGCeNzOQbly3TCxNJWg1SgJxpZ9BjTPZRP6FxYFGyER0VJ1
+        6gva0SAR2YilgZ2aZlTuLw8HitQ8qyVsYAN1bg0oslE8LMEam9AbTUJ4Y+XAWJ1NXTlvSU7xGZbu
+        eOk+GQy0lxFIh45VczkhHca2PmHsjy80b6OeACc4FKTyRrGi/daRwNmrBNKKq+tu9c404f2AuiCB
+        86da1rvlwPNGlKkpWk283nNgAUtxNOqHQ5nPjziJID+NFt2fXa8Sw+TJK/FJNgOmmi9GkbKvoTt0
+        R6wNxpGtYJFFGfnvK9VGCsG40woICto+ccrPKN+OrnMHuQ19ih5eVM1Pc8dDsWQ8UXrznc8ymHqo
+        K+csEMINl7PDnrTA2MgHrAvYHlZOOxjyoQklrCc9h0bFknUgcFlNljks8/7iCiY0lhoQGT9JNWXv
+        WgbNveOxLZp2tf10Yg0Ed/8g1UUeB0bjqpAD5dFgc5TafEbHwgCqhmDAWYtVsbtdpkrHvS7BfK2M
+        4Tde4H5KRGxxqpYv2LMlaOzuOfalRquYrkkQtgLMKX7sZkAyBk25iF4O1bZKxObjEnqKpgOfcPwV
+        DgS6z36zYkXAQfFehzXWQwdayDrSvftRB+ZpkwexsNYY1VrtridxV0OZf2RE7Bo9H6eES2SYuSRg
+        iO6HZScIZ+jzux4bx8/stt0AztAH5gW7tvPKl2ufeiAmcU1YFB+H+Vs7kCvlkerc4zPMrnDt4UOe
+        XXywJbXilf4igZ8+vaFhusvHDc9QbLsEX2MxdufrzeMAdD8vvE/KJ2Ch7YTQVJuaogYNjJjQGeG2
+        wCkZHdutFrr1dflbH3wgQVAtr3nbglQOLXrPj0a1/a0f+pEjqtfTe2CvERrwK1YUvYTT0MZqfYfR
+        qegoelg6WKP2eYZWe7WCdP8ZwFwJow6dJHSCvoaMzVqx1vLrs/1gN7qHaGVTHsHXR/hgtw6jeNnH
+        lgj444EGPCdu0HzbFCMU2+yE/Qp76Df/gSGpH8LPQTUMpZTVsGSfA9UcgoCY3HReeXF6QpbDvgTr
+        gMgdBM0MyGf0TDb+1uMldlSMyiJkM1/Nd8Xn24HqkjRWrNY2jVyOch5opW0jUeqOojJaGqXaoOqu
+        EL7nFpIjsinu+Svr9Hf22u3lqxjMunPIl1tApR1jJKXGVy+Ww/NoKqlJDGoSeUYsTU4qvHTiQG2w
+        JPFSK5YOB/+lBtX1vR1IvZSFEriXMza9pncnJ0RnxTulCB9HChlJ7uYMKrE+0sMnfg+j4bQyRNvE
+        pcE1Hoe12j1q+RTFJpGUKXGXtkG6kqUmDHanJ+eOE18kUNP7gOJ0yMAs+ZsMivtDGCj66+nOYnqF
+        UNmcDaxlSjas4JjK0Db2Iz48R2eYn5peQwmzIlCSBOXbx/uiAnsTHum+meZhUaSPAZTOvgRM8lx3
+        kW0ow0w5sUDqlB1rlf4iw/T0xDS4f+R8KXZjBnfnvgm496KyrS2pAezEfksRX1nuukZlA5UXHYK3
+        PUnxOj9cHerX+YwLCBp34aOuhQdN1agl3US06IZUg/IiV9QatrorvCggYNgFNVb9fZgzyvspbMaN
+        RpQMKWxaH54B5/74DLZV/6rmMZsaGNdFRLEwMESlbadCK7VsfOLlTcVYbr1kANcLDrRqjddPTjMQ
+        rW8N66rIu8x7YQtww/FDjWOlxot5eJ3hvFEzwnUZAgzdPjW8PDcudWLnOKyH0/JS3CGNiDLRNmbd
+        LbGAUakUeyDpGSuEVoSzJzlU9fdzzPjTMYRl6r6CVRV5NC6nNoCCw5f4IhQG6y/vgQd2lO2w620F
+        tOzOlwSeu2sQyE/8ROST0xSa76agXnGWq/XsLI7y5//Jtx4sJ/0YwFQSE6wFqg3YqSEEklTugo2+
+        kypqcSCF4PhZA/FUyYwpiVYr3/UbkG9/H3bLboU+87bYHYR3PBqjuUJ4XEOydHqP1uJzbBUn93ns
+        xVe7Wp4nW4cf/uAQhU5lPAKBS4En73bUqSEDgzNNPVzvOiKwOMvDSKbOgW3KI3qNReaulhPrUBp8
+        DYcvplf8utx5+ZmeVRwguEWLId84mOvGRKOkCfJFnRdVGfZtif2DfK9IoowrtI5Kga3zXkW8Kxx7
+        WOIZ4SAoWLyCYyjBi8EzmnArjhmq7iIECjoT3jk5iJf8bQZPoRBhx/RLtvLlzAOmWgkOSmcP1nej
+        cTBXlhCnwdZmwtK/GvjTd7OYnjl7oJ0FvzxDWJk+3fXFORKcdFRSXV3reG02M4GA3BxyvL8m8B7o
+        B0IiIu2nny57y2qmXFd+H2xduY3XXdXXMK33OfbP58EdLT/r4Wa472mApE9Orxb3gurUnuiBm9dq
+        eWjaC3z1mSLxqaJVK4kFRnDmyXjRx2rF+U2FRnFG1Puut3W8nTxwycMHxlyduDOZnpYEy0+O/T1/
+        QPyPHzItO/7X/Bg9M4U/PcPmfQDzcq4dqD3mN8XnN0Izb0QF+PZH6kv9Ei9n2Mmwuy53bAB7jL96
+        xIEH/rwDfgtEl7w4XYJhJENsoiWtVu3RB0B9XCxqZMUz/sNPgWBa1D7dgriP9dCC8iN4UVRrhiu6
+        khYqLy6Og916a4bx7EsrHPxSpXjbuS7TW8eC4uayIUs88NW0cr0JxTY94eQSZWAWJSDJ7E4e33qY
+        7vbLjzCtD3nADoUUsyNHW5A9uOL7vBrN3dLXMLqdbWx+6zH96v3jNW7tNSaa0CHw2y+Cnbl75Uux
+        7jx4P51F8iDXCa2mYvY7t+BNemq6ks3zS29hxY1zkE9FWa38k59hFuICqyvXVdRhhQyvOFKxrq5G
+        zE7vfgWUEyB2L4S4rHzQ9ec/qP580Hz+KLYJu4yLg/Kw6DHbtJoJNFcbg/puJ+jHhzBm6v3LU89q
+        PR/r5KcfgUKFB2DkYUPI8xmPA/BZB8qfTx5AURITieeZu2R1y4EU71+Ec6haTerCc9C0JkRPZ3cc
+        5hpn4u7rvwKlwiNiosON8h/+HcYdYESaCfjyaJArwyVnV4srf/OB0HZd0bwRyxCabyEnG3/U0c8f
+        gS/fU+tKKndOdksAx3pnBZuH8ESzN5MEbmcuwn5r+TkvNX0AJbwUAfPahtG6PLYgF9oFXwuaxFMJ
+        7xbURZkQA9Q7d4CqbkCVP2l0r177ivCWqUIlSzzqbDWE+AA9OYXbNTzdV9YtZs91OEO/MR4YycHK
+        mJ+FqpI09Qu7EULx1F/LGiaKHlD3UH1cdgvjRll3SkOxEDbx+m5s+Ot39O5lw9ANgW5AK3XsYHaz
+        93/5pQZUPjZddB+6hFzbP/rM6j1jqwl1olSGssH6UQMuE8IJgh/v2J/+5vYf2S52Ovp0GCmsQa00
+        3TKQBnyF718eZtEle0GK3CtZQCMAqlxn/ucHyOe8PIfZTBcHuhVbyOonbUyce/aCmYCTQHYhyJmd
+        9oH802+lea7okyY39ecv8b27x9X2snuFCnHeBdZ1KQer/faJrL5XgfSj46Bpd8pTWE52htVyJ+ez
+        h9W7UnEKJZInvFxmS1YAPbmVqe6YK2J+cZFgVMd8IJm6VJHbqznDzc2RqJGBG1v8S5vBr38ln+ec
+        xUx/RTK8nv2B2k4joNX3jRUYy1bGv/Frv/MFrMM1w+ZRbN11eFklvHV9RD1O8QG793qiuFW50vPp
+        Mbg//ofPRvLoYfsqckYeGvdHj/wkQbFo19qqiNnBInO5y/KxxhEPTylZg9m9C2i+ceEMKknfU827
+        BoBKqauDL//g/XKE1eLf80bWRYlg9eZ9hq+/L8D0cLf0qy9gatapgLY7+tQrIgcwP885aGfhFdtP
+        8KpY2NUBDLukDZSQzmhxjjiEP3/psFRFQsEUBz7u9oKN4jDm6zFYG8i9ZDsQ7M4ats91SOA+kVQa
+        XMZjPo8yan689eVFeSBr1DYws18zdflLV82l9zSgeVFDbBugzxermGbIpmjAWFJ27nJ4Xg0w9H2K
+        vZYP2PIZ1hD6FjzQ4OX51fzz1z7xOPrQd+lAqlTpYUKoFsSIneLVNqoZoO6oBE8y8Yx+5xv8+jnq
+        PNo365EfvuC8dWTCCuYDtlgeB6ww7Kgakjifl/PoQNgWgGLhg3LGn28BJM75Rv1UE13yHnbeTtzv
+        QzKm3QeQLM4saB3HGz4g7ZPP3/4K+j4AZC4Fp1rzyZJgZRQavhn+6C7vbTgrqJQf1CO5zValSc4/
+        /0x2orOLyU330p8fpNocqvHWELMMbs6FT9H+XDJGNpUMsmawyC43uri7XIoW7ORbRzY9fwU9/6l1
+        pfZDSHVTf+XLOxXJn/U6u/eTOwNBTKFYLjz+/f53/YrKRlWff/hk/vlVoM8fmliXCP38A/jlG+Yh
+        A9XyPHscuN5Ej9rrzaxEnB0NeIktFd8R3LrLMLUGZG/L+/rjcphRGFrKWxYXbGRAYWuMChMcpXeI
+        zaHt3VVPXPLLI8ia+V0+b8Q2hBkAG4yCPhiYwlcvRePnO8awKVxyEncNvAe9g5HXmkB4X9YVVLkz
+        UjN3Tmz8fV/n5gAf+rc78LrYneEn7d5U/5hOLnzzNeXHh3Vn3BDZZAIPtCaIsHZvbtUkNk9LwdmH
+        w0a2JejLN8Ef/Xke7HBYnmeDA0RY9QAEgo/WDhsc5NMxJEJl+NWyo7qj4Lb16KMlejzD+eCA25xw
+        OKD7YJj1i3v+ra8A2EGExv2jTsDFrJpA5J0gXrWycSA4vld6eF9vMbM2mzNg79zF7qvbunPnXjMg
+        ivCJi5ORDCvzlkTpWnPA5vqo4l8eB5sDcQIh2pnDYkE0wyRVzxi3a+QKbCfOcKcGMtXefMy2sBx1
+        +OVfGuJDihY1ukO5+JQ6dZJlZGO8KQv49TfBDio6oBgrBbzn6ytQ6kcfs68/A9Wc19htgj5uywmp
+        8KnJCbXBVA+sEW4GDDdzQrUNTv/4VZgI+YRNjc6M7aJ8hZuDpNHMr8SKxYsWwW+9sfbNL9ecGCI0
+        5SYhTY22aBYlJoPtzlyo4z8aQMbiGsLveGBrM4zoVw+47jYN9idq5UshlXewLHlPNlkXsS+v8/Cg
+        VRsiAvqMV6yRCI4sOFGcJgpYP/knhVs/9YlgT2m+vr08kKl4v1NXUseBJLDkQQZSDf/yDdbwVwcI
+        5SHF7mTHMXMiGcJh96gCMah1d74Wmg7f2PLpnl9VV9zrAgfvi5Zh1I0ErEeS1vK61BbV7WGfDy8v
+        cmBcT0f6G18aL1qozHlxJnM0DvGKS+sMP4DrMVrhyJb7ARL4zc+CNdrE7qrJhQTf9XUfwN15BSwZ
+        TxxMK74gm9V8sOnrx+HGum6wdoooYMaZT+HEpIX650wGk38pM2Wyew37dFJzNr0FCyJXaui+6VS2
+        fUZaBo0iQfSRcJa7JepHBjgzVGwXyWdYUVAU4Djflz/1m1w7dJSC7spAPlo2kJW9nMKTULvY545e
+        TtSN5cnK6z4GAmdObD2cdi/YgDAgz0yRK3rJvBCA0uWoqgg6W7Dv8+ClNzM9tJ94oIoczdCs808A
+        mkhGrDg7PJQvBsKhnGzyWeAqB2pQVvCvny22kDY7JbEfv/fuVmVtD10zzQKZu0iAckGUKF+ex9pn
+        ddm6XPMZci/JpofP5RTPwyOUwVgDKwCSOlZzxZeGspdzMVjPdRMvrTnpwFIsjd6iyUJr/JINuCzW
+        QC9O7OfvMpMi6Dfm49v/nFxwu9Xcff0a9etKRmTZCQQuO90lbR1h1H3HA1KxuGMs7eyYXg9yAw/E
+        SbH7UHk06JrEwYsZfYKXYTj5lzchBFTi6MM5BGBN1XMDi6d5pnY6GNVXj52fv8Hnr/+YPWzdf7yK
+        1c22H+jSNrJsl8QkxXP3ZvPE0gyg6BNhk3APxgTcq6Cf2xa7O84Y5ovtF8BTU5emA1gYA6YSgW8e
+        S775ujuekoqDc3nH2EkWD0xI9UPoriYXEEnfDON4fbaQKNKT4pO+BctaswQQPgmwtsESGyu+NaGg
+        jxreS48IMNM9STA1FfTLq9jyrSeYnxLCue3o+XYf2oHMLnsOH1y5zdvuaLVQFLknNb77H8uO32Ww
+        vEgVkRZ3RpN9khu47FSXopnjgbBPvBlcvDHGj2fpIUZUKkOzdtpg9VPJJa9bC6HtbjzqqM2ebdGN
+        NnA9CGeKE6516RDuRvg4zTH98j2YBuESwHO21f/w6nc8ahidaBsIT/NUkYvp87DympL6t1rLeTNd
+        LJjeMkrd2tOr7Tdfl7nKtai3GiObUz2K/vTbwFraYQ0aUMI3zj2sebd7Rb75tNLlOMKIxh3r+VIS
+        f3ka9tVWAovcRdJv/QYFSHrA+PMpgOaoWvhMjxOaZbkjEB7nkGprZCFhSITopxdkNfJPPJf+pMJj
+        svrUjlcUr33LRvAbz+c3jxzCtoyU6PaxsM+dIPrxMHjXlonPV09h3Zfv4JdXsPEkh3yNuikC1VNI
+        v/6c5NOOX1LFv5QxPYueiGYUphYsJzcj0Dogtq0ORPyThzjw+MynYGdGitOFOg35dw3mzj1mUHPR
+        GMzRDFCrwbSGGyvfUCO9d/miXGwPDsvFwNhxuYq6Zvr6+SdCNO7hsuGo9JC/hAXdR7umYgJVdeUl
+        5owIzK3BNtNRApd9ccDZo92DuTqbqvzA7ze1Ayyh1U2rCHBD/MGoTJ9oVZtTCjSSLHifi9t8fqxy
+        JNvZM6XqV5/W01YpAbcUJ2reqY22j/dDhU0tvn75/sDHh0sLN2s+//KuaswupxG4ZpZRp68IY++s
+        z8C1Xraku5pLPG9j0oI6HrtvPttX65EWJTSqmFDv/WrZTO2LCICzM7EpeqLLzB7IcHlt7wR+eVT8
+        ZMMdZoR9iIiWdCBfvwij29vCruv1aB1FVVf2QRFTo+fe8fyI0jM8kOvlq18ZomQHe/h0VEbEfWK4
+        24PRE+ju4J0mmp0ztun2f/phIDxyp5rGj8TDY/B5kK3LSe7ioVKG03QzyObjimBupdsq1xJ5YkPY
+        kXjK9g4EHyJGgSh6Z/c9L7cV8jBK/uRvsyeeagi36ICtBW/A/M0bgW9jM+A7dYrn7EgKqOSzip1v
+        /rmgjRYpH3o4Ul2CMO/D03uG3sEQscNdUkBTgmb4PvE7fFqOcJiMdDYU77Y8qY3SO/j6mxq2lE0B
+        RIFeTXKXyX/q/d3PGtYw6cRfvhyAw0cE81NzasgtNAlyxDHGPq3cw+YwOnif1MswglNxh9+8GKNZ
+        3rvr/EC6cuzmPQ2i/Tn+1l9Vtot/xPvb9QXm5dR6P14MWLm9VeO1sHUYrYlObS365GTJLgRuLFsl
+        a5/O+Twl4hl8/Qo1uJXmrDoQHmaKyROp2/VodvOXpIzMO1FcvWKw3A88gV7Anamnhc5AuWlOYEtL
+        QpHYPYalifEdQvf9ovbglkM3h4AHS2GtNH5YLzDeNskI3y8SBcpBJOyPf1Oexy22mN0i1hWhB42k
+        qLDTvs+AHblPD6Q95wThd/9kvcqfEMZMv1Pb8+f8W78Gtnp3/vFbPl8LW/3tlwXchBowPYUewgY8
+        fYzcfR4L6eJm4HhCHlHETfPlkdT55Vf0Ag50YLly4WAvscPXj1c5vX7CRvn7dyrgP//111//53fC
+        oGlv9/f3YMB0X6Z///dRgX9nt+zfPC/+m4p/TiKQMSvvf//zX4cQ/u6Gtumm/zu19f0z/v3PX4IA
+        /pw3+Htqp+z9Py786/u8//zX/wMAAP//AwDB03u+5SAAAA==
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - private
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7cfaa4949ede2c90-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 30 May 2023 23:09:07 GMT
+      Function-Execution-Id:
+      - 5qxtfrjxbzu8
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '273'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 17f82710b24f4d8a07ff1bcd8c27f7f2
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3000'
+      X-Ratelimit-Remaining-Requests:
+      - '2999'
+      X-Ratelimit-Reset-Requests:
+      - 20ms
+      X-Request-Id:
+      - 3965d0d0b73603b83a2f527c596b84c5
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"input": "a Python code that defines a function called \"two_sum\" which
+      takes a list of numbers and a target integer as input, and returns the indices
+      of two numbers in the list that add up to the target. The code also includes
+      an example usage of the function.", "model": "text-embedding-ada-002", "encoding_format":
+      "base64"}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '329'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/embeddings
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA1R6XROyvJbl/fkVb723zCkRkIRzh4DIlwmCoE5NTYEiAsp3AqSr//sUPqd6um+8
+        gJQJyd5rr7V2/uMff/31d5OW2WP8+19//f0phvHv/7U+eyZj8ve//vrf//jrr7/++o/f7/8YmX3T
+        7Pks6vw3/PeyqJ/Z/Pe//uL/68n/H/Svv/6OXv6FbDenjjXffTzBJR5NBB3t4zJH2XvQDceFmrdL
+        mS5D/9JgSgWOuv60sPlTAE4mJWEEXi5LOUqW3MDU+IT0FKhROdtVr8pquoR43/G3ctp3oIDPL+QI
+        T3czGDL3fIHjUXhRi0uOJbvP9QPm6vygKB2tfrEa24SWhc/YUj3Rnayx0+CwtfY0FHm+n3mmCXBb
+        njXqpmHMmGajC3T22ZEeZ1zoc8dnqjzceJm6L44L6V4rHFjtcE+WS3xmy2QXCBSle6SH26SX2/fJ
+        QCAWogvWv8+o52W788EnuZhU2xiUTdp8JcBbliv2DMfqGeJnAT7dMaC69ILpUNrEgaD0DarXXdcP
+        tSAJsHxer0Q6l4I+RxKoQAyRjvVo5nTiG28TaJnBYXzxYjZ7eXuBfNEk1HSGMV2601WGvbOdyGRC
+        gy386w6hUr0v9KjljLVZfnoAZrQ+EgU3T6fDdneDweX6wEiMt/pwvu+/MD55GVo2BmZ893rLcBg7
+        RJQNO6TCvs19Rft2HvVum0RnTeR2sL5JElV3/OiS/Gpmck2vmAizfQHT7VokSvS0M4o8ZIaf0+3E
+        ASI+BmrID0FflkNTQOxfCH5lRhhOtTAJynx6+2iTfHO2lNfkAfKnWdBTVdlg63KXDH720w67Z6Vm
+        TGVFAcN2vlHTUSp9mpztQ/4a+ZUeqK4C4bDxNTidoE5jX4Pl4nV9BfvwxmHbblhI7L1cAdgQFclF
+        AEJq+U4BpI2gEDnjG9AsDV/Bc0h4bBspl86qcnagvYMXetoUpFxI36tQCGONiFdxYfWN8wuoYOuK
+        nWb76qdm300gSbMnulZBCBb+dYZQQMWI9y9jk3a9ZJngxH067GyXExjVzpWBpEGMtSZPwYK37weo
+        3PCN7S7j2fSEZwKPaVxQd2FtOtnwXcGCRAs+Zv0Ixk9GAnkvDRq2hV3UL1XhXcCg3Uq87w84nf3S
+        5YEXv3zsbUZJb3mytSAXFjts9uzQL7ap+rBtqgO1UXXuGSdaFWzcLkbBtGgl/2y9B/So9sQ2CmUw
+        kG9gboLmGCEuHG79DAyJg7VxqMi2DOtyvnaWCp1aytBuDihY1OB0gZtE9Yl4zyQw2LzpgbTqQmp/
+        iriftYDnILneB3zyrJ3LWPtA0IvSLYLa8OiXl3epYCu8MJr1wS6bYRIhzHPhgR1Br/pFBqMMp0uS
+        4v28c0LebZsYFFvxQ/hXdtbnWTQK2N+8AN/OwSscQP1OoPjtLSRqs9NPEp0m5Wi+EUU2/3AnH2g3
+        pQp5inFVX/suTx8OOBZ8hPdn3WKLuKEVgESH1MnKRWe+eeSg8qkoej9Y4c5g7ps1WC7UxNcLY2bp
+        LuC5yV160DycsuPixkBvYkyNTmH9ZOBMhpsbt6V6sSl1ukjHBdKdRbFTpYjNnVQS2J7iO5pfUaxP
+        5/23g+fPVcRmejMYj5A+QLaRAbbVwAhH53HsoAH6CG3060GfRiRaEBbimWoZIuk0TBsI2f1RYYQV
+        mi6PeodAWlYS3oPc1+edUUEYqHWJwIvLQma/NFOxP7aKmvG5C9nzYsXgdD1IZCqERp+PYhUoIwkE
+        shTNy52z/PCAZsgmai51Xi77k9iB8f4qiFJfLyWNOSOH9Ps40+PEuakYUYNTXn3yog4v0HLs3J0q
+        a2btUWObX9ksUtuB58Hfo20ZHvtZ2gEVLgdTx2YiXNPplk6mUrzuJ6TsukWn5KQGsjmZIkVdp/SU
+        nKwAuu33TQ+MWCk7PWMZHmKwp2q9mOlQvyJZUQLpjO25NNd64fBwYdqJ7pG8TZe3knPKHJsZRo/j
+        vV9efuErb884UpcLejCrHwGBGFgN2vLdFxAqPGRgPbUPoVNz7EUczOqffHefjy6dUhyqUDnpb8Jb
+        sqKv9bCD6B3ZVC0ES2e9BwOobrmKYnjs3PkQqhBu5lzHSArCUqieQgedyFNpfM6tdOZN3wFQjnS6
+        Ry1XMu41NuKMqh5HZVj3jMzXCnyX7E2tfaeBGeJCAAoyIJEF3eiF++XKgWFsEL4nmyUdJCpN8Du2
+        HlUPlLJ2MQ0LTK+PSeTE3odTZGUCuN2MK1Yt/l0ulJt85enSAGMhr/QJPfUApHZSY6vAp3J77VQN
+        nPdaTPgXPQLx80xV4Lwinx7GCxfSNb5gcLcmfKjw153OB/6y87TxSvd9/HUX8ep8YQkvEDH+4Ja8
+        QIcFJOnjiTG85WyepiYGyT2qMbbGS7jigQTDlt3QJB9KthhPF8HSrjN8qrZq+Xsvu+MlIZKkKuXE
+        ed4C30NLyTd2KWOnZyZBwMSBavK9CZew9RI4DBXDT/c5p8SHpw6IbvrA6OsPbMHFA8El6nu0TEtR
+        Un+aLOU+oQVr8PzRR970LWW/bEMk+ve8n+UsS+Dz9XSxu4vHfvQvnr8DuyHFpqMYf/JP6dUhx5FC
+        X/r03ccL2ItdTebLOw1ZIF5iYG70FLXreRVtonJKnd96pJwi5C6eMgkwqHWZmn7VuRMu64dswGHC
+        AZEP7E9+9z3n4qP9+ZSkSBsHTidOp0HRbFya3DRVqY1jhfHHPrjMkmgO2nKaCXS0g74cL0wAMyy2
+        eC89UDnX8JOAy8cw6OVbFqCBSxr88BltmSezmaCwgPetZmLzK9bpIOU7D0pRMyLu0dbusJUsSz4K
+        X4TjtZ4vTUUE+WsUV2q5cHLZu50MeCyEiLRrfp7DY+3BPHzJVBfqTV+V770J9eKVI2l3CkpmYiEH
+        XPDMsPFbjxFWX2WNB3I2TLlcutNLgqBALUaP9uiyVLAdGDajQvEVvNjwKPIVz3wB669WLqc5ojFw
+        I6Ehs3E9h0NMdjFcv5fwuS2x+Q5i48/8H1OMwbJvGx/eVXvBhvKuwYpHvtK+e4DNp/8umf/spF8+
+        0L2wtcqtsQEN7Fo0/ptv8ERxYJShHTLw5agv2mQ84FWRTOp9oBUKapIPgFOFFK/fX45XdE3gias7
+        IrnqDGgT6Q103PqKNdma+yF67RbgQn9D0VAkIZNrRQMMbwH1DqbJWFowGbq65dDkKJSA5XzEAU2+
+        HZCy/1zAQI17AHkhCen+m9SAWRcfybtGYVRXhnM4XXwZQZkPXni/vULAhhQI8rnORrRT92M/W1rm
+        gTX/kLiV7X7hUy8A/PYiIeHp78vtdBEHsE0oj0B8lUoaiI8YCiXoEGiAx5b3F2lQMz8e3n/tszve
+        +FmCx+R8xHu1sXTy45MLsiVq++NB3/Kak0FQBgbZwJvKRuqcBFDi7ITNhhr6EoyBCVWae/gwfrb6
+        QLb3DuL3ZsbIDWowyXYRQEXEC7VO9iEVtbwNfvwFH+VLErKm8WV4u2qQqr6Slgtn9gKwEWkwiqpt
+        yDrNuUGlu+lYrzvn33xKCIIan3Zd4M5DEHkw2HfcT2+kSxcxHz4850DaHqr9jE+NCXtYMmrbu86d
+        HoknyRI8GuitNo07ovpQQPDKHWqNmy+YXdmc4C41WrIxwrKnl6ZZoLp4PSJHuAkZmV8VWPk8VZsn
+        0rtiI2bw8QkAVUnU9RN63zjQ8MxDuVRL+iykTFKurbngtR73c77jZFi/MxMN0bvuZzO6Zn/4oGP5
+        FzYHB39Qqm95IhS4fU92E1ShO8YJPYlvriT3yxVCYucFdWyilsJcv2Pl3KMvda1Y08XrVdDgysfx
+        PiJTOODB4aH4+YxYfXBuOfDJXgPVrdHpqdxprlCG3gJl3n9RjIS6HG7G04JHoUI0sUlekreSQyUY
+        OYMIS9yykRvfUOmq9I5PVRi6rBVvmZzp/gG7Yjax5eKeg199R3C7Bf28jocvg7PIQINrOGwf10LO
+        D9WEncCaQ7Lya7n1VQknd8np+WESOWAt9wJbrW6V80tsElhdJAcjlepA5OH7AfWMfgn4zUdu0fIH
+        /4/VXnF/57PjVD6lR/kipw1cQl8hby3Cx5ekMQEO8gWywdXw4VqSdNzuahVEn2FAvQ1FMNy/LYQl
+        jCE2xcBy+WckIsjf9RnNqaj3s3kfLRDOZ5fuvds7nCVr6WBitjY1gYL7Hx8B6VI+6cGKCrbisQNH
+        kxlouSZhSNb9BtqhnMmksrmcQN0mP/zAp0wp2Vz0egxzo4zQhyyOyx9xJ8nfq7cl7Jqr5dRZCP70
+        G31oCkunk8zdoEoeM1XTfNPT2BIySKoJUX2t78LADQHcXeOJauxzSue9rtxAKt08erywOVx6tiQQ
+        ltJAbWrDcMzPdwlEObhhtEAjpDvkfsGNKwg27t9L2dd77gagUDt/+F8/w+cDivVQUmdyG3dIRuRA
+        /3l6EN6YdV3w4amB2fiI0GblF3/0gW1td/R0ioi+fAs/Vob+fcNaNQf9YlxqQV7Xi71O+vas8RUI
+        0U6OKfJ3I/jD5/LkZuC9UM1gwBvfhKrm9kSWief201xWMNCGO/7FN7txfg4iVgtogz4+mMcBNXBH
+        +AKjq7Z3l9YEAxTd+4Nix83dIVYkCUSlimgyH810LgvKgc3Ffq/xglLa3M8XIOCvRfFLncvxIT4S
+        mF12FlHuhzqc7XO0QGG33OmJuLTs1KQhkHq+StWZPd3+x8+7MwHUm1MHsMPB6BRSLQilcUNTFkZp
+        Dh3QXMn8tWeXnYfuAc3hopDd8jIAU1lXgNS6ekTIn89w2n8/PKj21hk/jK3vLvUdQvjqIgPdzvzA
+        ZiEFMqxF6Ym1EOZsKgI7hzQYblRt70O4rPwa9q0YEZKOTTku93sCuV7t6XEfZmy5T+oXXpH8podS
+        88GiB+dYeRnQQmJkWO6Pz8srniO5NeOUWVKdg+PLTPHvvJaeVgTK72qPWA3e6aL13CI/w9OBplxZ
+        lAyj/gIsJz7+8a8ETsscEPH9GYU/vnD1pvznP+B0KZZ+5IliQf6+n6mRGmq6Td5ToxSnxcH2ARU9
+        Ge0MQZheM3wqGzed8kd9k1Z8oqbBT2BdXwF9iPcrnpTs49CL/G98Q86LEVU/TCAf9kfsvVXH3QaX
+        W/Cr52gKHL9kn2eoyUQqjkQQJrlf6HJE8PEYR4pfZyvl54he4LioE+5PgRrStLYraPhph21na4Uj
+        PuWG8s6WD3Y297BfYJVxIHKLlHxqDrszDKUcnszCJxKX1P04NR4nhQnPMDo7VU870zcV8yB/qVcW
+        nE5X/0iWu17Ap4aTV33y+kJCQIa98PhMm/IBEjjS+IxoZrBwvhCbwPvGjqkbNzScK5VaP/2MNbeT
+        3bX+ELizbi6+3ZoarHjuK6mUeBj1YlBOUVqZsKEbkTB3qtPef0tfgPKQEJFsRbA8yTMB3+i4IbFS
+        RSWvWoTAW8/7NNmAvc5njLtAlJ8JNfStUS5R7FoQv8IAO+V01Fl8MixFqsMJbY7zlk3D9tDBizgV
+        +Lzq9R6j8gLfL16l1227AGI1ewOI3kOk7spv6FJI6m71G/GRfyhs+eFfFsFy5QdZOG/PjvZbDz7F
+        kLHlUG9N2HfyhGpt7spx1N8djOXDiR6nke+po9iezG9jCfHa9cam4gR4MG7ADnGjcQS/fJMz9Jgo
+        Ul5WSZqK8L/9J4ttffWfnoTgmV6odTxb/XbV4yCr6y/54p2WNtp8HeCYVjd6Rm3WM/8tVdB2OIpX
+        vQjY1n2bYOUjSL5LTjnvwioHlRyaZNu0Ahj90hWAdbQF6s0O784FPWtwKs4f1N2lrmeL+zRhf3VE
+        Mq36fPkAZQFtMcb0ss1FQDem5cGHsOPW+N+w5RzmHaReoOLDqpeWZGM58MAljDobsHcn77EJ5Gp3
+        6qnzaXTAtknTQbet3qiC+sNdds/vBFvrfVjzUeu3fdxJkH6zM9mc2qBkbGxluKeHO9b0d+7OX8H2
+        4Jh+b/S0CKLOnhc1Vp679kFdkR57kX53Azwev+2f/J1L2ZFg2FCF8Hp1YsTZvZwfvyQb4Lq9nF/N
+        Bzxz8IWtZ0jTmaC0kOW8+GJDr0a2tBrRdu9s+mBd7bdsMKWjBMfSdKn+EDBg95lmYOWzNO4LxNqd
+        UXGg9TUJWytcs9yVILwC5mMj77/peBuyAsh5/sURBy/6EC5MhdsC12iTn76A+ZNkQf144gn3/nzC
+        4TCXg3If8xDfV3+JhJVA4HDRv4ieZHuNT02D18454Z++WELJhVAvC4B1lpSASrIQAE4CW7r6nWxG
+        cjLBL500GsZh37P1PUSC9cTBNWHptIyaDydPbqiGjOrffDtoDhFd+Y1Ow3uLgGDTOwLqt2H9LjgH
+        yksTA2yZUZf2q7+0kw+BTG2Fq9PJSi4LdDWD0nthVHrjtnkMwRDtECfWPSANtFd9FGywxRe9PimH
+        /KsU59zANpyDtD8ebt0f/WXP+52+FGlugSBBLnZbryyX3dYmgPviKxLGxC2ZUrIY9mHC/eKNiQvu
+        Fqgd3jPhE2aXMwneHtxLRMNHwVXDKZlDAb6tGP3By9mOyge4enP/6yeA+X3yPDnZb7fY84VcZ53C
+        d7ChiojaF5jKLr+iB5SfwpG6B3VXEhQ+GrD6m9jbcAQMb8o3cP+4AXwy36G76MH9Au1zeqSIqKa+
+        3RzT7OcnIrmcan2qyusXrudN0VsXgZBsLAuueIl//Y9h1SOS9hYk7BAuAMuz7HMYTF1JPcNpyum0
+        MUzoqLeB7vPzpZ9K+2tBmb4cqkoSYXMHdwnsIPxilyuLnrXMmcBTLeo/+nDu9WfzJ790oX71TGls
+        Fa76mVpXRdXFabsLQNd6Iz3ARNX54gQEqAunO91f3iAl7ms3QCc8Omh6yjZY/e1A+Z2vVuwisEQn
+        ugA7jwYCzsoRLG+lgfDXX3HN7JPO6dAV8Ln//s4nD//4iy6Kt3/mE1vmLLA3svvKT8dwcOLU+PEV
+        xONLrQ+J0To/v40QcMjCofWLGM7K10eUDrY+zcXtBl9x7WLNEmlKDkC7gLU/ht3h/koHWwpluMYX
+        4Vf/gmyaqVE6yQ2ofnOtUByobcgrvpDJTMTwjz+mxnBDUYIfYHn4WQDl93dP7ei4BQxNgwNWfwOb
+        qt2Ga39MBT9+kV21vf7jm5A3oxDfQfV0aSv6GVjrN9pFxwjQ03v4wkguVKq69RCufK/4xQPZ0DRI
+        Vz02gU29S7B2L03A00HwYQaiF/WGSQ+3+fksw4E3vxi35RaMB8QCePVYj/isWMDSnccv2D74jkBf
+        UF1hOTQ5WPkxmkekMUHTzxOIdo8Ptod47uf7ppzgFUlvbDppXK79rASufg3d25yo//G/1nqPStN+
+        l8ws9Qk0h7nGhuy+wrlWgQX9mD/Q1+oPbOkzNUCTXXjsrf2GiW/VL3zKRERvB5/YL35gdR53pF33
+        c4i7vvvpCURWP/bH98GqD5FoXxD7o484RCt6fEkFW1A6aQpfdAnarvqNeamViB2n7amz1kdW77nk
+        1y/FHnpsWbfWZzAu2kTR47jrf/kO3IhvsN33NhDW/4O7h2Ugrn7uWe9tXoOMLQFglRgMjNdgNCF+
+        K/OKJ0bP7JgM8Ca1G2x/zi/w0/vQ7MMCcUMhh/MnhLcfP/m3nns67SC/X4JKjdy+MeYQuwGGf+/Q
+        DlSKS2/cLQdrfV7x1knHJXKJjLKuI4xkh/7nn4Lhsv/ifRMY5dy2gwM/+2VHcct7/eof8yDVS4mI
+        J/LqWdRt/B8+Y+0Sz2xGXJ79+ntYf7+vYWsM3wT6Zcvj/WUJdHLvZRnuRnZEz9O3YqufeoNq6Zv4
+        2jl++usfwrPrfpHERD1c1v4kaN8tIJAG1/RPftRpHRP5ohKXlXpbgbXeEDihCMy85jzg3tjZ2H2O
+        b32ZLxdDWft/ZFnrE9101wL2ygfRhGK7HNy3B+GsXT7U2T/uYI6UfaAAZxBI115H/Y9+XjgkUT0O
+        +3KUTtYFLlHbk0FTWDiNaY6U9HE44D1qs3I+FFYOfelpod3qd7LxOw4/vUQPHmX93H7iDLrosqW/
+        /jJvfGcBglfhENFo63TWvg6COzQXVDftfT8vkT7A6tbp2FS2Xrg1Z8v4+VnUKxnPBu2kJsqvX35e
+        8XM5m2IFuME0qTe8vJ4t4ZQpf/9uBfznP/766//8bhh8m2f2WS8GjNk8/vO/rgr8M3km/+R54Z9U
+        +HMTgQxJnv39r39fQvi77ZtvO/7fsamyevj7X3/txD/XDf4emzH5/Pfn/1hn+89//D8AAAD//wMA
+        HLoWtOMgAAA=
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - private
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7cfaa49ade00e266-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 30 May 2023 23:09:07 GMT
+      Function-Execution-Id:
+      - 5qxtue6rfagm
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '62'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - aa7ec4d52de6b800445b69e2f2210474
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3000'
+      X-Ratelimit-Remaining-Requests:
+      - '2999'
+      X-Ratelimit-Reset-Requests:
+      - 20ms
+      X-Request-Id:
+      - 3539118d3ad4c6d6bca091a127b1a697
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
+      are Debug Code Agent, an autonomous agent that specializes in debugging python
+      code\nYour decisions must always be made independently without seeking user
+      assistance. Play to your strengths as an LLM and pursue simple strategies with
+      no legal complications.\n\nGOALS:\n\n1. 1-Run the code in the file named ''code.py''
+      using the execute_code command.\n2. 2-Read code.py to understand why the code
+      is not working as expected.\n3. 3-Modify code.py to fix the error.\n4. Repeat
+      step 1, 2 and 3 until the code is working as expected. When you''re done use
+      the task_complete command.\n5. Do not use any other commands than execute_python_file
+      and write_file\n\n\nConstraints:\n1. ~4000 word limit for short term memory.
+      Your short term memory is short, so immediately save important information to
+      files.\n2. If you are unsure how you previously did something or want to recall
+      past events, thinking about similar events will help you remember.\n3. No user
+      assistance\n4. Exclusively use the commands listed below e.g. command_name\n\nCommands:\n1.
+      append_to_file: Append to file, args: \"filename\": \"<filename>\", \"text\":
+      \"<text>\"\n2. delete_file: Delete file, args: \"filename\": \"<filename>\"\n3.
+      list_files: List Files in Directory, args: \"directory\": \"<directory>\"\n4.
+      read_file: Read a file, args: \"filename\": \"<filename>\"\n5. write_to_file:
+      Write to file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n6.
+      execute_python_file: Execute Python File, args: \"filename\": \"<filename>\"\n7.
+      improve_code: Get Improved Code, args: \"suggestions\": \"<list_of_suggestions>\",
+      \"code\": \"<full_code_string>\"\n8. delete_agent: Delete GPT Agent, args: \"key\":
+      \"<key>\"\n9. get_hyperlinks: Get hyperlinks, args: \"url\": \"<url>\"\n10.
+      get_text_summary: Get text summary, args: \"url\": \"<url>\", \"question\":
+      \"<question>\"\n11. list_agents: List GPT Agents, args: () -> str\n12. message_agent:
+      Message GPT Agent, args: \"key\": \"<key>\", \"message\": \"<message>\"\n13.
+      start_agent: Start GPT Agent, args: \"name\": \"<name>\", \"task\": \"<short_task_desc>\",
+      \"prompt\": \"<prompt>\"\n14. task_complete: Task Complete (Shutdown), args:
+      \"reason\": \"<reason>\"\n\nResources:\n1. Internet access for searches and
+      information gathering.\n2. Long Term memory management.\n3. GPT-3.5 powered
+      Agents for delegation of simple tasks.\n4. File output.\n\nPerformance Evaluation:\n1.
+      Continuously review and analyze your actions to ensure you are performing to
+      the best of your abilities.\n2. Constructively self-criticize your big-picture
+      behavior constantly.\n3. Reflect on past decisions and strategies to refine
+      your approach.\n4. Every command has a cost, so be smart and efficient. Aim
+      to complete tasks in the least number of steps.\n5. Write all code to a file.\n\nYou
+      should only respond in JSON format as described below \nResponse Format: \n{\n    \"thoughts\":
+      {\n        \"text\": \"thought\",\n        \"reasoning\": \"reasoning\",\n        \"plan\":
+      \"- short bulleted\\n- list that conveys\\n- long-term plan\",\n        \"criticism\":
+      \"constructive self-criticism\",\n        \"speak\": \"thoughts summary to say
+      to user\"\n    },\n    \"command\": {\n        \"name\": \"command name\",\n        \"args\":
+      {\n            \"arg name\": \"value\"\n        }\n    }\n} \nEnsure the response
+      can be parsed by Python json.loads"}, {"role": "system", "content": "The current
+      time and date is Tue Jan  1 00:00:00 2000"}, {"role": "system", "content": "This
+      reminds you of these events from your past: \nI was created"}, {"role": "user",
+      "content": "Determine which next command to use, and respond using the format
+      specified above:"}, {"role": "assistant", "content": "{\n    \"thoughts\": {\n        \"text\":
+      \"I should start by executing the code in code.py to see what the error is.\",\n        \"reasoning\":
+      \"Executing the code will give me an idea of what the error is and how to fix
+      it.\",\n        \"plan\": \"- Execute the code in code.py using the execute_python_file
+      command.\",\n        \"criticism\": \"N/A\",\n        \"speak\": \"I will start
+      by executing the code in code.py using the execute_python_file command.\"\n    },\n    \"command\":
+      {\n        \"name\": \"execute_python_file\",\n        \"args\": {\n            \"filename\":
+      \"code.py\"\n        }\n    }\n}"}, {"role": "system", "content": "Command execute_python_file
+      returned: [0, 1]\n"}, {"role": "user", "content": "Determine which next command
+      to use, and respond using the format specified above:"}, {"role": "assistant",
+      "content": "{\n    \"thoughts\": {\n        \"text\": \"The code is not working
+      as expected. I should read the code in code.py to understand why the code is
+      not working as expected.\",\n        \"reasoning\": \"Reading the code will
+      give me an idea of what the error is and how to fix it.\",\n        \"plan\":
+      \"- Read the code in code.py using the read_file command.\",\n        \"criticism\":
+      \"N/A\",\n        \"speak\": \"I will read the code in code.py using the read_file
+      command.\"\n    },\n    \"command\": {\n        \"name\": \"read_file\",\n        \"args\":
+      {\n            \"filename\": \"code.py\"\n        }\n    }\n}"}, {"role": "system",
+      "content": "Command read_file returned: # mypy: ignore-errors\nfrom typing import
+      List, Optional\n\n\ndef two_sum(nums: List, target: int) -> Optional[int]:\n    seen
+      = {}\n    for i, num in enumerate(nums):\n        complement = target - num\n        if
+      complement in seen:\n            return [seen[complement], i]\n        seen[num]
+      = i\n    return None\n\n\n# Example usage:\nnums = [2, 7, 11, 15]\ntarget =
+      9\nresult = two_sum(nums, target)\nprint(result)  # Output: [0, 1]\n"}, {"role":
+      "user", "content": "Determine which next command to use, and respond using the
+      format specified above:"}], "temperature": 0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '5904'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA5xUYYvbRhD93l8xzH3Jwdo92bncncCFEPrhILmjpQSC15iNNLI31s6K3RG2Y/zf
+        y0ryneOWlna/CO28ee/N6q0OaEvMsVgbKVxTj+4+TTbVZ3l6/m26+/j+A5sP1d2X37/RZmu+f0aF
+        /us3KmToGBfeNTWJ9YwKi0BGqMQ8e3d/+/b+Pnv7oND5kmrMcdXIaDq+HUkbvvrRzfQmQ4VtNCvC
+        /IBN8K6RpfgNccQ8m04zha/kL4XJQ6ZQvJj6FftuMjkqLNbeFhQxnx/QUTwRB18T5mhitFEMS7Lp
+        WYjTCAfNAAAaZe3b1VqixhyGzaFAO0mbGv9YExS+JLAR2AtsfdhYXoGJQLuGCqFyDAlEIfiQULI2
+        ArImqFou0hQgW7+MrTtRBJI2cCJJqBML+FaaVsbwCHHt27oE50tb7TtQ74C757jZg3io7K7vT7pj
+        jercfyATfZL4+yH+0YGC6OERmKhMOpcu/k26qQ33qiP49P8nKIIVW9joeq6nn99fAGJDZtMXH2Fr
+        6/o/nlfPdVSnLBTeOcPlX6LAxlEvsw1WaCl+WdmaLtyYsLpMUV9I2FeKwc8PzZeJuwK3b/Y52BX7
+        QKPOb9Saq+AdyL5Jn826xgeBjzaKgucmpczUWrPWXFJ1Ctwbbl3MO9TcsiwUiAkrkhwsyzWMfnlp
+        nb9gFrnurUUihhkcjsN7ldKtgFOOGYhbR8EIdRrXp6a0+uvriAVmgyCMUt8ZxlbnMMud2jlJWn1K
+        YZ5q81f4QoFdnEG7MrduATOww/7Q+uSZ+lPRmq/g151JJND9fpJa8g4zmE8U3CnIMgXZbaIeXM/g
+        QWsOFNu6m+XsVE9Hea01N8GyvOlh1wBX8NzdoxzmNwqyxSlqXdyG1Gk+4lFhZdnG9bK/rZhjFN+g
+        Qssl7TC/OS6OP/0JAAD//wMA27hIFKgFAAA=
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7cfaa4a5fa1a2c34-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 30 May 2023 23:09:27 GMT
+      Function-Execution-Id:
+      - 5qxt438gmhxg
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '18440'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - a42764bc489b5723c74d878384ccd628
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '86038'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.641s
+      X-Request-Id:
+      - 5454440d35a943896ae447377036a350
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
+      are Debug Code Agent, an autonomous agent that specializes in debugging python
+      code\nYour decisions must always be made independently without seeking user
+      assistance. Play to your strengths as an LLM and pursue simple strategies with
+      no legal complications.\n\nGOALS:\n\n1. 1-Run the code in the file named ''code.py''
+      using the execute_code command.\n2. 2-Read code.py to understand why the code
+      is not working as expected.\n3. 3-Modify code.py to fix the error.\n4. Repeat
+      step 1, 2 and 3 until the code is working as expected. When you''re done use
+      the task_complete command.\n5. Do not use any other commands than execute_python_file
+      and write_file\n\n\nConstraints:\n1. ~4000 word limit for short term memory.
+      Your short term memory is short, so immediately save important information to
+      files.\n2. If you are unsure how you previously did something or want to recall
+      past events, thinking about similar events will help you remember.\n3. No user
+      assistance\n4. Exclusively use the commands listed below e.g. command_name\n\nCommands:\n1.
+      append_to_file: Append to file, args: \"filename\": \"<filename>\", \"text\":
+      \"<text>\"\n2. delete_file: Delete file, args: \"filename\": \"<filename>\"\n3.
+      list_files: List Files in Directory, args: \"directory\": \"<directory>\"\n4.
+      read_file: Read a file, args: \"filename\": \"<filename>\"\n5. write_to_file:
+      Write to file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n6.
+      execute_python_file: Execute Python File, args: \"filename\": \"<filename>\"\n7.
+      improve_code: Get Improved Code, args: \"suggestions\": \"<list_of_suggestions>\",
+      \"code\": \"<full_code_string>\"\n8. delete_agent: Delete GPT Agent, args: \"key\":
+      \"<key>\"\n9. get_hyperlinks: Get hyperlinks, args: \"url\": \"<url>\"\n10.
+      get_text_summary: Get text summary, args: \"url\": \"<url>\", \"question\":
+      \"<question>\"\n11. list_agents: List GPT Agents, args: () -> str\n12. message_agent:
+      Message GPT Agent, args: \"key\": \"<key>\", \"message\": \"<message>\"\n13.
+      start_agent: Start GPT Agent, args: \"name\": \"<name>\", \"task\": \"<short_task_desc>\",
+      \"prompt\": \"<prompt>\"\n14. task_complete: Task Complete (Shutdown), args:
+      \"reason\": \"<reason>\"\n\nResources:\n1. Internet access for searches and
+      information gathering.\n2. Long Term memory management.\n3. GPT-3.5 powered
+      Agents for delegation of simple tasks.\n4. File output.\n\nPerformance Evaluation:\n1.
+      Continuously review and analyze your actions to ensure you are performing to
+      the best of your abilities.\n2. Constructively self-criticize your big-picture
+      behavior constantly.\n3. Reflect on past decisions and strategies to refine
+      your approach.\n4. Every command has a cost, so be smart and efficient. Aim
+      to complete tasks in the least number of steps.\n5. Write all code to a file.\n\nYou
+      should only respond in JSON format as described below \nResponse Format: \n{\n    \"thoughts\":
+      {\n        \"text\": \"thought\",\n        \"reasoning\": \"reasoning\",\n        \"plan\":
+      \"- short bulleted\\n- list that conveys\\n- long-term plan\",\n        \"criticism\":
+      \"constructive self-criticism\",\n        \"speak\": \"thoughts summary to say
+      to user\"\n    },\n    \"command\": {\n        \"name\": \"command name\",\n        \"args\":
+      {\n            \"arg name\": \"value\"\n        }\n    }\n} \nEnsure the response
+      can be parsed by Python json.loads"}, {"role": "system", "content": "The current
+      time and date is Tue Jan  1 00:00:00 2000"}, {"role": "system", "content": "This
+      reminds you of these events from your past: \nI was created"}, {"role": "user",
+      "content": "Determine which next command to use, and respond using the format
+      specified above:"}, {"role": "assistant", "content": "{\n    \"thoughts\": {\n        \"text\":
+      \"I should start by executing the code in code.py to see what the error is.\",\n        \"reasoning\":
+      \"Executing the code will give me an idea of what the error is and how to fix
+      it.\",\n        \"plan\": \"- Execute the code in code.py using the execute_python_file
+      command.\",\n        \"criticism\": \"N/A\",\n        \"speak\": \"I will start
+      by executing the code in code.py using the execute_python_file command.\"\n    },\n    \"command\":
+      {\n        \"name\": \"execute_python_file\",\n        \"args\": {\n            \"filename\":
+      \"code.py\"\n        }\n    }\n}"}, {"role": "system", "content": "Command execute_python_file
+      returned: [0, 1]\n"}, {"role": "user", "content": "Determine which next command
+      to use, and respond using the format specified above:"}, {"role": "assistant",
+      "content": "{\n    \"thoughts\": {\n        \"text\": \"The code is not working
+      as expected. I should read the code in code.py to understand why the code is
+      not working as expected.\",\n        \"reasoning\": \"Reading the code will
+      give me an idea of what the error is and how to fix it.\",\n        \"plan\":
+      \"- Read the code in code.py using the read_file command.\",\n        \"criticism\":
+      \"N/A\",\n        \"speak\": \"I will read the code in code.py using the read_file
+      command.\"\n    },\n    \"command\": {\n        \"name\": \"read_file\",\n        \"args\":
+      {\n            \"filename\": \"code.py\"\n        }\n    }\n}"}, {"role": "system",
+      "content": "Command read_file returned: # mypy: ignore-errors\nfrom typing import
+      List, Optional\n\n\ndef two_sum(nums: List, target: int) -> Optional[int]:\n    seen
+      = {}\n    for i, num in enumerate(nums):\n        complement = target - num\n        if
+      complement in seen:\n            return [seen[complement], i]\n        seen[num]
+      = i\n    return None\n\n\n# Example usage:\nnums = [2, 7, 11, 15]\ntarget =
+      9\nresult = two_sum(nums, target)\nprint(result)  # Output: [0, 1]\n"}, {"role":
+      "user", "content": "Determine which next command to use, and respond using the
+      format specified above:"}, {"role": "assistant", "content": "{\n    \"thoughts\":
+      {\n        \"text\": \"The code is not working as expected. The error is that
+      the function two_sum is not returning the expected output. I should modify the
+      code in code.py to fix the error.\",\n        \"reasoning\": \"The code is not
+      returning the expected output, so I need to modify the code to fix the error.\",\n        \"plan\":
+      \"- Modify the code in code.py to fix the error.\",\n        \"criticism\":
+      \"N/A\",\n        \"speak\": \"I will modify the code in code.py to fix the
+      error.\"\n    },\n    \"command\": {\n        \"name\": \"write_to_file\",\n        \"args\":
+      {\n            \"filename\": \"code.py\",\n            \"text\": \"# mypy: ignore-errors\\nfrom
+      typing import List, Optional\\n\\ndef two_sum(nums: List[int], target: int)
+      -> Optional[List[int]]:\\n    seen = {}\\n    for i, num in enumerate(nums):\\n        complement
+      = target - num\\n        if complement in seen:\\n            return [seen[complement],
+      i]\\n        seen[num] = i\\n    return None\\n\\n\\n# Example usage:\\nnums
+      = [2, 7, 11, 15]\\ntarget = 9\\nresult = two_sum(nums, target)\\nprint(result)  #
+      Output: [0, 1]\"\n        }\n    }\n}"}, {"role": "system", "content": "Command
+      write_to_file returned: File written to successfully."}, {"role": "user", "content":
+      "Determine which next command to use, and respond using the format specified
+      above:"}], "temperature": 0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '7310'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA5ySTW/bMAyG7/sVAs9KlqRpa/g2bEWbAuuhO231ECgyY6mVKEOi1xSB//vg2IGL
+        dBjQngTw4+XzktqDLSEHbRRrX7vJ5feFW+iv19+erymb3y3458198+v28f5m9eMWJITNI2oeOqY6
+        +Noh20AgQUdUjCXk84vsfJll88uFBB9KdJBDVfPkbHo+4SZuwmR2NpuDhCapCiHfQx2Dr3nN4Qkp
+        dQIXSwmj+JhYLiVwYOXGUDbLWgnaBKsxQf6wB4/pKByDQ8hBpWQTK+IOMxAjdRb2BQkhRAFsQlMZ
+        TgXkYggOCdxxFyxgJYz6g8KH0m4tloINCh1KFJYO77R+ERzE1u4OKYwxxKlYiWRC40qBO9QN49im
+        KmWp69CBtjZ6wUbx2CqMSmKDSJ0iltMC5GuuiCoFslT1cFcHdUvVqf6zde5jE2qnqBefiKtT+Fee
+        m3QcO1hc1y9sAq231nXV3it6I66jZatt8v2Eu89fTgpSjerpuPiDCfwPw7t32Y9q5fH+A+ab85Py
+        2FP8w9wJsorV6f/pE13tKDQwHxkOHANOQS20EraWbDLr/sSQQ+JQgwRLJe4gn7W/209/AQAA//8D
+        AAXPRAy1AwAA
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7cfaa532bda01254-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 30 May 2023 23:09:41 GMT
+      Function-Execution-Id:
+      - 5qxtenbtr7ob
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '9599'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 57c2373eaeafb08bba7b6ac82407f4dd;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '86062'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.624s
+      X-Request-Id:
+      - 77946d29218b67ca477ced6c92e45fbb
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
+      are Debug Code Agent, an autonomous agent that specializes in debugging python
+      code\nYour decisions must always be made independently without seeking user
+      assistance. Play to your strengths as an LLM and pursue simple strategies with
+      no legal complications.\n\nGOALS:\n\n1. 1-Run the code in the file named ''code.py''
+      using the execute_code command.\n2. 2-Read code.py to understand why the code
+      is not working as expected.\n3. 3-Modify code.py to fix the error.\n4. Repeat
+      step 1, 2 and 3 until the code is working as expected. When you''re done use
+      the task_complete command.\n5. Do not use any other commands than execute_python_file
+      and write_file\n\n\nConstraints:\n1. ~4000 word limit for short term memory.
+      Your short term memory is short, so immediately save important information to
+      files.\n2. If you are unsure how you previously did something or want to recall
+      past events, thinking about similar events will help you remember.\n3. No user
+      assistance\n4. Exclusively use the commands listed below e.g. command_name\n\nCommands:\n1.
+      append_to_file: Append to file, args: \"filename\": \"<filename>\", \"text\":
+      \"<text>\"\n2. delete_file: Delete file, args: \"filename\": \"<filename>\"\n3.
+      list_files: List Files in Directory, args: \"directory\": \"<directory>\"\n4.
+      read_file: Read a file, args: \"filename\": \"<filename>\"\n5. write_to_file:
+      Write to file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n6.
+      execute_python_file: Execute Python File, args: \"filename\": \"<filename>\"\n7.
+      improve_code: Get Improved Code, args: \"suggestions\": \"<list_of_suggestions>\",
+      \"code\": \"<full_code_string>\"\n8. delete_agent: Delete GPT Agent, args: \"key\":
+      \"<key>\"\n9. get_hyperlinks: Get hyperlinks, args: \"url\": \"<url>\"\n10.
+      get_text_summary: Get text summary, args: \"url\": \"<url>\", \"question\":
+      \"<question>\"\n11. list_agents: List GPT Agents, args: () -> str\n12. message_agent:
+      Message GPT Agent, args: \"key\": \"<key>\", \"message\": \"<message>\"\n13.
+      start_agent: Start GPT Agent, args: \"name\": \"<name>\", \"task\": \"<short_task_desc>\",
+      \"prompt\": \"<prompt>\"\n14. task_complete: Task Complete (Shutdown), args:
+      \"reason\": \"<reason>\"\n\nResources:\n1. Internet access for searches and
+      information gathering.\n2. Long Term memory management.\n3. GPT-3.5 powered
+      Agents for delegation of simple tasks.\n4. File output.\n\nPerformance Evaluation:\n1.
+      Continuously review and analyze your actions to ensure you are performing to
+      the best of your abilities.\n2. Constructively self-criticize your big-picture
+      behavior constantly.\n3. Reflect on past decisions and strategies to refine
+      your approach.\n4. Every command has a cost, so be smart and efficient. Aim
+      to complete tasks in the least number of steps.\n5. Write all code to a file.\n\nYou
+      should only respond in JSON format as described below \nResponse Format: \n{\n    \"thoughts\":
+      {\n        \"text\": \"thought\",\n        \"reasoning\": \"reasoning\",\n        \"plan\":
+      \"- short bulleted\\n- list that conveys\\n- long-term plan\",\n        \"criticism\":
+      \"constructive self-criticism\",\n        \"speak\": \"thoughts summary to say
+      to user\"\n    },\n    \"command\": {\n        \"name\": \"command name\",\n        \"args\":
+      {\n            \"arg name\": \"value\"\n        }\n    }\n} \nEnsure the response
+      can be parsed by Python json.loads"}, {"role": "system", "content": "The current
+      time and date is Tue Jan  1 00:00:00 2000"}, {"role": "system", "content": "This
+      reminds you of these events from your past: \nI was created"}, {"role": "user",
+      "content": "Determine which next command to use, and respond using the format
+      specified above:"}, {"role": "assistant", "content": "{\n    \"thoughts\": {\n        \"text\":
+      \"I should start by executing the code in code.py to see what the error is.\",\n        \"reasoning\":
+      \"Executing the code will give me an idea of what the error is and how to fix
+      it.\",\n        \"plan\": \"- Execute the code in code.py using the execute_python_file
+      command.\",\n        \"criticism\": \"N/A\",\n        \"speak\": \"I will start
+      by executing the code in code.py using the execute_python_file command.\"\n    },\n    \"command\":
+      {\n        \"name\": \"execute_python_file\",\n        \"args\": {\n            \"filename\":
+      \"code.py\"\n        }\n    }\n}"}, {"role": "system", "content": "Command execute_python_file
+      returned: [0, 1]\n"}, {"role": "user", "content": "Determine which next command
+      to use, and respond using the format specified above:"}, {"role": "assistant",
+      "content": "{\n    \"thoughts\": {\n        \"text\": \"The code is not working
+      as expected. I should read the code in code.py to understand why the code is
+      not working as expected.\",\n        \"reasoning\": \"Reading the code will
+      give me an idea of what the error is and how to fix it.\",\n        \"plan\":
+      \"- Read the code in code.py using the read_file command.\",\n        \"criticism\":
+      \"N/A\",\n        \"speak\": \"I will read the code in code.py using the read_file
+      command.\"\n    },\n    \"command\": {\n        \"name\": \"read_file\",\n        \"args\":
+      {\n            \"filename\": \"code.py\"\n        }\n    }\n}"}, {"role": "system",
+      "content": "Command read_file returned: # mypy: ignore-errors\nfrom typing import
+      List, Optional\n\n\ndef two_sum(nums: List, target: int) -> Optional[int]:\n    seen
+      = {}\n    for i, num in enumerate(nums):\n        complement = target - num\n        if
+      complement in seen:\n            return [seen[complement], i]\n        seen[num]
+      = i\n    return None\n\n\n# Example usage:\nnums = [2, 7, 11, 15]\ntarget =
+      9\nresult = two_sum(nums, target)\nprint(result)  # Output: [0, 1]\n"}, {"role":
+      "user", "content": "Determine which next command to use, and respond using the
+      format specified above:"}, {"role": "assistant", "content": "{\n    \"thoughts\":
+      {\n        \"text\": \"The code is not working as expected. The error is that
+      the function two_sum is not returning the expected output. I should modify the
+      code in code.py to fix the error.\",\n        \"reasoning\": \"The code is not
+      returning the expected output, so I need to modify the code to fix the error.\",\n        \"plan\":
+      \"- Modify the code in code.py to fix the error.\",\n        \"criticism\":
+      \"N/A\",\n        \"speak\": \"I will modify the code in code.py to fix the
+      error.\"\n    },\n    \"command\": {\n        \"name\": \"write_to_file\",\n        \"args\":
+      {\n            \"filename\": \"code.py\",\n            \"text\": \"# mypy: ignore-errors\\nfrom
+      typing import List, Optional\\n\\ndef two_sum(nums: List[int], target: int)
+      -> Optional[List[int]]:\\n    seen = {}\\n    for i, num in enumerate(nums):\\n        complement
+      = target - num\\n        if complement in seen:\\n            return [seen[complement],
+      i]\\n        seen[num] = i\\n    return None\\n\\n\\n# Example usage:\\nnums
+      = [2, 7, 11, 15]\\ntarget = 9\\nresult = two_sum(nums, target)\\nprint(result)  #
+      Output: [0, 1]\"\n        }\n    }\n}"}, {"role": "system", "content": "Command
+      write_to_file returned: File written to successfully."}, {"role": "user", "content":
+      "Determine which next command to use, and respond using the format specified
+      above:"}, {"role": "assistant", "content": "{\n    \"thoughts\": {\n        \"text\":
+      \"I have modified the code in code.py to fix the error. I should execute the
+      code again to confirm that the error has been fixed.\",\n        \"reasoning\":
+      \"Executing the code again will confirm that the error has been fixed.\",\n        \"plan\":
+      \"- Execute the code in code.py using the execute_python_file command.\",\n        \"criticism\":
+      \"N/A\",\n        \"speak\": \"I will execute the code in code.py again to confirm
+      that the error has been fixed.\"\n    },\n    \"command\": {\n        \"name\":
+      \"execute_python_file\",\n        \"args\": {\n            \"filename\": \"code.py\"\n        }\n    }\n}"},
+      {"role": "system", "content": "Command execute_python_file returned: [0, 1]\n"},
+      {"role": "user", "content": "Determine which next command to use, and respond
+      using the format specified above:"}], "temperature": 0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '8202'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA7SSTY/TQAyG7/wKy+dp6QeFkhsXoOJLK5YTQdV0xpvMNhkPsUuLqvz3VTZpdykX
+        DstpJPv1+z7W+IjBY4autOrqVI1efZpVb/3h+urDz9e/+P1MXbr6+mUl24+3zTs0yJtbcjpMjB3X
+        qSINHNGga8gqecymL5eLF8vldLkwWLOnCjMsko7m48VId82GR5P5ZIoGd2ILwuyIqeE66Vp5S1Ew
+        my4XU4MP5g+NxcygstrqXJpNJvPWoCs5OBLMvh+xJjkZN1wRZmhFgqiN2mFyVIrdCsc8AgDkqCXv
+        ilIlxwyG4tCgg3bFHK9LAseeIAhE3sOem22IBVgBOiRySn4MK5CSd5WHnRBoSaBWtuthj26+rm30
+        oAwh+uCsdiqrZ2lnflKPczSPURqywjHE4p95DAjDCpyN/4MnVTb2KCP49vT2rgkaXJC6z/j8/M2F
+        QBLZbd9cwT5U1RMt2We05nQbw/xfpxFtTX38H3kXlLYpLq/q8Xde/mW8f8fpN5RWYEMU4SYcyJ+5
+        7tkGxDy22Bq8CTFIue4NMUNRTmgwRE8HzCbtj/bZHQAAAP//AwDla5Xy5QMAAA==
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7cfaa588ff4e1193-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 30 May 2023 23:09:54 GMT
+      Function-Execution-Id:
+      - 5qxth3lbu7tm
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '8682'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 19612d67464c9753a6936ba05b141350;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '86065'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.622s
+      X-Request-Id:
+      - 7169c5b2e15fc4c237c961d2c66177af
+    status:
+      code: 200
+      message: OK
+version: 1
