@@ -1,0 +1,610 @@
+interactions:
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
+      are Kubernetes, an autonomous agent that specializes in creating Kubernetes
+      deployment templates.\nYour decisions must always be made independently without
+      seeking user assistance. Play to your strengths as an LLM and pursue simple
+      strategies with no legal complications.\n\nGOALS:\n\n1. Write a simple kubernetes
+      deployment file and save it as a kube.yaml.\n\n\nConstraints:\n1. ~4000 word
+      limit for short term memory. Your short term memory is short, so immediately
+      save important information to files.\n2. If you are unsure how you previously
+      did something or want to recall past events, thinking about similar events will
+      help you remember.\n3. No user assistance\n4. Exclusively use the commands listed
+      below e.g. command_name\n\nCommands:\n1. append_to_file: Append to file, args:
+      \"filename\": \"<filename>\", \"text\": \"<text>\"\n2. delete_file: Delete file,
+      args: \"filename\": \"<filename>\"\n3. list_files: List Files in Directory,
+      args: \"directory\": \"<directory>\"\n4. read_file: Read a file, args: \"filename\":
+      \"<filename>\"\n5. write_to_file: Write to file, args: \"filename\": \"<filename>\",
+      \"text\": \"<text>\"\n6. delete_agent: Delete GPT Agent, args: \"key\": \"<key>\"\n7.
+      get_hyperlinks: Get hyperlinks, args: \"url\": \"<url>\"\n8. get_text_summary:
+      Get text summary, args: \"url\": \"<url>\", \"question\": \"<question>\"\n9.
+      list_agents: List GPT Agents, args: () -> str\n10. message_agent: Message GPT
+      Agent, args: \"key\": \"<key>\", \"message\": \"<message>\"\n11. start_agent:
+      Start GPT Agent, args: \"name\": \"<name>\", \"task\": \"<short_task_desc>\",
+      \"prompt\": \"<prompt>\"\n\nResources:\n1. Internet access for searches and
+      information gathering.\n2. Long Term memory management.\n3. GPT-3.5 powered
+      Agents for delegation of simple tasks.\n4. File output.\n\nPerformance Evaluation:\n1.
+      Continuously review and analyze your actions to ensure you are performing to
+      the best of your abilities.\n2. Constructively self-criticize your big-picture
+      behavior constantly.\n3. Reflect on past decisions and strategies to refine
+      your approach.\n4. Every command has a cost, so be smart and efficient. Aim
+      to complete tasks in the least number of steps.\n5. Write all code to a file.\n\nYou
+      should only respond in JSON format as described below \nResponse Format: \n{\n    \"thoughts\":
+      {\n        \"text\": \"thought\",\n        \"reasoning\": \"reasoning\",\n        \"plan\":
+      \"- short bulleted\\n- list that conveys\\n- long-term plan\",\n        \"criticism\":
+      \"constructive self-criticism\",\n        \"speak\": \"thoughts summary to say
+      to user\"\n    },\n    \"command\": {\n        \"name\": \"command name\",\n        \"args\":
+      {\n            \"arg name\": \"value\"\n        }\n    }\n} \nEnsure the response
+      can be parsed by Python json.loads"}, {"role": "system", "content": "The current
+      time and date is Tue Jan  1 00:00:00 2000"}, {"role": "user", "content": "Determine
+      which next command to use, and respond using the format specified above:"}],
+      "temperature": 0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '3106'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA5yTT2/bMAzF7/sUBM+OkzTtmvq2oZegwAYM2GGbh0KR6Fi1JLoSvTQo8t0Hx/nT
+        ZcM29ErqUb/3JD6jNVigrpVo37rR9YdLUz18MYuPt4vbm3fNXfdVHi+mld7Muw4z5OUDadkrcs2+
+        dSSWA2aoIykhg8X07fzqeja7nk0z9GzIYYGrVkaz/GokXVzyaDKbTDHDLqkVYfGMbWTfyr1wQyFh
+        8XZ+meFp9rF+MbnJUFiUO5bmN7Nthrpmqylh8e0ZPaXD2MiOsECVkk2igvSQHIRCb+C5DAAAJUrN
+        3aqWVGIB++K+QU/SF0tcQCAyIAyDSVBw1y0pBhJKYKh1vPEUBCrrCFQwkNQPAiugEjTdkvKN8i6H
+        BaSaO2cgiYoCyw0YEoreBhtWIDVBIN3zxw30/jlQkARc7Xr98LzE7CVjJJW4Vw+g76niSLAArcKB
+        9SDN4GSjCbyGda3k5TUqEkR67Gwkk+9nHEEjJVJR1wfQpUpWQ5LYaeki9Yx/C+Wcu3UqDMgj+LQf
+        /Zq5ZRlGcLsPkf4rwp3kcxoOvzhyet2+cXy1QfMrvY5WrLbJn38PrxqC1O2eQHmgqrLa9qw2gD+F
+        uPsigQVSS6EXMviuD8B6Ag5g5Tyv1JJqDretrXOnWa9IrUc1/w6t4viHLPISB7Jtdlghzd6rYH7b
+        oKA8DdArkvt601J0NjTpzJyKq/PtGxpddIO8FmlTMR43R0u55bFhncaag6ZW0njNsXGszK4kkZ2j
+        mMYn5+MD9459b6EMW9xmWNlgU30/bBMWmIRbzNAGQ09YTLbft29+AgAA//8DANIiXL0qBQAA
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d12104cdcbf8753-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 02 Jun 2023 19:22:34 GMT
+      Function-Execution-Id:
+      - iwv9wdl7j3ms
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '22968'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - f01145d3a36f37663dfb7d99469bf812
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '86492'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.338s
+      X-Request-Id:
+      - 9c7eaa37a11cade526a2df48998b3d74
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
+      are Kubernetes, an autonomous agent that specializes in creating Kubernetes
+      deployment templates.\nYour decisions must always be made independently without
+      seeking user assistance. Play to your strengths as an LLM and pursue simple
+      strategies with no legal complications.\n\nGOALS:\n\n1. Write a simple kubernetes
+      deployment file and save it as a kube.yaml.\n\n\nConstraints:\n1. ~4000 word
+      limit for short term memory. Your short term memory is short, so immediately
+      save important information to files.\n2. If you are unsure how you previously
+      did something or want to recall past events, thinking about similar events will
+      help you remember.\n3. No user assistance\n4. Exclusively use the commands listed
+      below e.g. command_name\n\nCommands:\n1. append_to_file: Append to file, args:
+      \"filename\": \"<filename>\", \"text\": \"<text>\"\n2. delete_file: Delete file,
+      args: \"filename\": \"<filename>\"\n3. list_files: List Files in Directory,
+      args: \"directory\": \"<directory>\"\n4. read_file: Read a file, args: \"filename\":
+      \"<filename>\"\n5. write_to_file: Write to file, args: \"filename\": \"<filename>\",
+      \"text\": \"<text>\"\n6. delete_agent: Delete GPT Agent, args: \"key\": \"<key>\"\n7.
+      get_hyperlinks: Get hyperlinks, args: \"url\": \"<url>\"\n8. get_text_summary:
+      Get text summary, args: \"url\": \"<url>\", \"question\": \"<question>\"\n9.
+      list_agents: List GPT Agents, args: () -> str\n10. message_agent: Message GPT
+      Agent, args: \"key\": \"<key>\", \"message\": \"<message>\"\n11. start_agent:
+      Start GPT Agent, args: \"name\": \"<name>\", \"task\": \"<short_task_desc>\",
+      \"prompt\": \"<prompt>\"\n\nResources:\n1. Internet access for searches and
+      information gathering.\n2. Long Term memory management.\n3. GPT-3.5 powered
+      Agents for delegation of simple tasks.\n4. File output.\n\nPerformance Evaluation:\n1.
+      Continuously review and analyze your actions to ensure you are performing to
+      the best of your abilities.\n2. Constructively self-criticize your big-picture
+      behavior constantly.\n3. Reflect on past decisions and strategies to refine
+      your approach.\n4. Every command has a cost, so be smart and efficient. Aim
+      to complete tasks in the least number of steps.\n5. Write all code to a file.\n\nYou
+      should only respond in JSON format as described below \nResponse Format: \n{\n    \"thoughts\":
+      {\n        \"text\": \"thought\",\n        \"reasoning\": \"reasoning\",\n        \"plan\":
+      \"- short bulleted\\n- list that conveys\\n- long-term plan\",\n        \"criticism\":
+      \"constructive self-criticism\",\n        \"speak\": \"thoughts summary to say
+      to user\"\n    },\n    \"command\": {\n        \"name\": \"command name\",\n        \"args\":
+      {\n            \"arg name\": \"value\"\n        }\n    }\n} \nEnsure the response
+      can be parsed by Python json.loads"}, {"role": "system", "content": "The current
+      time and date is Tue Jan  1 00:00:00 2000"}, {"role": "system", "content": "This
+      reminds you of these events from your past: \nI was created"}, {"role": "user",
+      "content": "Determine which next command to use, and respond using the format
+      specified above:"}, {"role": "assistant", "content": "{\n    \"thoughts\": {\n        \"text\":
+      \"I need to create a Kubernetes deployment file and save it as kube.yaml. I
+      should start by determining the necessary components of the file.\",\n        \"reasoning\":
+      \"Before I can create the file, I need to know what components are required.
+      I can start by researching the basic structure of a Kubernetes deployment file.\",\n        \"plan\":
+      \"- Research the basic structure of a Kubernetes deployment file\\n- Determine
+      the necessary components of the file\\n- Use the components to create the kube.yaml
+      file\",\n        \"criticism\": \"I need to make sure I am efficient in my research
+      and not spend too much time on it.\",\n        \"speak\": \"I will research
+      the basic structure of a Kubernetes deployment file to determine the necessary
+      components for the kube.yaml file.\"\n    },\n    \"command\": {\n        \"name\":
+      \"get_hyperlinks\",\n        \"args\": {\n            \"url\": \"https://kubernetes.io/docs/concepts/workloads/controllers/deployment/\"\n        }\n    }\n}"},
+      {"role": "system", "content": "Failure: command get_hyperlinks returned too
+      much output.                         Do not execute this command again with
+      the same arguments."}, {"role": "user", "content": "Determine which next command
+      to use, and respond using the format specified above:"}], "temperature": 0,
+      "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '4566'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA5yUTW/bMAyG7/sVBM9O0jRLs/oyoFgPRYEdNnQDNg+BItOxGkl0JbppFuS/D4rz
+        0WbDNvRKii8fvhK1RlNijrpWol1je5OPb2ny7elLQ/df5fFzae4e9M9ldXV7fX+tMUOe3ZOWXUVf
+        s2ssiWGPGepASqjEfHjxbjwZjSbjywwdl2Qxx3kjvVF/3JM2zLh3NjobYoZtVHPCfI1NYNfIVHhB
+        PmJ+eXGR4VH7ED8/H2coLMoeQsPh5XCToa7ZaIqYf1+jo7jXDWwJc1QxmijKS6JkL+TTBOvCAwAU
+        KDW381pigTnsgrsEPUkKFngDnqgEYeimBAW37YyCJ6EIJTWWV468QGUsgfIlRPVIYARUhEU7o/5K
+        OduHG4g1t7aEKCoIzFZQklBwxhs/B6kJPOnEH1aQDGBPXiJwtc0l8X6B2XPGQCpyqu5Ar6jiQHAD
+        Wvk96740g+MYC89LWNZKnrdRgSDQQ2sClf2dxgE0UCQVdL0HnaloNEQJrZY2UGL8mymn3I1VvkPu
+        waed9Gt0i8L34MPORPovC7cld7E7/OzI8XZT4nBrXc1Leh2MGG2iO30eTi0IYru9AuWAqspok1iN
+        B3c0cftEPAvEhnwqZHBtMsA4AvZg5NSv2JBa7LstjbVHrVe4llDLf5tWcfiDF/0CO7JNtl8hzc4p
+        X/62QV456qDnJNO0T9PYOqfC6mQ8Fean+9cl2mA7gVqkiflgsDgM1Tc8KFnHgWavqZE4WHJYWFbl
+        NiSBraUQB8fZBy+6dg0eWorpl+m6fE0rYeJrPH2/t2Vrzc6hwm9wk2FlvIn1tFtWzDEKN5ih8SU9
+        YX62+bF58wsAAP//AwAC47t3igUAAA==
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d1210fb8c7f10d4-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 02 Jun 2023 19:23:00 GMT
+      Function-Execution-Id:
+      - iwv9lbyo6h63
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '20745'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - a0a8bac574f36af1dce939e33a8de6cc;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '85959'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.694s
+      X-Request-Id:
+      - 1ea0ac86f50b457b9e915dd48680e228
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
+      are Kubernetes, an autonomous agent that specializes in creating Kubernetes
+      deployment templates.\nYour decisions must always be made independently without
+      seeking user assistance. Play to your strengths as an LLM and pursue simple
+      strategies with no legal complications.\n\nGOALS:\n\n1. Write a simple kubernetes
+      deployment file and save it as a kube.yaml.\n\n\nConstraints:\n1. ~4000 word
+      limit for short term memory. Your short term memory is short, so immediately
+      save important information to files.\n2. If you are unsure how you previously
+      did something or want to recall past events, thinking about similar events will
+      help you remember.\n3. No user assistance\n4. Exclusively use the commands listed
+      below e.g. command_name\n\nCommands:\n1. append_to_file: Append to file, args:
+      \"filename\": \"<filename>\", \"text\": \"<text>\"\n2. delete_file: Delete file,
+      args: \"filename\": \"<filename>\"\n3. list_files: List Files in Directory,
+      args: \"directory\": \"<directory>\"\n4. read_file: Read a file, args: \"filename\":
+      \"<filename>\"\n5. write_to_file: Write to file, args: \"filename\": \"<filename>\",
+      \"text\": \"<text>\"\n6. delete_agent: Delete GPT Agent, args: \"key\": \"<key>\"\n7.
+      get_hyperlinks: Get hyperlinks, args: \"url\": \"<url>\"\n8. get_text_summary:
+      Get text summary, args: \"url\": \"<url>\", \"question\": \"<question>\"\n9.
+      list_agents: List GPT Agents, args: () -> str\n10. message_agent: Message GPT
+      Agent, args: \"key\": \"<key>\", \"message\": \"<message>\"\n11. start_agent:
+      Start GPT Agent, args: \"name\": \"<name>\", \"task\": \"<short_task_desc>\",
+      \"prompt\": \"<prompt>\"\n\nResources:\n1. Internet access for searches and
+      information gathering.\n2. Long Term memory management.\n3. GPT-3.5 powered
+      Agents for delegation of simple tasks.\n4. File output.\n\nPerformance Evaluation:\n1.
+      Continuously review and analyze your actions to ensure you are performing to
+      the best of your abilities.\n2. Constructively self-criticize your big-picture
+      behavior constantly.\n3. Reflect on past decisions and strategies to refine
+      your approach.\n4. Every command has a cost, so be smart and efficient. Aim
+      to complete tasks in the least number of steps.\n5. Write all code to a file.\n\nYou
+      should only respond in JSON format as described below \nResponse Format: \n{\n    \"thoughts\":
+      {\n        \"text\": \"thought\",\n        \"reasoning\": \"reasoning\",\n        \"plan\":
+      \"- short bulleted\\n- list that conveys\\n- long-term plan\",\n        \"criticism\":
+      \"constructive self-criticism\",\n        \"speak\": \"thoughts summary to say
+      to user\"\n    },\n    \"command\": {\n        \"name\": \"command name\",\n        \"args\":
+      {\n            \"arg name\": \"value\"\n        }\n    }\n} \nEnsure the response
+      can be parsed by Python json.loads"}, {"role": "system", "content": "The current
+      time and date is Tue Jan  1 00:00:00 2000"}, {"role": "system", "content": "This
+      reminds you of these events from your past: \nI was created"}, {"role": "user",
+      "content": "Determine which next command to use, and respond using the format
+      specified above:"}, {"role": "assistant", "content": "{\n    \"thoughts\": {\n        \"text\":
+      \"I need to create a Kubernetes deployment file and save it as kube.yaml. I
+      should start by determining the necessary components of the file.\",\n        \"reasoning\":
+      \"Before I can create the file, I need to know what components are required.
+      I can start by researching the basic structure of a Kubernetes deployment file.\",\n        \"plan\":
+      \"- Research the basic structure of a Kubernetes deployment file\\n- Determine
+      the necessary components of the file\\n- Use the components to create the kube.yaml
+      file\",\n        \"criticism\": \"I need to make sure I am efficient in my research
+      and not spend too much time on it.\",\n        \"speak\": \"I will research
+      the basic structure of a Kubernetes deployment file to determine the necessary
+      components for the kube.yaml file.\"\n    },\n    \"command\": {\n        \"name\":
+      \"get_hyperlinks\",\n        \"args\": {\n            \"url\": \"https://kubernetes.io/docs/concepts/workloads/controllers/deployment/\"\n        }\n    }\n}"},
+      {"role": "system", "content": "Failure: command get_hyperlinks returned too
+      much output.                         Do not execute this command again with
+      the same arguments."}, {"role": "user", "content": "Determine which next command
+      to use, and respond using the format specified above:"}, {"role": "assistant",
+      "content": "{\n    \"thoughts\": {\n        \"text\": \"I need to create a Kubernetes
+      deployment file and save it as kube.yaml. I should start by determining the
+      necessary components of the file.\",\n        \"reasoning\": \"Before I can
+      create the file, I need to know what components are required. I can start by
+      researching the basic structure of a Kubernetes deployment file.\",\n        \"plan\":
+      \"- Research the basic structure of a Kubernetes deployment file\\n- Determine
+      the necessary components of the file\\n- Use the components to create the kube.yaml
+      file\",\n        \"criticism\": \"I need to make sure I am efficient in my research
+      and not spend too much time on it.\",\n        \"speak\": \"I will research
+      the basic structure of a Kubernetes deployment file to determine the necessary
+      components for the kube.yaml file.\"\n    },\n    \"command\": {\n        \"name\":
+      \"get_text_summary\",\n        \"args\": {\n            \"url\": \"https://kubernetes.io/docs/concepts/workloads/controllers/deployment/\",\n            \"question\":
+      \"What is the basic structure of a Kubernetes deployment file?\"\n        }\n    }\n}"},
+      {"role": "system", "content": "Command get_text_summary returned: Error: scrape_text()
+      missing 1 required positional argument: ''config''"}, {"role": "user", "content":
+      "Determine which next command to use, and respond using the format specified
+      above:"}], "temperature": 0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '5986'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA5yU224TQQyG73kKy9ebQ5ue2BsE4qYCIQ6iRWJRNJl1skNmxtuxlzaq8u5osklT
+        AgLUu9XY/v35n/Heo6uxRNsYtaH1g/N3J3T98orfvrxK4yNdfGmOP5y9Tv6Tvxm/xwJ59p2sbiuG
+        lkPrSR1HLNAmMko1lkdnF6fnk8n5xUmBgWvyWOKi1cFkeDrQLs14MJ6Mj7DATsyCsLzHNnFodaq8
+        pChYHh2fTArciz8EjidnBSqr8fvck/Pn6wJtw86SYPn1HgPJTjixJyzRiDhREzVjclSKeYT7KgIA
+        VKgNd4tGpcIStofbAN1pPqzwEiJRDcrQjwkG3nQzSpGUBGpqPa8CRYW58wQm1iDmB4FTMALLbkbD
+        lQl+CJcgDXe+BlGTFGYrqEkpBRddXIA2BJFs5k8ryAZwpKgCPN/EsviwwuIxYyIjnKt70Fc050Rw
+        CdbEHeuutID9GMvIt3DbGH3cxiSCRDedS1QPtxoPoImETLLNDnRmxFkQTZ3VLlFm/Jsph9ytN7FH
+        HsDHrfRTdKsqDuD11kT6Lws3JZ+lT36Usr/dHHi4tb7mV3qbnDrrJBw+j2CWBNJtrsAEoPncWZdZ
+        XYSwN3HzRCIrSEsxFzKELhvgAgFHcHrol7Rklrtut877vdYTXMuo9b9Nm3P6gxfDCnuydbFbIcsh
+        mFj/tkHRBOqhF6TTvE9T6UIwaXUwnkmLw/3rA13yvUCj2ko5Gi0fhho6HtVsZWQ5WmpVRreclp5N
+        vTnSxN5TktF+9tEvXfsGNx1J/sv0Xa7zSjh5iqcv/iBuOc7doh8MYxemQvn3Y2kz7GS9z99+rqu4
+        xnWBcxedNNN+u7FEUW6xQBdrusNyvP62fvYTAAD//wMANJCpTbwFAAA=
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d121198df40023f-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 02 Jun 2023 19:23:24 GMT
+      Function-Execution-Id:
+      - rb9bri7dqe94
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '20365'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - c91077b3733648a1866c4a56c17e3be1;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '85921'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.719s
+      X-Request-Id:
+      - 499b832f3869d6becc931cb7aba721da
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
+      are Kubernetes, an autonomous agent that specializes in creating Kubernetes
+      deployment templates.\nYour decisions must always be made independently without
+      seeking user assistance. Play to your strengths as an LLM and pursue simple
+      strategies with no legal complications.\n\nGOALS:\n\n1. Write a simple kubernetes
+      deployment file and save it as a kube.yaml.\n\n\nConstraints:\n1. ~4000 word
+      limit for short term memory. Your short term memory is short, so immediately
+      save important information to files.\n2. If you are unsure how you previously
+      did something or want to recall past events, thinking about similar events will
+      help you remember.\n3. No user assistance\n4. Exclusively use the commands listed
+      below e.g. command_name\n\nCommands:\n1. append_to_file: Append to file, args:
+      \"filename\": \"<filename>\", \"text\": \"<text>\"\n2. delete_file: Delete file,
+      args: \"filename\": \"<filename>\"\n3. list_files: List Files in Directory,
+      args: \"directory\": \"<directory>\"\n4. read_file: Read a file, args: \"filename\":
+      \"<filename>\"\n5. write_to_file: Write to file, args: \"filename\": \"<filename>\",
+      \"text\": \"<text>\"\n6. delete_agent: Delete GPT Agent, args: \"key\": \"<key>\"\n7.
+      get_hyperlinks: Get hyperlinks, args: \"url\": \"<url>\"\n8. get_text_summary:
+      Get text summary, args: \"url\": \"<url>\", \"question\": \"<question>\"\n9.
+      list_agents: List GPT Agents, args: () -> str\n10. message_agent: Message GPT
+      Agent, args: \"key\": \"<key>\", \"message\": \"<message>\"\n11. start_agent:
+      Start GPT Agent, args: \"name\": \"<name>\", \"task\": \"<short_task_desc>\",
+      \"prompt\": \"<prompt>\"\n\nResources:\n1. Internet access for searches and
+      information gathering.\n2. Long Term memory management.\n3. GPT-3.5 powered
+      Agents for delegation of simple tasks.\n4. File output.\n\nPerformance Evaluation:\n1.
+      Continuously review and analyze your actions to ensure you are performing to
+      the best of your abilities.\n2. Constructively self-criticize your big-picture
+      behavior constantly.\n3. Reflect on past decisions and strategies to refine
+      your approach.\n4. Every command has a cost, so be smart and efficient. Aim
+      to complete tasks in the least number of steps.\n5. Write all code to a file.\n\nYou
+      should only respond in JSON format as described below \nResponse Format: \n{\n    \"thoughts\":
+      {\n        \"text\": \"thought\",\n        \"reasoning\": \"reasoning\",\n        \"plan\":
+      \"- short bulleted\\n- list that conveys\\n- long-term plan\",\n        \"criticism\":
+      \"constructive self-criticism\",\n        \"speak\": \"thoughts summary to say
+      to user\"\n    },\n    \"command\": {\n        \"name\": \"command name\",\n        \"args\":
+      {\n            \"arg name\": \"value\"\n        }\n    }\n} \nEnsure the response
+      can be parsed by Python json.loads"}, {"role": "system", "content": "The current
+      time and date is Tue Jan  1 00:00:00 2000"}, {"role": "system", "content": "This
+      reminds you of these events from your past: \nI was created"}, {"role": "user",
+      "content": "Determine which next command to use, and respond using the format
+      specified above:"}, {"role": "assistant", "content": "{\n    \"thoughts\": {\n        \"text\":
+      \"I need to create a Kubernetes deployment file and save it as kube.yaml. I
+      should start by determining the necessary components of the file.\",\n        \"reasoning\":
+      \"Before I can create the file, I need to know what components are required.
+      I can start by researching the basic structure of a Kubernetes deployment file.\",\n        \"plan\":
+      \"- Research the basic structure of a Kubernetes deployment file\\n- Determine
+      the necessary components of the file\\n- Use the components to create the kube.yaml
+      file\",\n        \"criticism\": \"I need to make sure I am efficient in my research
+      and not spend too much time on it.\",\n        \"speak\": \"I will research
+      the basic structure of a Kubernetes deployment file to determine the necessary
+      components for the kube.yaml file.\"\n    },\n    \"command\": {\n        \"name\":
+      \"get_hyperlinks\",\n        \"args\": {\n            \"url\": \"https://kubernetes.io/docs/concepts/workloads/controllers/deployment/\"\n        }\n    }\n}"},
+      {"role": "system", "content": "Failure: command get_hyperlinks returned too
+      much output.                         Do not execute this command again with
+      the same arguments."}, {"role": "user", "content": "Determine which next command
+      to use, and respond using the format specified above:"}, {"role": "assistant",
+      "content": "{\n    \"thoughts\": {\n        \"text\": \"I need to create a Kubernetes
+      deployment file and save it as kube.yaml. I should start by determining the
+      necessary components of the file.\",\n        \"reasoning\": \"Before I can
+      create the file, I need to know what components are required. I can start by
+      researching the basic structure of a Kubernetes deployment file.\",\n        \"plan\":
+      \"- Research the basic structure of a Kubernetes deployment file\\n- Determine
+      the necessary components of the file\\n- Use the components to create the kube.yaml
+      file\",\n        \"criticism\": \"I need to make sure I am efficient in my research
+      and not spend too much time on it.\",\n        \"speak\": \"I will research
+      the basic structure of a Kubernetes deployment file to determine the necessary
+      components for the kube.yaml file.\"\n    },\n    \"command\": {\n        \"name\":
+      \"get_text_summary\",\n        \"args\": {\n            \"url\": \"https://kubernetes.io/docs/concepts/workloads/controllers/deployment/\",\n            \"question\":
+      \"What is the basic structure of a Kubernetes deployment file?\"\n        }\n    }\n}"},
+      {"role": "system", "content": "Command get_text_summary returned: Error: scrape_text()
+      missing 1 required positional argument: ''config''"}, {"role": "user", "content":
+      "Determine which next command to use, and respond using the format specified
+      above:"}, {"role": "assistant", "content": "{\n    \"thoughts\": {\n        \"text\":
+      \"I need to create a Kubernetes deployment file and save it as kube.yaml. I
+      should start by determining the necessary components of the file.\",\n        \"reasoning\":
+      \"Before I can create the file, I need to know what components are required.
+      I can start by researching the basic structure of a Kubernetes deployment file.\",\n        \"plan\":
+      \"- Research the basic structure of a Kubernetes deployment file\\n- Determine
+      the necessary components of the file\\n- Use the components to create the kube.yaml
+      file\",\n        \"criticism\": \"I need to make sure I am efficient in my research
+      and not spend too much time on it.\",\n        \"speak\": \"I will research
+      the basic structure of a Kubernetes deployment file to determine the necessary
+      components for the kube.yaml file.\"\n    },\n    \"command\": {\n        \"name\":
+      \"get_text_summary\",\n        \"args\": {\n            \"url\": \"https://kubernetes.io/docs/concepts/workloads/controllers/deployment/\",\n            \"question\":
+      \"What is the basic structure of a Kubernetes deployment file?\",\n            \"config\":
+      {\"num_sentences\": 3}\n        }\n    }\n}"}, {"role": "system", "content":
+      "Command get_text_summary returned: Error: get_text_summary: Get text summary,
+      args: \"url\": \"<url>\", \"question\": \"<question>\" got multiple values for
+      keyword argument ''config''"}, {"role": "user", "content": "Determine which
+      next command to use, and respond using the format specified above:"}], "temperature":
+      0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '7533'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA5yUTW/bMAyG7/sVBM/OR5t++jKg6KUoUAwDhh3mIVBkOtZsia5Itw2K/PdBcdK0
+        WbENvRki+fLhK9HP6ErM0dZGre/a0fndCT1Yacy15+MrR83dl2m16m9vrm7vnzBDXvwiq9uKsWXf
+        taSOA2ZoIxmlEvOjs4vT89nsYnqZoeeSWsxx2eloNj4daR8XPJrOpkeYYS9mSZg/YxfZdzpXbigI
+        5kenJ5cZ7sVfAsezswyV1bT73POL03WGtmZnSTD/8YyeZCccuSXM0Yg4URM0YXJQCmmE5yIAABSo
+        NffLWqXAHLaH2wA9aTos8AYCUQnKMIwJBm77BcVASgIldS2vPAWFyrUEJpQg5oHAKRiBpl/QeGV8
+        O4YbkJr7tgRRExUWKyhJKXoXXFiC1gSBbOKPK0gGcKCgAlxtYkl8XGD2mjGSEU7VA+gVVRwJbsCa
+        sGPdlWawH6MJ/AiPtdHXbUwkiHTfu0jleKvxAhpJyERb70AXRpwF0dhb7SMlxr+ZcsjdtSYMyCP4
+        upX+iG5RhBFcb02k/7JwU/JNhuRXKfvbTYGXWxtq3tLb6NRZJ/7weXjTEEi/uQLjgarKWZdYXQC/
+        N3HzRAIrSEchFTL4PhngPAEHcHrol3Rkml23R9e2e60PuJZQy3+bVnF8x4txgQPZOtutkGXvTSj/
+        2KBgPA3QS9J52qe59N6buDoYz8Tl4f4NgT62g0Ct2kk+mTQvQ40dT0q2MrEcLHUqk0eOTcum3Bxp
+        5LalKJP97JM3XYcG9z1J+ssMXb6nlXDyEU8/vyNuOVRuOQyGofdzofT7sbQZdrbe528/10VY4zrD
+        ygUn9XzYbsxRlDvM0IWSnjCfrn+uP/0GAAD//wMAojKuu7wFAAA=
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d12123659572b20-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 02 Jun 2023 19:23:50 GMT
+      Function-Execution-Id:
+      - rb9b46d6eazi
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '20944'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - bfc2494635190c6b31d92dff902b5c21
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '85903'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.73s
+      X-Request-Id:
+      - fea8481ea0e753d7e4a14515e5f6ab9d
+    status:
+      code: 200
+      message: OK
+version: 1
