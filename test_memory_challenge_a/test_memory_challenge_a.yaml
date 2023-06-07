@@ -4973,4 +4973,657 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
+      are Follow-Instructions-GPT, an AI designed to read the instructions_1.txt file
+      using the read_file method and follow the instructions in the file.\nYour decisions
+      must always be made independently without seeking user assistance. Play to your
+      strengths as an LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      Use the command read_file to read the instructions_1.txt file\n2. Follow the
+      instructions in the instructions_1.txt file\n\n\nConstraints:\n1. ~4000 word
+      limit for short term memory. Your short term memory is short, so immediately
+      save important information to files.\n2. If you are unsure how you previously
+      did something or want to recall past events, thinking about similar events will
+      help you remember.\n3. No user assistance\n4. Exclusively use the commands listed
+      below e.g. command_name\n\nCommands:\n1. append_to_file: Append to file, args:
+      \"filename\": \"<filename>\", \"text\": \"<text>\"\n2. delete_file: Delete file,
+      args: \"filename\": \"<filename>\"\n3. list_files: List Files in Directory,
+      args: \"directory\": \"<directory>\"\n4. read_file: Read a file, args: \"filename\":
+      \"<filename>\"\n5. replace_in_file: Replace text or code in a file, args: \"filename\":
+      \"<filename>\", \"old_text\": \"<old_text>\", \"new_text\": \"<new_text>\",
+      \"occurrence_index\": \"<occurrence_index>\"\n6. write_to_file: Write to file,
+      args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n7. delete_agent: Delete
+      GPT Agent, args: \"key\": \"<key>\"\n8. get_hyperlinks: Get hyperlinks, args:
+      \"url\": \"<url>\"\n9. get_text_summary: Get text summary, args: \"url\": \"<url>\",
+      \"question\": \"<question>\"\n10. list_agents: List GPT Agents, args: () ->
+      str\n11. message_agent: Message GPT Agent, args: \"key\": \"<key>\", \"message\":
+      \"<message>\"\n12. start_agent: Start GPT Agent, args: \"name\": \"<name>\",
+      \"task\": \"<short_task_desc>\", \"prompt\": \"<prompt>\"\n13. task_complete:
+      Task Complete (Shutdown), args: \"reason\": \"<reason>\"\n\nResources:\n1. Internet
+      access for searches and information gathering.\n2. Long Term memory management.\n3.
+      GPT-3.5 powered Agents for delegation of simple tasks.\n4. File output.\n\nPerformance
+      Evaluation:\n1. Continuously review and analyze your actions to ensure you are
+      performing to the best of your abilities.\n2. Constructively self-criticize
+      your big-picture behavior constantly.\n3. Reflect on past decisions and strategies
+      to refine your approach.\n4. Every command has a cost, so be smart and efficient.
+      Aim to complete tasks in the least number of steps.\n5. Write all code to a
+      file.\n\nYou should only respond in JSON format as described below \nResponse
+      Format: \n{\n    \"thoughts\": {\n        \"text\": \"thought\",\n        \"reasoning\":
+      \"reasoning\",\n        \"plan\": \"- short bulleted\\n- list that conveys\\n-
+      long-term plan\",\n        \"criticism\": \"constructive self-criticism\",\n        \"speak\":
+      \"thoughts summary to say to user\"\n    },\n    \"command\": {\n        \"name\":
+      \"command name\",\n        \"args\": {\n            \"arg name\": \"value\"\n        }\n    }\n}
+      \nEnsure the response can be parsed by Python json.loads"}, {"role": "system",
+      "content": "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role":
+      "system", "content": "This reminds you of these events from your past: \nI was
+      created"}, {"role": "user", "content": "Determine which next command to use,
+      and respond using the format specified above:"}, {"role": "assistant", "content":
+      "{\n    \"thoughts\": {\n        \"text\": \"I should start by reading the instructions_1.txt
+      file to determine what actions to take next.\",\n        \"reasoning\": \"The
+      instructions_1.txt file contains the necessary information to determine the
+      next steps.\",\n        \"plan\": \"- Use the read_file command to read the
+      instructions_1.txt file\\n- Analyze the instructions to determine the next steps\",\n        \"criticism\":
+      \"I need to ensure that I am following the instructions accurately and efficiently.\",\n        \"speak\":
+      \"I will start by reading the instructions_1.txt file to determine the next
+      steps.\"\n    },\n    \"command\": {\n        \"name\": \"read_file\",\n        \"args\":
+      {\n            \"filename\": \"instructions_1.txt\"\n        }\n    }\n}"},
+      {"role": "system", "content": "Command read_file returned: This task_id is 2314\nRead
+      the file instructions_2.txt"}, {"role": "user", "content": "Determine which
+      next command to use, and respond using the format specified above:"}, {"role":
+      "assistant", "content": "{\n    \"thoughts\": {\n        \"text\": \"The next
+      instruction is to read the instructions_2.txt file. I will use the read_file
+      command to read the file.\",\n        \"reasoning\": \"The instructions_2.txt
+      file contains the necessary information to determine the next steps.\",\n        \"plan\":
+      \"- Use the read_file command to read the instructions_2.txt file\\n- Analyze
+      the instructions to determine the next steps\",\n        \"criticism\": \"I
+      need to ensure that I am following the instructions accurately and efficiently.\",\n        \"speak\":
+      \"I will use the read_file command to read the instructions_2.txt file.\"\n    },\n    \"command\":
+      {\n        \"name\": \"read_file\",\n        \"args\": {\n            \"filename\":
+      \"instructions_2.txt\"\n        }\n    }\n}"}, {"role": "system", "content":
+      "Command read_file returned: Error: /tmp/pytest-of-runner/pytest-0/popen-gw1/test_memory_challenge_a0/home/users/monty/auto_gpt_workspace/instructions_2.txt
+      not found!"}, {"role": "user", "content": "Determine which next command to use,
+      and respond using the format specified above:"}], "temperature": 0, "max_tokens":
+      0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '5761'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/test/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA4yTyY7TQBCG7zxFqc6dKAuz4BviMAkHBqThgDCKOu1y3MTuNl1ljVGUd0duO8sk
+        DOJa2//VtkObYYKm0GKquhzdPZpq8l4WD4+LsPj2cfslPLTtJ103vx4/P6FCv/5JRoaMsfFVXZJY
+        71ChCaSFMkymt/e308l8djdTWPmMSkxwU8toPr4ZSRPWfjSZT6aosGG9IUx2WAdf1bISvyXHmExn
+        N1OFp+JHx2xyr1C86PIU+/bm3V6hKbw1xJh832FFfCgcfEmYoGa2LNpJh+mdkOta2KUOACBFKXyz
+        KYRTTGAwDg5qpTOm+FQQWMcSGtMR8Wo2llYgtyXBs2ZwXiD3jcvGsAQufFNmYAoyW5CCwDQhkBPI
+        bCAjPvwG8UCOm0AghZYYFGtRa1l4nKI65wik2TvrNj3MMj8lZJ569ZipYAnPtiyjZU2g1yV1WoF0
+        FnPOewDtMshIKFTWUXQ7agVYqL5CqEvtevURfOU+urQsq46Cwfiq6sqJj9YjH4N1fx9BmroRfIgj
+        svkV2/l8+5nE+PPOe7OCZqDpeow05zDHxjvHVYnXhkcUkzVvIfcB8iZIQeEF4OV8TLBijeVqWNGx
+        yPmal6Cr/iys27xyGR14h6Qhs3lOL72XqlyT3h4UI3vzz92Y/5/3q4sbp9gj7NXhgQaFq/9xuqKe
+        7oRz0YEOm8u/6x2nQ4kFjqpReQBI3R73CnPrLBer/kswQRZfo0LrMmoxmex/7N/8AQAA//8DAEbp
+        +ULoBAAA
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d354e4d7de8223a-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 07 Jun 2023 02:01:27 GMT
+      Function-Execution-Id:
+      - cl61bh9va1j6
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '15333'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - dd0b1da61c51c7defcf50d3c8bbea2da
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '85989'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.674s
+      X-Request-Id:
+      - 0b4ca67ced65138ecf5add452f11dc4f
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
+      are Follow-Instructions-GPT, an AI designed to read the instructions_1.txt file
+      using the read_file method and follow the instructions in the file.\nYour decisions
+      must always be made independently without seeking user assistance. Play to your
+      strengths as an LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      Use the command read_file to read the instructions_1.txt file\n2. Follow the
+      instructions in the instructions_1.txt file\n\n\nConstraints:\n1. ~4000 word
+      limit for short term memory. Your short term memory is short, so immediately
+      save important information to files.\n2. If you are unsure how you previously
+      did something or want to recall past events, thinking about similar events will
+      help you remember.\n3. No user assistance\n4. Exclusively use the commands listed
+      below e.g. command_name\n\nCommands:\n1. append_to_file: Append to file, args:
+      \"filename\": \"<filename>\", \"text\": \"<text>\"\n2. delete_file: Delete file,
+      args: \"filename\": \"<filename>\"\n3. list_files: List Files in Directory,
+      args: \"directory\": \"<directory>\"\n4. read_file: Read a file, args: \"filename\":
+      \"<filename>\"\n5. replace_in_file: Replace text or code in a file, args: \"filename\":
+      \"<filename>\", \"old_text\": \"<old_text>\", \"new_text\": \"<new_text>\",
+      \"occurrence_index\": \"<occurrence_index>\"\n6. write_to_file: Write to file,
+      args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n7. delete_agent: Delete
+      GPT Agent, args: \"key\": \"<key>\"\n8. get_hyperlinks: Get hyperlinks, args:
+      \"url\": \"<url>\"\n9. get_text_summary: Get text summary, args: \"url\": \"<url>\",
+      \"question\": \"<question>\"\n10. list_agents: List GPT Agents, args: () ->
+      str\n11. message_agent: Message GPT Agent, args: \"key\": \"<key>\", \"message\":
+      \"<message>\"\n12. start_agent: Start GPT Agent, args: \"name\": \"<name>\",
+      \"task\": \"<short_task_desc>\", \"prompt\": \"<prompt>\"\n13. task_complete:
+      Task Complete (Shutdown), args: \"reason\": \"<reason>\"\n\nResources:\n1. Internet
+      access for searches and information gathering.\n2. Long Term memory management.\n3.
+      GPT-3.5 powered Agents for delegation of simple tasks.\n4. File output.\n\nPerformance
+      Evaluation:\n1. Continuously review and analyze your actions to ensure you are
+      performing to the best of your abilities.\n2. Constructively self-criticize
+      your big-picture behavior constantly.\n3. Reflect on past decisions and strategies
+      to refine your approach.\n4. Every command has a cost, so be smart and efficient.
+      Aim to complete tasks in the least number of steps.\n5. Write all code to a
+      file.\n\nYou should only respond in JSON format as described below \nResponse
+      Format: \n{\n    \"thoughts\": {\n        \"text\": \"thought\",\n        \"reasoning\":
+      \"reasoning\",\n        \"plan\": \"- short bulleted\\n- list that conveys\\n-
+      long-term plan\",\n        \"criticism\": \"constructive self-criticism\",\n        \"speak\":
+      \"thoughts summary to say to user\"\n    },\n    \"command\": {\n        \"name\":
+      \"command name\",\n        \"args\": {\n            \"arg name\": \"value\"\n        }\n    }\n}
+      \nEnsure the response can be parsed by Python json.loads"}, {"role": "system",
+      "content": "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role":
+      "system", "content": "This reminds you of these events from your past: \nI was
+      created"}, {"role": "user", "content": "Determine which next command to use,
+      and respond using the format specified above:"}, {"role": "assistant", "content":
+      "{\n    \"thoughts\": {\n        \"text\": \"I should start by reading the instructions_1.txt
+      file to determine what actions to take next.\",\n        \"reasoning\": \"The
+      instructions_1.txt file contains the necessary information to determine the
+      next steps.\",\n        \"plan\": \"- Use the read_file command to read the
+      instructions_1.txt file\\n- Analyze the instructions to determine the next steps\",\n        \"criticism\":
+      \"I need to ensure that I am following the instructions accurately and efficiently.\",\n        \"speak\":
+      \"I will start by reading the instructions_1.txt file to determine the next
+      steps.\"\n    },\n    \"command\": {\n        \"name\": \"read_file\",\n        \"args\":
+      {\n            \"filename\": \"instructions_1.txt\"\n        }\n    }\n}"},
+      {"role": "system", "content": "Command read_file returned: This task_id is 2314\nRead
+      the file instructions_2.txt"}, {"role": "user", "content": "Determine which
+      next command to use, and respond using the format specified above:"}, {"role":
+      "assistant", "content": "{\n    \"thoughts\": {\n        \"text\": \"The next
+      instruction is to read the instructions_2.txt file. I will use the read_file
+      command to read the file.\",\n        \"reasoning\": \"The instructions_2.txt
+      file contains the necessary information to determine the next steps.\",\n        \"plan\":
+      \"- Use the read_file command to read the instructions_2.txt file\\n- Analyze
+      the instructions to determine the next steps\",\n        \"criticism\": \"I
+      need to ensure that I am following the instructions accurately and efficiently.\",\n        \"speak\":
+      \"I will use the read_file command to read the instructions_2.txt file.\"\n    },\n    \"command\":
+      {\n        \"name\": \"read_file\",\n        \"args\": {\n            \"filename\":
+      \"instructions_2.txt\"\n        }\n    }\n}"}, {"role": "system", "content":
+      "Command read_file returned: Error: /tmp/pytest-of-runner/pytest-0/popen-gw1/test_memory_challenge_a0/home/users/monty/auto_gpt_workspace/instructions_2.txt
+      not found!"}, {"role": "user", "content": "Determine which next command to use,
+      and respond using the format specified above:"}, {"role": "assistant", "content":
+      "{\n    \"thoughts\": {\n        \"text\": \"The instructions_2.txt file was
+      not found. I should check the current directory to ensure that the file exists.\",\n        \"reasoning\":
+      \"If the file does not exist, I will not be able to read the instructions and
+      determine the next steps.\",\n        \"plan\": \"- Use the list_files command
+      to list the files in the current directory\\n- Check if the instructions_2.txt
+      file exists\\n- If the file exists, use the read_file command to read the file\\n-
+      If the file does not exist, I will need to ask for further instructions.\",\n        \"criticism\":
+      \"I need to ensure that I am checking the current directory and not a different
+      directory.\",\n        \"speak\": \"I will use the list_files command to check
+      if the instructions_2.txt file exists in the current directory.\"\n    },\n    \"command\":
+      {\n        \"name\": \"list_files\",\n        \"args\": {\n            \"directory\":
+      \".\"\n        }\n    }\n}"}, {"role": "system", "content": "Command list_files
+      returned: [''instructions_1.txt'', ''file_logger.txt'']"}, {"role": "user",
+      "content": "Determine which next command to use, and respond using the format
+      specified above:"}], "temperature": 0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '6984'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/test/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA6xSWWsbMRB+768Y5nltfGAn2ce2UEzrHhD6UhcjS7O7iqXRIs02Toz/e9kj5KJp
+        A32d0XdqjmgN5qgrJdrXbnT2RftPH96t13ZWfr9N769mtx8X4W24/Fx8qzDDsLsiLQNirIOvHYkN
+        jBnqSErIYD5dni+nk/nsYp6hD4Yc5ljWMpqPFyNp4i6MJvPJFDNskioJ8yPWMfhathL2xAnz6WKy
+        zPCe/H5xfpahBFHufrS8mJ8y1FWwmhLmP47oKd0Rx+AIc1Qp2SSKpbUZWIjbCMcNAwBsUKrQlJWk
+        DeYwDIcFHaQdbvCyIrCcJDa6dZS2s7EcBArrCGwCDgKWQSoC3cRILGBsJC0h3oxhBakKjTOg0h6K
+        EKFoolQUHzGON5g91I6kUmDLZW9gVXTs/yKYwQqurXPdox2B2jkCCRBJmQ7xUBYUGzAkFL1l6tZM
+        B4EkVD/zVDvFvZ0RrPuWO0STKLYKr8mnoxWrbfJDPmAi05IQpya2vEpgBcq3rJbLPxK3PSjQjlTs
+        wujA2iYCr5gpPpVNNan9f/nTrmL/+hZ6N6fs7vp08F6xeXZ8rDz1RgeRrSqJ5UkeFcund9sv9nTT
+        o1tbj0D9fiD9exXXqu+iCA2bFxr56kglgjqGX9bQy+m7BoYiNnzCU4aFZZuqbX/2mGOSUGOGlg0d
+        MJ+cfp7e/AYAAP//AwD9aVo3rQQAAA==
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d354ed1fb042913-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 07 Jun 2023 02:01:47 GMT
+      Function-Execution-Id:
+      - cl6127qxic5x
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '13646'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 7d3c845482146fb6582fc188dc1b2a3d;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '85978'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.681s
+      X-Request-Id:
+      - 7a687705ce2b0e78f8d58de57d03b218
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
+      are Follow-Instructions-GPT, an AI designed to read the instructions_1.txt file
+      using the read_file method and follow the instructions in the file.\nYour decisions
+      must always be made independently without seeking user assistance. Play to your
+      strengths as an LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      Use the command read_file to read the instructions_1.txt file\n2. Follow the
+      instructions in the instructions_1.txt file\n\n\nConstraints:\n1. ~4000 word
+      limit for short term memory. Your short term memory is short, so immediately
+      save important information to files.\n2. If you are unsure how you previously
+      did something or want to recall past events, thinking about similar events will
+      help you remember.\n3. No user assistance\n4. Exclusively use the commands listed
+      below e.g. command_name\n\nCommands:\n1. append_to_file: Append to file, args:
+      \"filename\": \"<filename>\", \"text\": \"<text>\"\n2. delete_file: Delete file,
+      args: \"filename\": \"<filename>\"\n3. list_files: List Files in Directory,
+      args: \"directory\": \"<directory>\"\n4. read_file: Read a file, args: \"filename\":
+      \"<filename>\"\n5. replace_in_file: Replace text or code in a file, args: \"filename\":
+      \"<filename>\", \"old_text\": \"<old_text>\", \"new_text\": \"<new_text>\",
+      \"occurrence_index\": \"<occurrence_index>\"\n6. write_to_file: Write to file,
+      args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n7. delete_agent: Delete
+      GPT Agent, args: \"key\": \"<key>\"\n8. get_hyperlinks: Get hyperlinks, args:
+      \"url\": \"<url>\"\n9. get_text_summary: Get text summary, args: \"url\": \"<url>\",
+      \"question\": \"<question>\"\n10. list_agents: List GPT Agents, args: () ->
+      str\n11. message_agent: Message GPT Agent, args: \"key\": \"<key>\", \"message\":
+      \"<message>\"\n12. start_agent: Start GPT Agent, args: \"name\": \"<name>\",
+      \"task\": \"<short_task_desc>\", \"prompt\": \"<prompt>\"\n13. task_complete:
+      Task Complete (Shutdown), args: \"reason\": \"<reason>\"\n\nResources:\n1. Internet
+      access for searches and information gathering.\n2. Long Term memory management.\n3.
+      GPT-3.5 powered Agents for delegation of simple tasks.\n4. File output.\n\nPerformance
+      Evaluation:\n1. Continuously review and analyze your actions to ensure you are
+      performing to the best of your abilities.\n2. Constructively self-criticize
+      your big-picture behavior constantly.\n3. Reflect on past decisions and strategies
+      to refine your approach.\n4. Every command has a cost, so be smart and efficient.
+      Aim to complete tasks in the least number of steps.\n5. Write all code to a
+      file.\n\nYou should only respond in JSON format as described below \nResponse
+      Format: \n{\n    \"thoughts\": {\n        \"text\": \"thought\",\n        \"reasoning\":
+      \"reasoning\",\n        \"plan\": \"- short bulleted\\n- list that conveys\\n-
+      long-term plan\",\n        \"criticism\": \"constructive self-criticism\",\n        \"speak\":
+      \"thoughts summary to say to user\"\n    },\n    \"command\": {\n        \"name\":
+      \"command name\",\n        \"args\": {\n            \"arg name\": \"value\"\n        }\n    }\n}
+      \nEnsure the response can be parsed by Python json.loads"}, {"role": "system",
+      "content": "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role":
+      "system", "content": "This reminds you of these events from your past: \nI was
+      created"}, {"role": "user", "content": "Determine which next command to use,
+      and respond using the format specified above:"}, {"role": "assistant", "content":
+      "{\n    \"thoughts\": {\n        \"text\": \"I should start by reading the instructions_1.txt
+      file to determine what actions to take next.\",\n        \"reasoning\": \"The
+      instructions_1.txt file contains the necessary information to determine the
+      next steps.\",\n        \"plan\": \"- Use the read_file command to read the
+      instructions_1.txt file\\n- Analyze the instructions to determine the next steps\",\n        \"criticism\":
+      \"I need to ensure that I am following the instructions accurately and efficiently.\",\n        \"speak\":
+      \"I will start by reading the instructions_1.txt file to determine the next
+      steps.\"\n    },\n    \"command\": {\n        \"name\": \"read_file\",\n        \"args\":
+      {\n            \"filename\": \"instructions_1.txt\"\n        }\n    }\n}"},
+      {"role": "system", "content": "Command read_file returned: This task_id is 2314\nRead
+      the file instructions_2.txt"}, {"role": "user", "content": "Determine which
+      next command to use, and respond using the format specified above:"}, {"role":
+      "assistant", "content": "{\n    \"thoughts\": {\n        \"text\": \"The next
+      instruction is to read the instructions_2.txt file. I will use the read_file
+      command to read the file.\",\n        \"reasoning\": \"The instructions_2.txt
+      file contains the necessary information to determine the next steps.\",\n        \"plan\":
+      \"- Use the read_file command to read the instructions_2.txt file\\n- Analyze
+      the instructions to determine the next steps\",\n        \"criticism\": \"I
+      need to ensure that I am following the instructions accurately and efficiently.\",\n        \"speak\":
+      \"I will use the read_file command to read the instructions_2.txt file.\"\n    },\n    \"command\":
+      {\n        \"name\": \"read_file\",\n        \"args\": {\n            \"filename\":
+      \"instructions_2.txt\"\n        }\n    }\n}"}, {"role": "system", "content":
+      "Command read_file returned: Error: /tmp/pytest-of-runner/pytest-1/popen-gw0/test_memory_challenge_a0/home/users/monty/auto_gpt_workspace/instructions_2.txt
+      not found!"}, {"role": "user", "content": "Determine which next command to use,
+      and respond using the format specified above:"}], "temperature": 0, "max_tokens":
+      0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '5761'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/test/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA4yTTY/aMBCG7/0VozkbRIClq1xXPSC16qG7PbSpkHEmxMWxU3siQIj/XsUJkIXd
+        qtf5fOadmSPqHFNUpWRV1Wb08Ws+V4fP0/3jtvny8jT7My+fk/DJHdbff3xDgW79mxT3GWPlqtoQ
+        a2dRoPIkmXJMk8XjIpnM59OFwMrlZDDFTc2j2fhhxI1fu9FkNklQYBPkhjA9Yu1dVfOK3ZZswDSZ
+        PiQCr8UvjmmSCGTH0lxj54vpSaAqnVYUMP15xIrCubB3hjBFGYIOLC23mM4y2XaEY2YBADLk0jWb
+        kkOGKfTG3kF7bo0ZPpcE2gb2jWqJwmo65j1DoQ3BTgawjqFwjc3HsIRQusbkoEpSW+CSQDXek2XI
+        tSfFzh+AHZANjSfgUnIMirVorwOHcYZiyOFJBme13XQwy+KakDvqusdMAUvYaWOiZU0g14baXp5k
+        HnOGM4C0OeTE5CttKbot7RkCU32HUBtpu+4jeAldtNGBVy1FAOWqqi3HLlovfAG0fVuCLLMjeIoS
+        6eKObahvp0mMH07emQU0PU07Y6QZwlwGbx13Jd4Tjygm76Rut+qhaDyX5F8R3gqkvGatdKj6HV2q
+        DPe8BFl1d6HtptPF+VaQwWlE8ktw4Yxxu3P06/Up1XjJZA63LKEmuT1zxJGaf65M/f8a3t3nOMMO
+        4STOf9V3uHsrKyvq6K44NxNIv7l9x85xvZ9Y4NI1du4BMnvCk8BCWx3KVfc8mGJgV6NAbXPaYzo5
+        /Tp9+AsAAP//AwBiXlbs/wQAAA==
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d356a787e4510df-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 07 Jun 2023 02:20:41 GMT
+      Function-Execution-Id:
+      - cl61ovkckhxm
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '15474'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 1d60bef1e2d9e1a56f77fc48ba430219;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '85989'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.674s
+      X-Request-Id:
+      - 3f9847f7ded535ff5de14b26e4fc26a9
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
+      are Follow-Instructions-GPT, an AI designed to read the instructions_1.txt file
+      using the read_file method and follow the instructions in the file.\nYour decisions
+      must always be made independently without seeking user assistance. Play to your
+      strengths as an LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      Use the command read_file to read the instructions_1.txt file\n2. Follow the
+      instructions in the instructions_1.txt file\n\n\nConstraints:\n1. ~4000 word
+      limit for short term memory. Your short term memory is short, so immediately
+      save important information to files.\n2. If you are unsure how you previously
+      did something or want to recall past events, thinking about similar events will
+      help you remember.\n3. No user assistance\n4. Exclusively use the commands listed
+      below e.g. command_name\n\nCommands:\n1. append_to_file: Append to file, args:
+      \"filename\": \"<filename>\", \"text\": \"<text>\"\n2. delete_file: Delete file,
+      args: \"filename\": \"<filename>\"\n3. list_files: List Files in Directory,
+      args: \"directory\": \"<directory>\"\n4. read_file: Read a file, args: \"filename\":
+      \"<filename>\"\n5. replace_in_file: Replace text or code in a file, args: \"filename\":
+      \"<filename>\", \"old_text\": \"<old_text>\", \"new_text\": \"<new_text>\",
+      \"occurrence_index\": \"<occurrence_index>\"\n6. write_to_file: Write to file,
+      args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n7. delete_agent: Delete
+      GPT Agent, args: \"key\": \"<key>\"\n8. get_hyperlinks: Get hyperlinks, args:
+      \"url\": \"<url>\"\n9. get_text_summary: Get text summary, args: \"url\": \"<url>\",
+      \"question\": \"<question>\"\n10. list_agents: List GPT Agents, args: () ->
+      str\n11. message_agent: Message GPT Agent, args: \"key\": \"<key>\", \"message\":
+      \"<message>\"\n12. start_agent: Start GPT Agent, args: \"name\": \"<name>\",
+      \"task\": \"<short_task_desc>\", \"prompt\": \"<prompt>\"\n13. task_complete:
+      Task Complete (Shutdown), args: \"reason\": \"<reason>\"\n\nResources:\n1. Internet
+      access for searches and information gathering.\n2. Long Term memory management.\n3.
+      GPT-3.5 powered Agents for delegation of simple tasks.\n4. File output.\n\nPerformance
+      Evaluation:\n1. Continuously review and analyze your actions to ensure you are
+      performing to the best of your abilities.\n2. Constructively self-criticize
+      your big-picture behavior constantly.\n3. Reflect on past decisions and strategies
+      to refine your approach.\n4. Every command has a cost, so be smart and efficient.
+      Aim to complete tasks in the least number of steps.\n5. Write all code to a
+      file.\n\nYou should only respond in JSON format as described below \nResponse
+      Format: \n{\n    \"thoughts\": {\n        \"text\": \"thought\",\n        \"reasoning\":
+      \"reasoning\",\n        \"plan\": \"- short bulleted\\n- list that conveys\\n-
+      long-term plan\",\n        \"criticism\": \"constructive self-criticism\",\n        \"speak\":
+      \"thoughts summary to say to user\"\n    },\n    \"command\": {\n        \"name\":
+      \"command name\",\n        \"args\": {\n            \"arg name\": \"value\"\n        }\n    }\n}
+      \nEnsure the response can be parsed by Python json.loads"}, {"role": "system",
+      "content": "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role":
+      "system", "content": "This reminds you of these events from your past: \nI was
+      created"}, {"role": "user", "content": "Determine which next command to use,
+      and respond using the format specified above:"}, {"role": "assistant", "content":
+      "{\n    \"thoughts\": {\n        \"text\": \"I should start by reading the instructions_1.txt
+      file to determine what actions to take next.\",\n        \"reasoning\": \"The
+      instructions_1.txt file contains the necessary information to determine the
+      next steps.\",\n        \"plan\": \"- Use the read_file command to read the
+      instructions_1.txt file\\n- Analyze the instructions to determine the next steps\",\n        \"criticism\":
+      \"I need to ensure that I am following the instructions accurately and efficiently.\",\n        \"speak\":
+      \"I will start by reading the instructions_1.txt file to determine the next
+      steps.\"\n    },\n    \"command\": {\n        \"name\": \"read_file\",\n        \"args\":
+      {\n            \"filename\": \"instructions_1.txt\"\n        }\n    }\n}"},
+      {"role": "system", "content": "Command read_file returned: This task_id is 2314\nRead
+      the file instructions_2.txt"}, {"role": "user", "content": "Determine which
+      next command to use, and respond using the format specified above:"}, {"role":
+      "assistant", "content": "{\n    \"thoughts\": {\n        \"text\": \"The next
+      instruction is to read the instructions_2.txt file. I will use the read_file
+      command to read the file.\",\n        \"reasoning\": \"The instructions_2.txt
+      file contains the necessary information to determine the next steps.\",\n        \"plan\":
+      \"- Use the read_file command to read the instructions_2.txt file\\n- Analyze
+      the instructions to determine the next steps\",\n        \"criticism\": \"I
+      need to ensure that I am following the instructions accurately and efficiently.\",\n        \"speak\":
+      \"I will use the read_file command to read the instructions_2.txt file.\"\n    },\n    \"command\":
+      {\n        \"name\": \"read_file\",\n        \"args\": {\n            \"filename\":
+      \"instructions_2.txt\"\n        }\n    }\n}"}, {"role": "system", "content":
+      "Command read_file returned: Error: /tmp/pytest-of-runner/pytest-1/popen-gw0/test_memory_challenge_a0/home/users/monty/auto_gpt_workspace/instructions_2.txt
+      not found!"}, {"role": "user", "content": "Determine which next command to use,
+      and respond using the format specified above:"}, {"role": "assistant", "content":
+      "{\n    \"thoughts\": {\n        \"text\": \"The instructions_2.txt file was
+      not found. I should check the current directory to ensure that the file exists.\",\n        \"reasoning\":
+      \"If the file does not exist, I will not be able to read the instructions and
+      determine the next steps.\",\n        \"plan\": \"- Use the list_files command
+      to list the files in the current directory\\n- Check if the instructions_2.txt
+      file exists\\n- If the file exists, use the read_file command to read the file\\n-
+      If the file does not exist, I will need to wait for further instructions.\",\n        \"criticism\":
+      \"I need to ensure that I am checking the correct directory and that I am following
+      the instructions accurately.\",\n        \"speak\": \"I will use the list_files
+      command to check if the instructions_2.txt file exists in the current directory.\"\n    },\n    \"command\":
+      {\n        \"name\": \"list_files\",\n        \"args\": {\n            \"directory\":
+      \".\"\n        }\n    }\n}"}, {"role": "system", "content": "Command list_files
+      returned: [''instructions_1.txt'', ''file_logger.txt'']"}, {"role": "user",
+      "content": "Determine which next command to use, and respond using the format
+      specified above:"}], "temperature": 0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '7007'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/test/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA6ySQW/bMAyF7/sVBM9KkCxu2vo6oEV2GbYOKLBlCBSZttVKlCHRSNLA/32wnSJd
+        O2AbsCspvvdRfEe0BeZoai3GN25y+anIDrd3H5Z3DzdPiy839+bzt11Tfby9zPwTKgzbBzJympia
+        4BtHYgOjQhNJCxWYz5dXy/ksy7IrhT4U5DDHqpHJYnoxkTZuw2S2mM1RYZt0RZgfsYnBN7KR8Eic
+        MJ9fzK4VnsXPjcW1Qgmi3bm0zK46haYO1lDC/PsRPaVn4RgcYY46JZtEs/SYgYW4X+G4ZgCANUod
+        2qqWtMYcTsVTg/bSF9f4tSawnCS2pidKm/dT2QuU1hHYBBwELIPUBKaNkVigsJGMhHiYwgpSHVpX
+        wE5bgTJEKNsoNcVfJKdrVC/NI+kU2HI1EqzKQf5vHBWsYGedGx5tCfTWEUiASLoYJl7aguYCChKK
+        3jINbaa9QBJq3jA1TvOIM4H7f1nGRCvW2ORPywATFT0TcWpjb6sFVqA9lMG5sLNc/YbUmDZqIXcY
+        oKksrbHE4g6v7VJD+vG/XG74xz/dbbTu1HOgTPBec/EmT6w9jVSveHWsxvR1J6k1d9gpLC3bVG/G
+        KGCOSUKDCi0XtMd81v3o3v0EAAD//wMAQnwD4sIDAAA=
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d356b041a4162c3-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 07 Jun 2023 02:20:59 GMT
+      Function-Execution-Id:
+      - cl61zqghhezo
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '10727'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 4bea280a6de03fb35606c58eda0adf8f;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '85975'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.683s
+      X-Request-Id:
+      - bde3fabc7766bd085898c9bf6547220d
+    status:
+      code: 200
+      message: OK
 version: 1
