@@ -1180,4 +1180,643 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
+      are File System Agent, an AI designed to manage a file system.\nYour decisions
+      must always be made independently without seeking user assistance. Play to your
+      strengths as an LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      Write ''Hello World'' into a file named \"hello_world.txt\".\n\n\nConstraints:\n1.
+      ~4000 word limit for short term memory. Your short term memory is short, so
+      immediately save important information to files.\n2. If you are unsure how you
+      previously did something or want to recall past events, thinking about similar
+      events will help you remember.\n3. No user assistance\n4. Exclusively use the
+      commands listed below e.g. command_name\n\nCommands:\n1. execute_python_file:
+      Execute Python File, args: \"filename\": \"<filename>\"\n2. append_to_file:
+      Append to file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n3.
+      delete_file: Delete file, args: \"filename\": \"<filename>\"\n4. list_files:
+      List Files in Directory, args: \"directory\": \"<directory>\"\n5. read_file:
+      Read a file, args: \"filename\": \"<filename>\"\n6. replace_in_file: Replace
+      text or code in a file, args: \"filename\": \"<filename>\", \"old_text\": \"<old_text>\",
+      \"new_text\": \"<new_text>\", \"occurrence_index\": \"<occurrence_index>\"\n7.
+      write_to_file: Write to file, args: \"filename\": \"<filename>\", \"text\":
+      \"<text>\"\n8. google: Google Search, args: \"query\": \"<query>\"\n9. improve_code:
+      Get Improved Code, args: \"suggestions\": \"<list_of_suggestions>\", \"code\":
+      \"<full_code_string>\"\n10. browse_website: Browse Website, args: \"url\": \"<url>\",
+      \"question\": \"<what_you_want_to_find_on_website>\"\n11. write_tests: Write
+      Tests, args: \"code\": \"<full_code_string>\", \"focus\": \"<list_of_focus_areas>\"\n12.
+      delete_agent: Delete GPT Agent, args: \"key\": \"<key>\"\n13. get_hyperlinks:
+      Get hyperlinks, args: \"url\": \"<url>\"\n14. get_text_summary: Get text summary,
+      args: \"url\": \"<url>\", \"question\": \"<question>\"\n15. list_agents: List
+      GPT Agents, args: () -> str\n16. message_agent: Message GPT Agent, args: \"key\":
+      \"<key>\", \"message\": \"<message>\"\n17. start_agent: Start GPT Agent, args:
+      \"name\": \"<name>\", \"task\": \"<short_task_desc>\", \"prompt\": \"<prompt>\"\n18.
+      task_complete: Task Complete (Shutdown), args: \"reason\": \"<reason>\"\n\nResources:\n1.
+      Internet access for searches and information gathering.\n2. Long Term memory
+      management.\n3. GPT-3.5 powered Agents for delegation of simple tasks.\n4. File
+      output.\n\nPerformance Evaluation:\n1. Continuously review and analyze your
+      actions to ensure you are performing to the best of your abilities.\n2. Constructively
+      self-criticize your big-picture behavior constantly.\n3. Reflect on past decisions
+      and strategies to refine your approach.\n4. Every command has a cost, so be
+      smart and efficient. Aim to complete tasks in the least number of steps.\n5.
+      Write all code to a file.\n\nYou should only respond in JSON format as described
+      below \nResponse Format: \n{\n    \"thoughts\": {\n        \"text\": \"thought\",\n        \"reasoning\":
+      \"reasoning\",\n        \"plan\": \"- short bulleted\\n- list that conveys\\n-
+      long-term plan\",\n        \"criticism\": \"constructive self-criticism\",\n        \"speak\":
+      \"thoughts summary to say to user\"\n    },\n    \"command\": {\n        \"name\":
+      \"command name\",\n        \"args\": {\n            \"arg name\": \"value\"\n        }\n    }\n}
+      \nEnsure the response can be parsed by Python json.loads"}, {"role": "system",
+      "content": "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role":
+      "user", "content": "Determine which next command to use, and respond using the
+      format specified above:"}], "temperature": 0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '3816'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA7yTQY/aMBCF7/kVI19yAQSFAsu5W7VSD1XVaoWaCplkSFwcj2VPBFuU/145hgWy
+        UqX20Os8z3vfJDOnBECoQqxA5JXkvLZ6uPi8fkeLZvr4/rj9tVNr/0wzg+tPX5qnx4MYhA7a/sSc
+        L12jnGqrkRWZKOcOJWNwncyX8+mb2WQ864SaCtShrbQ8nI7eDrlxWxqOp+NJ7Gy8LFGs4JQAAAjr
+        qLa8Ydqj8WIFy/lyEJVr5FWdPDycVSaW+kYYzxcJQBvhKlI5hvL37nGMCnDo79K7oiMdKkJ6rzxL
+        w2JwFXMyjKb7DqfMhFImuKKmrNhnwScWzwIeORQz8REOSmtoPAJXCOnBKcYN02anNKaQU11LUwAT
+        dAqkH1BrgidyukhBGSaQEN6CkTUWkFZB3xyCPuIjp6NMDG6jHUpPRpky5n/9Q6jyHVNNnkFa68g6
+        JRlhRw64Cqr0e5AeFIPUmg4earyihiHhha/PYbU0EWEI3/5t+r+ePXeKVa58ffn2vqJGF4DGNy4g
+        SO44Os9XblAQejAUhnUoi2fAo/IMW9yRw45QmTJQKe4ne4ty///+eIxuB5dFPJu+2sPgEKnuKHrw
+        0pX9FY5CeHu16HHcmfTX/mamC21HfAbPTCvOp9VebkzslFG+2sQFDnfmmezLCQplCjyKFYy7QpsA
+        /Eja5DcAAAD//wMA4EZmGtUEAAA=
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d4a5daf1a5b1135-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 09 Jun 2023 15:21:54 GMT
+      Function-Execution-Id:
+      - 6i1kpsxdtav3
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '10480'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - edf5cc2e18bb9932f11e9df1374c31bd;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '86416'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.388s
+      X-Request-Id:
+      - d6f517ea0046f449c18c5d3d268594ce
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
+      are File System Agent, an AI designed to manage a file system.\nYour decisions
+      must always be made independently without seeking user assistance. Play to your
+      strengths as an LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      Write ''Hello World'' into a file named \"hello_world.txt\".\n\n\nConstraints:\n1.
+      ~4000 word limit for short term memory. Your short term memory is short, so
+      immediately save important information to files.\n2. If you are unsure how you
+      previously did something or want to recall past events, thinking about similar
+      events will help you remember.\n3. No user assistance\n4. Exclusively use the
+      commands listed below e.g. command_name\n\nCommands:\n1. execute_python_file:
+      Execute Python File, args: \"filename\": \"<filename>\"\n2. append_to_file:
+      Append to file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n3.
+      delete_file: Delete file, args: \"filename\": \"<filename>\"\n4. list_files:
+      List Files in Directory, args: \"directory\": \"<directory>\"\n5. read_file:
+      Read a file, args: \"filename\": \"<filename>\"\n6. replace_in_file: Replace
+      text or code in a file, args: \"filename\": \"<filename>\", \"old_text\": \"<old_text>\",
+      \"new_text\": \"<new_text>\", \"occurrence_index\": \"<occurrence_index>\"\n7.
+      write_to_file: Write to file, args: \"filename\": \"<filename>\", \"text\":
+      \"<text>\"\n8. google: Google Search, args: \"query\": \"<query>\"\n9. improve_code:
+      Get Improved Code, args: \"suggestions\": \"<list_of_suggestions>\", \"code\":
+      \"<full_code_string>\"\n10. browse_website: Browse Website, args: \"url\": \"<url>\",
+      \"question\": \"<what_you_want_to_find_on_website>\"\n11. write_tests: Write
+      Tests, args: \"code\": \"<full_code_string>\", \"focus\": \"<list_of_focus_areas>\"\n12.
+      delete_agent: Delete GPT Agent, args: \"key\": \"<key>\"\n13. get_hyperlinks:
+      Get hyperlinks, args: \"url\": \"<url>\"\n14. get_text_summary: Get text summary,
+      args: \"url\": \"<url>\", \"question\": \"<question>\"\n15. list_agents: List
+      GPT Agents, args: () -> str\n16. message_agent: Message GPT Agent, args: \"key\":
+      \"<key>\", \"message\": \"<message>\"\n17. start_agent: Start GPT Agent, args:
+      \"name\": \"<name>\", \"task\": \"<short_task_desc>\", \"prompt\": \"<prompt>\"\n18.
+      task_complete: Task Complete (Shutdown), args: \"reason\": \"<reason>\"\n\nResources:\n1.
+      Internet access for searches and information gathering.\n2. Long Term memory
+      management.\n3. GPT-3.5 powered Agents for delegation of simple tasks.\n4. File
+      output.\n\nPerformance Evaluation:\n1. Continuously review and analyze your
+      actions to ensure you are performing to the best of your abilities.\n2. Constructively
+      self-criticize your big-picture behavior constantly.\n3. Reflect on past decisions
+      and strategies to refine your approach.\n4. Every command has a cost, so be
+      smart and efficient. Aim to complete tasks in the least number of steps.\n5.
+      Write all code to a file.\n\nYou should only respond in JSON format as described
+      below \nResponse Format: \n{\n    \"thoughts\": {\n        \"text\": \"thought\",\n        \"reasoning\":
+      \"reasoning\",\n        \"plan\": \"- short bulleted\\n- list that conveys\\n-
+      long-term plan\",\n        \"criticism\": \"constructive self-criticism\",\n        \"speak\":
+      \"thoughts summary to say to user\"\n    },\n    \"command\": {\n        \"name\":
+      \"command name\",\n        \"args\": {\n            \"arg name\": \"value\"\n        }\n    }\n}
+      \nEnsure the response can be parsed by Python json.loads"}, {"role": "system",
+      "content": "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role":
+      "system", "content": "This reminds you of these events from your past: \nI was
+      created"}, {"role": "user", "content": "Determine which next command to use,
+      and respond using the format specified above:"}, {"role": "assistant", "content":
+      "{\n    \"thoughts\": {\n        \"text\": \"I will use the ''write_to_file''
+      command to write ''Hello World'' into a file named ''hello_world.txt''.\",\n        \"reasoning\":
+      \"The ''write_to_file'' command is the most appropriate for this task as it
+      allows me to write text to a file.\",\n        \"plan\": \"- Use the ''write_to_file''
+      command to write ''Hello World'' to a file named ''hello_world.txt''.\",\n        \"criticism\":
+      \"I should ensure that the file ''hello_world.txt'' does not already exist before
+      writing to it.\",\n        \"speak\": \"I will use the ''write_to_file'' command
+      to write ''Hello World'' into a file named ''hello_world.txt''.\"\n    },\n    \"command\":
+      {\n        \"name\": \"write_to_file\",\n        \"args\": {\n            \"filename\":
+      \"hello_world.txt\",\n            \"text\": \"Hello World\"\n        }\n    }\n}"},
+      {"role": "system", "content": "Command write_to_file returned: File written
+      to successfully."}, {"role": "user", "content": "Determine which next command
+      to use, and respond using the format specified above:"}], "temperature": 0,
+      "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '5001'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA7yTTW/bMAyG7/kVhC65JEHSdF2a44ABHVBgHbphKJohUGw6ViOLgkgv6Qr/90GW
+        87F0H7dd+Yrv+5gmX3oAyuRqDiortWSVt8O3dw/vp77Wn56e7y9Xu1verW7dx4f7H+Hm7p0axA5a
+        PWEm+65RRpW3KIZckrOAWjC6Tq5mV9OLy8nkuhUqytHGtrWX4XT0Zih1WNFwPB1PUmfNeo1qDi89
+        AADlA1VelkIbdBztJhezQZKOmSfybNKpQqLtiTAdX/cAmkRXkskwlh/bxykr0iH/Et8WA9lYUZrZ
+        sGgnanAUM3KCrh3Ey8LF0kJJSfW6FF5En1TsBNxJLC7UB9gaa6FmBCkR+gF1viyMxT5kVFXa5SAE
+        3zGY4hmk1AL9G7SW4CsFm/dhqxm2wYigiw/7ZRSX2yiOZCf90UINTpMDaiZn3DrFf/5DpuEWpyIW
+        0N4H8sFoQSgogJRR1bwBzWAEtLW0ZagwAkSvtrWbBwMVoCG6n6N4q12iGMKXv3//b13/+a1ZMGIy
+        w9V+1FxSbXNAx3XANM1oGuNeuwHuDAvDCgsKCFoEKy/GrQ9ARaAKjJzHske9+W9/NyU3g/3Odb6v
+        Vs7pChPUAeKMW4f1+aYmIb49tp8x7Alaig5m4RrVXUazPxFVGGe4XKYFjGfCQv5wQcq4HHdqDuO2
+        0PQAvvWa3k8AAAD//wMAFK+dt5UEAAA=
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d4a5e114c7f1094-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 09 Jun 2023 15:22:08 GMT
+      Function-Execution-Id:
+      - 6i1koeggavff
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '9272'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 3d6345372f1642be0d1d78f9d80b0177;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '85932'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.712s
+      X-Request-Id:
+      - 8dc7a381ae0354979687db9f223b5350
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"input": ["Hello World"], "model": "text-embedding-ada-002", "encoding_format":
+      "base64"}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '90'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/embeddings
+  response:
+    body:
+      string: !!binary |
+        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
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - private
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d4a5e657ac78716-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 09 Jun 2023 15:22:13 GMT
+      Function-Execution-Id:
+      - 6i1k73ino68z
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '241'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 3cdd7d4dfbf61967eaf12cff373d5858;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3000'
+      X-Ratelimit-Remaining-Requests:
+      - '2999'
+      X-Ratelimit-Reset-Requests:
+      - 20ms
+      X-Request-Id:
+      - e8393f5d37d8f29e58f6bc7bdd4db43d
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"input": "a simple greeting of \"Hello World.\"", "model": "text-embedding-ada-002",
+      "encoding_format": "base64"}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '114'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/embeddings
+  response:
+    body:
+      string: !!binary |
+        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
+        4SAAAA==
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - private
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d4a5e6edff210d8-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 09 Jun 2023 15:22:14 GMT
+      Function-Execution-Id:
+      - 6i1kvk0z7nt7
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '96'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - ea6d0d9dcbb53c1daeee8abfe7ca9e43
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3000'
+      X-Ratelimit-Remaining-Requests:
+      - '2999'
+      X-Ratelimit-Reset-Requests:
+      - 20ms
+      X-Request-Id:
+      - 77b56ec7d38fa258767201fff391a2c9
+    status:
+      code: 200
+      message: OK
 version: 1
