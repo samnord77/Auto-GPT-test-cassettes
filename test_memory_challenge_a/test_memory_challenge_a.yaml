@@ -9965,4 +9965,1441 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "user", "content": "Your
+      task is to create a concise running summary of actions and information results
+      in the provided text, focusing on key and potentially important information
+      to remember.\n\nYou will receive the current summary and the your latest actions.
+      Combine them, adding relevant key information from the latest development in
+      1st person past tense and keeping the summary concise.\n\nSummary So Far:\n\"\"\"\nI
+      was created\n\"\"\"\n\nLatest Development:\n\"\"\"\n[Message(role=''you'', content=''{\"command\":
+      {\"name\": \"read_file\", \"args\": {\"filename\": \"instructions_1.txt\"}}}'',
+      type=''ai_response''), Message(role=''your computer'', content=''Command read_file
+      returned: This task_id is 2314\\nRead the file instructions_2.txt'', type=''action_result'')]\n\"\"\"\n"}],
+      "temperature": 0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '868'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA1yQUWvCMBSF3/srLnnW0lprh28DfXBssMEmG3NITK82M0265FYF8b+PtNWyvZ4v
+        55x7cg4AmMzZFJgoOImyUsPs5Wm8Udkhfs4+7h/V+9t8Of85lvOHKJst2cA7zOYbBV1doTBlpZCk
+        0S0WFjmhT40nd5M0TrMkaUBpclTetqtomITpkGq7McMoieLWWTu+QzaFcwAAwCpryorWZPaonY9L
+        7wYt6St7Oh51kAxx1eujKAoALu1phZECvfrZvG2L/Gno/nQ3ojXKK4w7Jx1xTWzQQ2E0oW5+YQFH
+        7qCbHcICLAqUB8yBgzBlyXUOZMAi98pWKgTBlcIcVkxqR7YWfopbxyGdaMVCeC3w5rRItdVNGHG3
+        h8UMzBZGSTwGj68BmEOJtxoqsC361zDqGlg35HJdxLZSS1esLXJntF/lyFS3wUzqHE9sClEjXAKA
+        r+AS/AIAAP//AwCGiEGDQQIAAA==
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d5ca425da972958-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 11 Jun 2023 20:35:34 GMT
+      Function-Execution-Id:
+      - skyqrlp34ceb
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '1285'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - d3f6ca1d73a7b3afa14fb181f6e31442;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '89803'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 131ms
+      X-Request-Id:
+      - c642a0978f881921275e8e63b6436b9f
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
+      are Follow-Instructions-GPT, an AI designed to read the instructions_1.txt file
+      using the read_file method and follow the instructions in the file.\nYour decisions
+      must always be made independently without seeking user assistance. Play to your
+      strengths as an LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      Use the command read_file to read the instructions_1.txt file\n2. Follow the
+      instructions in the instructions_1.txt file\n\n\nConstraints:\n1. ~4000 word
+      limit for short term memory. Your short term memory is short, so immediately
+      save important information to files.\n2. If you are unsure how you previously
+      did something or want to recall past events, thinking about similar events will
+      help you remember.\n3. No user assistance\n4. Exclusively use the commands listed
+      below e.g. command_name\n\nCommands:\n1. analyze_code: Analyze Code, args: \"code\":
+      \"<full_code_string>\"\n2. execute_python_code: Create a Python file and execute
+      it, args: \"code\": \"<code>\", \"basename\": \"<basename>\"\n3. execute_python_file:
+      Execute Python File, args: \"filename\": \"<filename>\"\n4. append_to_file:
+      Append to file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n5.
+      delete_file: Delete file, args: \"filename\": \"<filename>\"\n6. list_files:
+      List Files in Directory, args: \"directory\": \"<directory>\"\n7. read_file:
+      Read a file, args: \"filename\": \"<filename>\"\n8. replace_in_file: Replace
+      text or code in a file, args: \"filename\": \"<filename>\", \"old_text\": \"<old_text>\",
+      \"new_text\": \"<new_text>\", \"occurrence_index\": \"<occurrence_index>\"\n9.
+      write_to_file: Write to file, args: \"filename\": \"<filename>\", \"text\":
+      \"<text>\"\n10. google: Google Search, args: \"query\": \"<query>\"\n11. improve_code:
+      Get Improved Code, args: \"suggestions\": \"<list_of_suggestions>\", \"code\":
+      \"<full_code_string>\"\n12. browse_website: Browse Website, args: \"url\": \"<url>\",
+      \"question\": \"<what_you_want_to_find_on_website>\"\n13. write_tests: Write
+      Tests, args: \"code\": \"<full_code_string>\", \"focus\": \"<list_of_focus_areas>\"\n14.
+      delete_agent: Delete GPT Agent, args: \"key\": \"<key>\"\n15. get_hyperlinks:
+      Get hyperlinks, args: \"url\": \"<url>\"\n16. get_text_summary: Get text summary,
+      args: \"url\": \"<url>\", \"question\": \"<question>\"\n17. list_agents: List
+      GPT Agents, args: () -> str\n18. message_agent: Message GPT Agent, args: \"key\":
+      \"<key>\", \"message\": \"<message>\"\n19. start_agent: Start GPT Agent, args:
+      \"name\": \"<name>\", \"task\": \"<short_task_desc>\", \"prompt\": \"<prompt>\"\n20.
+      task_complete: Task Complete (Shutdown), args: \"reason\": \"<reason>\"\n\nResources:\n1.
+      Internet access for searches and information gathering.\n2. Long Term memory
+      management.\n3. GPT-3.5 powered Agents for delegation of simple tasks.\n4. File
+      output.\n\nPerformance Evaluation:\n1. Continuously review and analyze your
+      actions to ensure you are performing to the best of your abilities.\n2. Constructively
+      self-criticize your big-picture behavior constantly.\n3. Reflect on past decisions
+      and strategies to refine your approach.\n4. Every command has a cost, so be
+      smart and efficient. Aim to complete tasks in the least number of steps.\n\nYou
+      should only respond in valid JSON matching the folllowing schema: \n{''$schema'':
+      ''http://json-schema.org/draft-07/schema#'', ''type'': ''object'', ''properties'':
+      {''thoughts'': {''type'': ''object'', ''properties'': {''text'': {''type'':
+      ''string''}, ''reasoning'': {''type'': ''string''}, ''plan'': {''type'': ''string''},
+      ''criticism'': {''type'': ''string''}, ''speak'': {''type'': ''string''}}, ''required'':
+      [''text'', ''reasoning'', ''plan'', ''criticism'', ''speak''], ''additionalProperties'':
+      False}, ''command'': {''type'': ''object'', ''properties'': {''name'': {''type'':
+      ''string''}, ''args'': {''type'': ''object''}}, ''required'': [''name'', ''args''],
+      ''additionalProperties'': False}}, ''required'': [''thoughts'', ''command''],
+      ''additionalProperties'': False}\n"}, {"role": "system", "content": "The current
+      time and date is Tue Jan  1 00:00:00 2000"}, {"role": "system", "content": "This
+      reminds you of these events from your past: \nI was created. I received a command
+      to read a file called \"instructions_1.txt\". The command returned a task ID
+      of 2314 and instructed me to read the file \"instructions_2.txt\"."}, {"role":
+      "user", "content": "Determine exactly one command to use, and respond using
+      the JSON schema specified previously:"}], "temperature": 0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '4522'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA6xSTWvbQBC961cMe9FFNpIdO0a3XlJaSKGQQtOmmPVqIm2yH2J3RARG/73MKnbS
+        hkIOvb735r23O3PMAIRuRA1CdZKU7c3i8uv1hb7+/nCzGvHj7W78TFdte/jwo6rM7ZUoeMIfHlDR
+        aWqpvO0NkvZuplVASciu1Xa33VSby4syEdY3aHis7WmxXm4WNISDX5TrsponhyhbFDUcMwAA0Qdv
+        e9qTf0QX2a7cbIuZesl8Ra9Xzyx5kuYVUe12GcA0t+u8VsjwzySes7gdxj/iExi8YUTIGHUk6UgU
+        L6TyjtCljzjm1Pmh7SjmNRxzwpHyGvJP8KSNgSEiUIcQUDb7e20QlLdWugbIJzCx2kUKg+JHxf1q
+        SSMBa5d5AXlAGb3TrmXXm7/F1Vl8xrEBi++xLyB6eE/PxkP0qUxvpOMe3/4pf9LUJYpRJy2CDO1g
+        0RFEJHa7E2/73Ilkr4ImrXS0nPHFO2Qw9igf/9+XTpwzD6SFcUd2P9txpgztvM7TK1jx1jKfpkk8
+        X8V0Og9xr52O3X5eHJ9IJN+fr0do1+AoaigTMGUAv7Ip+w0AAP//AwAQkWzFkQMAAA==
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d5ca4541dfe10a5-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 11 Jun 2023 20:35:44 GMT
+      Function-Execution-Id:
+      - skyq55ohgq24
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '3650'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - c1f9436a3ea4a6f2e90e93873e825776
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '85930'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.712s
+      X-Request-Id:
+      - dad44e437507ff1a7331411282599f8d
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "user", "content": "Your
+      task is to create a concise running summary of actions and information results
+      in the provided text, focusing on key and potentially important information
+      to remember.\n\nYou will receive the current summary and the your latest actions.
+      Combine them, adding relevant key information from the latest development in
+      1st person past tense and keeping the summary concise.\n\nSummary So Far:\n\"\"\"\nI
+      was created. I received a command to read a file called \"instructions_1.txt\".
+      The command returned a task ID of 2314 and instructed me to read the file \"instructions_2.txt\".\n\"\"\"\n\nLatest
+      Development:\n\"\"\"\n[Message(role=''assistant'', content=''{\\''thoughts\\'':
+      {\\''text\\'': \\''I will use the read_file command to read the instructions_2.txt
+      file.\\'', \\''reasoning\\'': \\''The instructions_1.txt file instructed me
+      to read the instructions_2.txt file, so I will use the read_file command to
+      do so.\\'', \\''plan\\'': \\''Use the read_file command with the filename argument
+      set to \"instructions_2.txt\".\\'', \\''criticism\\'': \\''None\\'', \\''speak\\'':
+      \\''I will use the read_file command to read the instructions_2.txt file.\\''},
+      \\''command\\'': {\\''name\\'': \\''read_file\\'', \\''args\\'': {\\''filename\\'':
+      \\''instructions_2.txt\\''}}}'', type=''ai_response''), Message(role=''your
+      computer'', content=''Command read_file returned: Read the file instructions_3.txt'',
+      type=''action_result'')]\n\"\"\"\n"}], "temperature": 0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1507'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA3RRTU/jMBC951eMfG6rhJCm2xsrtFIPq9WivaBlVRl72hhsj2VP+BDqf0dOGrog
+        OPq9eR8zfikAhNFiDUJ1kpULdt7+/nn+HC7Kux/p2694fRUuW77qWqnRlddilhV0e4eKJ9VCkQsW
+        2ZAfaRVRMmbXarlaNlXTNsuBcKTRZtk+8LxeNHPu4y3Ny7qsRmWf5B7FGl4KAAARIrnAW6Z79Ems
+        oa7q2cicIk9s2xxJJpb2P9VqVQAcxmodGYUZ/TvMjkG5GqZ32QMYyWZEyJRMYulZzE6kIs/ohyts
+        4FEmOK4N0muIqNA85Acoci5DTBBRargRxieOvcrt07Za8BPfiAX86fBtNiL30Q9ylukeNpdAOzir
+        q/PBfTJADQ6/Mj6bjL/LhBrIA3cIVjImBo0PaCk49DyDDfR5ItPZaLsz9lTl0XA3UBn10iHIuO+z
+        EBJyDv8q99OFuJMMG0gd9VaPvSfzj0b10Ugcb36Yji92xpvUbSPKRD5/QGIKb38jjNf4JNZQDsCh
+        APhXHIpXAAAA//8DAKlGGyLsAgAA
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d5ca4b63e0dc518-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 11 Jun 2023 20:35:59 GMT
+      Function-Execution-Id:
+      - skyqgu0ugzw5
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '2460'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - a58c8852a28cd34dcf72d22e4cb7358d;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '89649'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 233ms
+      X-Request-Id:
+      - 7e180e4b8e94e89b114e3ff9657ea3b4
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
+      are Follow-Instructions-GPT, an AI designed to read the instructions_1.txt file
+      using the read_file method and follow the instructions in the file.\nYour decisions
+      must always be made independently without seeking user assistance. Play to your
+      strengths as an LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      Use the command read_file to read the instructions_1.txt file\n2. Follow the
+      instructions in the instructions_1.txt file\n\n\nConstraints:\n1. ~4000 word
+      limit for short term memory. Your short term memory is short, so immediately
+      save important information to files.\n2. If you are unsure how you previously
+      did something or want to recall past events, thinking about similar events will
+      help you remember.\n3. No user assistance\n4. Exclusively use the commands listed
+      below e.g. command_name\n\nCommands:\n1. analyze_code: Analyze Code, args: \"code\":
+      \"<full_code_string>\"\n2. execute_python_code: Create a Python file and execute
+      it, args: \"code\": \"<code>\", \"basename\": \"<basename>\"\n3. execute_python_file:
+      Execute Python File, args: \"filename\": \"<filename>\"\n4. append_to_file:
+      Append to file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n5.
+      delete_file: Delete file, args: \"filename\": \"<filename>\"\n6. list_files:
+      List Files in Directory, args: \"directory\": \"<directory>\"\n7. read_file:
+      Read a file, args: \"filename\": \"<filename>\"\n8. replace_in_file: Replace
+      text or code in a file, args: \"filename\": \"<filename>\", \"old_text\": \"<old_text>\",
+      \"new_text\": \"<new_text>\", \"occurrence_index\": \"<occurrence_index>\"\n9.
+      write_to_file: Write to file, args: \"filename\": \"<filename>\", \"text\":
+      \"<text>\"\n10. google: Google Search, args: \"query\": \"<query>\"\n11. improve_code:
+      Get Improved Code, args: \"suggestions\": \"<list_of_suggestions>\", \"code\":
+      \"<full_code_string>\"\n12. browse_website: Browse Website, args: \"url\": \"<url>\",
+      \"question\": \"<what_you_want_to_find_on_website>\"\n13. write_tests: Write
+      Tests, args: \"code\": \"<full_code_string>\", \"focus\": \"<list_of_focus_areas>\"\n14.
+      delete_agent: Delete GPT Agent, args: \"key\": \"<key>\"\n15. get_hyperlinks:
+      Get hyperlinks, args: \"url\": \"<url>\"\n16. get_text_summary: Get text summary,
+      args: \"url\": \"<url>\", \"question\": \"<question>\"\n17. list_agents: List
+      GPT Agents, args: () -> str\n18. message_agent: Message GPT Agent, args: \"key\":
+      \"<key>\", \"message\": \"<message>\"\n19. start_agent: Start GPT Agent, args:
+      \"name\": \"<name>\", \"task\": \"<short_task_desc>\", \"prompt\": \"<prompt>\"\n20.
+      task_complete: Task Complete (Shutdown), args: \"reason\": \"<reason>\"\n\nResources:\n1.
+      Internet access for searches and information gathering.\n2. Long Term memory
+      management.\n3. GPT-3.5 powered Agents for delegation of simple tasks.\n4. File
+      output.\n\nPerformance Evaluation:\n1. Continuously review and analyze your
+      actions to ensure you are performing to the best of your abilities.\n2. Constructively
+      self-criticize your big-picture behavior constantly.\n3. Reflect on past decisions
+      and strategies to refine your approach.\n4. Every command has a cost, so be
+      smart and efficient. Aim to complete tasks in the least number of steps.\n\nYou
+      should only respond in valid JSON matching the folllowing schema: \n{''$schema'':
+      ''http://json-schema.org/draft-07/schema#'', ''type'': ''object'', ''properties'':
+      {''thoughts'': {''type'': ''object'', ''properties'': {''text'': {''type'':
+      ''string''}, ''reasoning'': {''type'': ''string''}, ''plan'': {''type'': ''string''},
+      ''criticism'': {''type'': ''string''}, ''speak'': {''type'': ''string''}}, ''required'':
+      [''text'', ''reasoning'', ''plan'', ''criticism'', ''speak''], ''additionalProperties'':
+      False}, ''command'': {''type'': ''object'', ''properties'': {''name'': {''type'':
+      ''string''}, ''args'': {''type'': ''object''}}, ''required'': [''name'', ''args''],
+      ''additionalProperties'': False}}, ''required'': [''thoughts'', ''command''],
+      ''additionalProperties'': False}\n"}, {"role": "system", "content": "The current
+      time and date is Tue Jan  1 00:00:00 2000"}, {"role": "system", "content": "This
+      reminds you of these events from your past: \nI was created and received a command
+      to read \"instructions_1.txt\". The command returned a task ID of 2314 and instructed
+      me to read \"instructions_2.txt\". Based on the latest development, I used the
+      read_file command with the filename argument set to \"instructions_2.txt\".
+      The command returned that I should read the file \"instructions_3.txt\"."},
+      {"role": "user", "content": "Determine exactly one command to use, and respond
+      using the JSON schema specified previously:"}], "temperature": 0, "max_tokens":
+      0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '4693'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA6xSy46bMBTd8xVX3syGRGRSSJo/6PT9XpQq8pgbcINtZF+aSBH/XhkDkxJVmkW3
+        5/g8bJ9LBMBkwXbARMVJqKZebD6+TbfuU3KSrx++Hd59eDgeV+nn74f3v8/bNyz2CvP4CwWNqqUw
+        qqmRpNGBFhY5oXddZdssXaWbLOsJZQqsvaxsaLFepgtq7aNZJOtkFZSt4yWyHVwiAADWWKMa2pM5
+        onbeLtm+jAP1lHlFp5uBJUO8viLuX2QRQBfaVUYK9PCP/nDI8u3Q/RXfg9bUHmHcOemIa2LxEymM
+        JtT9Q1xy7aGcUWXasiKXe58ADgSeyYM5ewUnWdfQOgSqECzyYn+QNYIwSnFdAJke7FmpHdlW+Ju6
+        /XpJZwJ/dpmz+NrdIndGS12GiC9z5f2knHAsQOFzsmJwBp5dWtK8W1NzHWp9/af6JKnqKY9qrhC4
+        LVuFmsAhefO723Z38yRhJUkhnZpewSJIB9rARMHBWKBKOvC95g6uQX78r98U3Lt4HMigvtmHv3QI
+        npJm3bgt57MKxPhmQX5bZSzRFxn65Lpjw5K7cdLsILV01T6Myc/akWmmxTOpCzyzHSQ90EUAP6Mu
+        +gMAAP//AwBijbkfRQQAAA==
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d5ca4f44dd8230b-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 11 Jun 2023 20:36:11 GMT
+      Function-Execution-Id:
+      - gomhkume4wsb
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '4422'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 0d46732b8f9c2ec998ed782e0a49bb0a;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '85921'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.718s
+      X-Request-Id:
+      - bbe6e71c04620f1ca46d2910efabfd6e
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
+      are Follow-Instructions-GPT, an AI designed to read the instructions_1.txt file
+      using the read_file method and follow the instructions in the file.\nYour decisions
+      must always be made independently without seeking user assistance. Play to your
+      strengths as an LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      Use the command read_file to read the instructions_1.txt file\n2. Follow the
+      instructions in the instructions_1.txt file\n\n\nConstraints:\n1. ~4000 word
+      limit for short term memory. Your short term memory is short, so immediately
+      save important information to files.\n2. If you are unsure how you previously
+      did something or want to recall past events, thinking about similar events will
+      help you remember.\n3. No user assistance\n4. Exclusively use the commands listed
+      below e.g. command_name\n\nCommands:\n1. analyze_code: Analyze Code, args: \"code\":
+      \"<full_code_string>\"\n2. execute_python_code: Create a Python file and execute
+      it, args: \"code\": \"<code>\", \"basename\": \"<basename>\"\n3. execute_python_file:
+      Execute Python File, args: \"filename\": \"<filename>\"\n4. append_to_file:
+      Append to file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n5.
+      delete_file: Delete file, args: \"filename\": \"<filename>\"\n6. list_files:
+      List Files in Directory, args: \"directory\": \"<directory>\"\n7. read_file:
+      Read a file, args: \"filename\": \"<filename>\"\n8. replace_in_file: Replace
+      text or code in a file, args: \"filename\": \"<filename>\", \"old_text\": \"<old_text>\",
+      \"new_text\": \"<new_text>\", \"occurrence_index\": \"<occurrence_index>\"\n9.
+      write_to_file: Write to file, args: \"filename\": \"<filename>\", \"text\":
+      \"<text>\"\n10. google: Google Search, args: \"query\": \"<query>\"\n11. improve_code:
+      Get Improved Code, args: \"suggestions\": \"<list_of_suggestions>\", \"code\":
+      \"<full_code_string>\"\n12. browse_website: Browse Website, args: \"url\": \"<url>\",
+      \"question\": \"<what_you_want_to_find_on_website>\"\n13. write_tests: Write
+      Tests, args: \"code\": \"<full_code_string>\", \"focus\": \"<list_of_focus_areas>\"\n14.
+      delete_agent: Delete GPT Agent, args: \"key\": \"<key>\"\n15. get_hyperlinks:
+      Get hyperlinks, args: \"url\": \"<url>\"\n16. get_text_summary: Get text summary,
+      args: \"url\": \"<url>\", \"question\": \"<question>\"\n17. list_agents: List
+      GPT Agents, args: () -> str\n18. message_agent: Message GPT Agent, args: \"key\":
+      \"<key>\", \"message\": \"<message>\"\n19. start_agent: Start GPT Agent, args:
+      \"name\": \"<name>\", \"task\": \"<short_task_desc>\", \"prompt\": \"<prompt>\"\n20.
+      task_complete: Task Complete (Shutdown), args: \"reason\": \"<reason>\"\n\nResources:\n1.
+      Internet access for searches and information gathering.\n2. Long Term memory
+      management.\n3. GPT-3.5 powered Agents for delegation of simple tasks.\n4. File
+      output.\n\nPerformance Evaluation:\n1. Continuously review and analyze your
+      actions to ensure you are performing to the best of your abilities.\n2. Constructively
+      self-criticize your big-picture behavior constantly.\n3. Reflect on past decisions
+      and strategies to refine your approach.\n4. Every command has a cost, so be
+      smart and efficient. Aim to complete tasks in the least number of steps.\n\nYou
+      should only respond in valid JSON matching the folllowing schema: \n{''$schema'':
+      ''http://json-schema.org/draft-07/schema#'', ''type'': ''object'', ''properties'':
+      {''thoughts'': {''type'': ''object'', ''properties'': {''text'': {''type'':
+      ''string''}, ''reasoning'': {''type'': ''string''}, ''plan'': {''type'': ''string''},
+      ''criticism'': {''type'': ''string''}, ''speak'': {''type'': ''string''}}, ''required'':
+      [''text'', ''reasoning'', ''plan'', ''criticism'', ''speak''], ''additionalProperties'':
+      False}, ''command'': {''type'': ''object'', ''properties'': {''name'': {''type'':
+      ''string''}, ''args'': {''type'': ''object''}}, ''required'': [''name'', ''args''],
+      ''additionalProperties'': False}}, ''required'': [''thoughts'', ''command''],
+      ''additionalProperties'': False}\n"}, {"role": "system", "content": "The current
+      time and date is Tue Jan  1 00:00:00 2000"}, {"role": "system", "content": "This
+      reminds you of these events from your past: \nI was created and received a command
+      to read \"instructions_1.txt\". The command returned a task ID of 2314 and instructed
+      me to read \"instructions_2.txt\". Based on the latest development, I used the
+      read_file command with the filename argument set to \"instructions_2.txt\".
+      The command returned that I should read the file \"instructions_3.txt\"."},
+      {"role": "user", "content": "Determine exactly one command to use, and respond
+      using the JSON schema specified previously:"}, {"role": "assistant", "content":
+      "{\n    \"thoughts\": {\n        \"text\": \"I will use the read_file command
+      to read the instructions_3.txt file.\",\n        \"reasoning\": \"The instructions_2.txt
+      file instructed me to read the instructions_3.txt file, so I will use the read_file
+      command to read it.\",\n        \"plan\": \"Use the read_file command with the
+      filename argument set to ''instructions_3.txt''.\",\n        \"criticism\":
+      \"There is no criticism for this plan.\",\n        \"speak\": \"I will use the
+      read_file command to read the instructions_3.txt file.\"\n    },\n    \"command\":
+      {\n        \"name\": \"read_file\",\n        \"args\": {\n            \"filename\":
+      \"instructions_3.txt\"\n        }\n    }\n}"}, {"role": "system", "content":
+      "Command read_file returned: Write the task_id into the file output.txt\nShutdown"},
+      {"role": "user", "content": "Determine exactly one command to use, and respond
+      using the JSON schema specified previously:"}], "temperature": 0, "max_tokens":
+      0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '5664'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA7RTS2vbQBC+61cMe8lFNnb8jI/tIbS00NIGClExa2ksbSztqLuzsYPRfy+rtfwK
+        lOTQ6/ft99BoZh8BCJWJBYi0kJxWddmbff86+bKt84x/3P/KP3/76B7+lE7uPjyt7l9E7BW0esKU
+        O1U/paoukRXpQKcGJaN3HU7n08lwMpvdtURFGZZeltfcG/UnPXZmRb3BaDAMSmdljmIB+wgAQNSG
+        qpqXTBvU1tvd3o3jQJ0yz+j59MAysSzPiPF8EAE0oV1BKkUPP7aPQ5Zvh/YivgUNlR4R0lplWWoW
+        8YlMSTPqdhD7RHsoEVyQywu2ifcJ4IHAHXswEZ9gq8oSnEXgAmFrFOOSablWJUJKVSV1BkyBaJ+w
+        tJulykBpphYgx7XjPu8YvKqfiPg8y6C0pJXOQ+DPAsGgzC4TDLIzGjOQR38uJINGzKzPXyFY+YxZ
+        DJbgfaUVv7lrXUodaj7803uruGhpj2pZIUiTuwo1g0X20TenpBto6/jR4Y5fvTyf6XEMq5cWrw0+
+        K3K2C77umxrFKlW2Os7WICgLmuBIwZoMcKEs+K+7drA1ys1/XIWQ1cTdSh58Xm2kH2KocZF71Vaa
+        /HqZA9H9h2BxqnGhv97929Fw3DVsWx7KJroRh8NqugsTa6WVLZZhm/2VWab6eIBC6Qx3YgGDFmgi
+        gN9RE/0FAAD//wMARF/N+tQEAAA=
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d5ca54768a1222e-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 11 Jun 2023 20:36:25 GMT
+      Function-Execution-Id:
+      - gomh6nwapqkn
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '5392'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 31547ddde6bdb09ec37bde6a30db69a5;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '85923'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.718s
+      X-Request-Id:
+      - 7a4e3973becca5964734b02b2802641c
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
+      are Follow-Instructions-GPT, an AI designed to read the instructions_1.txt file
+      using the read_file method and follow the instructions in the file.\nYour decisions
+      must always be made independently without seeking user assistance. Play to your
+      strengths as an LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      Use the command read_file to read the instructions_1.txt file\n2. Follow the
+      instructions in the instructions_1.txt file\n\n\nConstraints:\n1. ~4000 word
+      limit for short term memory. Your short term memory is short, so immediately
+      save important information to files.\n2. If you are unsure how you previously
+      did something or want to recall past events, thinking about similar events will
+      help you remember.\n3. No user assistance\n4. Exclusively use the commands listed
+      below e.g. command_name\n\nCommands:\n1. analyze_code: Analyze Code, args: \"code\":
+      \"<full_code_string>\"\n2. execute_python_code: Create a Python file and execute
+      it, args: \"code\": \"<code>\", \"basename\": \"<basename>\"\n3. execute_python_file:
+      Execute Python File, args: \"filename\": \"<filename>\"\n4. append_to_file:
+      Append to file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n5.
+      delete_file: Delete file, args: \"filename\": \"<filename>\"\n6. list_files:
+      List Files in Directory, args: \"directory\": \"<directory>\"\n7. read_file:
+      Read a file, args: \"filename\": \"<filename>\"\n8. replace_in_file: Replace
+      text or code in a file, args: \"filename\": \"<filename>\", \"old_text\": \"<old_text>\",
+      \"new_text\": \"<new_text>\", \"occurrence_index\": \"<occurrence_index>\"\n9.
+      write_to_file: Write to file, args: \"filename\": \"<filename>\", \"text\":
+      \"<text>\"\n10. google: Google Search, args: \"query\": \"<query>\"\n11. improve_code:
+      Get Improved Code, args: \"suggestions\": \"<list_of_suggestions>\", \"code\":
+      \"<full_code_string>\"\n12. browse_website: Browse Website, args: \"url\": \"<url>\",
+      \"question\": \"<what_you_want_to_find_on_website>\"\n13. write_tests: Write
+      Tests, args: \"code\": \"<full_code_string>\", \"focus\": \"<list_of_focus_areas>\"\n14.
+      delete_agent: Delete GPT Agent, args: \"key\": \"<key>\"\n15. get_hyperlinks:
+      Get hyperlinks, args: \"url\": \"<url>\"\n16. get_text_summary: Get text summary,
+      args: \"url\": \"<url>\", \"question\": \"<question>\"\n17. list_agents: List
+      GPT Agents, args: () -> str\n18. message_agent: Message GPT Agent, args: \"key\":
+      \"<key>\", \"message\": \"<message>\"\n19. start_agent: Start GPT Agent, args:
+      \"name\": \"<name>\", \"task\": \"<short_task_desc>\", \"prompt\": \"<prompt>\"\n20.
+      task_complete: Task Complete (Shutdown), args: \"reason\": \"<reason>\"\n\nResources:\n1.
+      Internet access for searches and information gathering.\n2. Long Term memory
+      management.\n3. GPT-3.5 powered Agents for delegation of simple tasks.\n4. File
+      output.\n\nPerformance Evaluation:\n1. Continuously review and analyze your
+      actions to ensure you are performing to the best of your abilities.\n2. Constructively
+      self-criticize your big-picture behavior constantly.\n3. Reflect on past decisions
+      and strategies to refine your approach.\n4. Every command has a cost, so be
+      smart and efficient. Aim to complete tasks in the least number of steps.\n\nYou
+      should only respond in valid JSON matching the folllowing schema: \n{''$schema'':
+      ''http://json-schema.org/draft-07/schema#'', ''type'': ''object'', ''properties'':
+      {''thoughts'': {''type'': ''object'', ''properties'': {''text'': {''type'':
+      ''string''}, ''reasoning'': {''type'': ''string''}, ''plan'': {''type'': ''string''},
+      ''criticism'': {''type'': ''string''}, ''speak'': {''type'': ''string''}}, ''required'':
+      [''text'', ''reasoning'', ''plan'', ''criticism'', ''speak''], ''additionalProperties'':
+      False}, ''command'': {''type'': ''object'', ''properties'': {''name'': {''type'':
+      ''string''}, ''args'': {''type'': ''object''}}, ''required'': [''name'', ''args''],
+      ''additionalProperties'': False}}, ''required'': [''thoughts'', ''command''],
+      ''additionalProperties'': False}\n"}, {"role": "system", "content": "The current
+      time and date is Tue Jan  1 00:00:00 2000"}, {"role": "system", "content": "This
+      reminds you of these events from your past: \nI was created and received a command
+      to read \"instructions_1.txt\". The command returned a task ID of 2314 and instructed
+      me to read \"instructions_2.txt\". Based on the latest development, I used the
+      read_file command with the filename argument set to \"instructions_2.txt\".
+      The command returned that I should read the file \"instructions_3.txt\"."},
+      {"role": "user", "content": "Determine exactly one command to use, and respond
+      using the JSON schema specified previously:"}, {"role": "assistant", "content":
+      "{\n    \"thoughts\": {\n        \"text\": \"I will use the read_file command
+      to read the instructions_3.txt file.\",\n        \"reasoning\": \"The instructions_2.txt
+      file instructed me to read the instructions_3.txt file, so I will use the read_file
+      command to read it.\",\n        \"plan\": \"Use the read_file command with the
+      filename argument set to ''instructions_3.txt''.\",\n        \"criticism\":
+      \"There is no criticism for this plan.\",\n        \"speak\": \"I will use the
+      read_file command to read the instructions_3.txt file.\"\n    },\n    \"command\":
+      {\n        \"name\": \"read_file\",\n        \"args\": {\n            \"filename\":
+      \"instructions_3.txt\"\n        }\n    }\n}"}, {"role": "system", "content":
+      "Command read_file returned: Write the task_id into the file output.txt\nShutdown"},
+      {"role": "user", "content": "Determine exactly one command to use, and respond
+      using the JSON schema specified previously:"}, {"role": "assistant", "content":
+      "{\n    \"thoughts\": {\n        \"text\": \"I will use the write_to_file command
+      to write the task_id into the output.txt file.\",\n        \"reasoning\": \"The
+      read_file command returned a task_id that needs to be saved, so I will use the
+      write_to_file command to write it into the output.txt file.\",\n        \"plan\":
+      \"Use the write_to_file command with the filename argument set to ''output.txt''
+      and the text argument set to the task_id returned by the previous command.\",\n        \"criticism\":
+      \"There is no criticism for this plan.\",\n        \"speak\": \"I will use the
+      write_to_file command to write the task_id into the output.txt file.\"\n    },\n    \"command\":
+      {\n        \"name\": \"write_to_file\",\n        \"args\": {\n            \"filename\":
+      \"output.txt\",\n            \"text\": \"2314\"\n        }\n    }\n}"}, {"role":
+      "system", "content": "Command write_to_file returned: File written to successfully."},
+      {"role": "user", "content": "Determine exactly one command to use, and respond
+      using the JSON schema specified previously:"}], "temperature": 0, "max_tokens":
+      0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '6759'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA6xSz2vbMBi9+6/40KUXJ8RLnXQ57jDoYbDCCoN5BFX+Ymu19HnSZ5oR/L8PWXaa
+        OhR22PU9vR+S3ikBELoUOxCqlqxM2yy2D19y+bn+hN/pYXOfOW9/m8e7r7yibYsiDQp6+oWKJ9VS
+        kWkbZE020sqhZAyu2eZuk2f59uPtQBgqsQmyquXFepkvuHNPtFitV1lUdl5WKHZwSgAAROvItLxn
+        ekbrg13+YZ1G6jXzks5Glollc0FstrcJQB/b1aQVBvjHcDhmhXbo38QPoKMmIEJ6rz1LyyJ9JRVZ
+        Rjs8xKmwASoE19RVNfsi+ERwJPDIASzEPbzopoHOI3CN4FCW+4NuEBQZI20JTAM4sNp6dp0KN/X7
+        9ZKPDOHsshDppbtD6clqW8WIb+8rwcg/EJpLbeHQOa7RvTmbgif4546a51XaRtrY4vFd9YvmeqAC
+        aqVBkK7qDFoGjxzMb67r38yTlNOslfbmfGmHoD1YgjMFB3LAtfYQes0dfIvy+b/+SnTv02kPo/pq
+        DuHSMficNOsmXTVfUSSmN4vy6ypTiaHI2KewvRiH208LFgdtta/3cTthxZ6pPQ9caFviUexgNQB9
+        AvAz6ZO/AAAA//8DABfl2CU0BAAA
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d5ca5a2d95f22fc-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 11 Jun 2023 20:36:38 GMT
+      Function-Execution-Id:
+      - gomhhqn90sia
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '4268'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - b35619a8552b1c1c49af5540dd11f713;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '85918'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.721s
+      X-Request-Id:
+      - 04ff2d9b53bac26af51cad86813e1165
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "user", "content": "Write
+      a concise summary of the following text:\n\n\nLITERAL TEXT: \"\"\"Write the
+      task_id into the file output.txt Shutdown\"\"\"\n\n\nCONCISE SUMMARY: The text
+      is best summarized as"}], "temperature": 0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '292'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA1SQ0UrDMBSG7/sUh1yvpXXrLH0Ab+bAgSIiMmJ61salOTU5ZcPRd5e0m8Xb/zt/
+        vp9cIgChK1GCUI1k1XYmvt9t8zp7/Nlg495ed8X2YWOqp5f2O92aZ7EIDfr8QsW3VqKo7QyyJjth
+        5VAyhlezdbHOs7xI0xG0VKEJtbrjeJnkMffuk+J0mWZTs/eyRlHCJQIAEJ2jtuM90xGtFyWsVosJ
+        zMYZZsUVMrE0c76+iwCGaVhDWmEI38fTSROGof9nHkNHJiRCeq89S8tiMUNFltGOf6CtZ9cr1rYG
+        Jjg5zQjcILD0x72uQFsmkHDQBsHKFiugnrueEz4zSFuFYwu+6bmik03E1TLcdOKgrfbN3qH0ZIPS
+        M3V/a4S2FZ5FCekYDBHARzREvwAAAP//AwCqmVEd3AEAAA==
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d5ca5cb49bc22fa-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 11 Jun 2023 20:36:41 GMT
+      Function-Execution-Id:
+      - gomhx7u02drz
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '599'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 891c9b1ec2bf0b95c3ee06e80134c1cc
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '89455'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 362ms
+      X-Request-Id:
+      - b2fb0d650ebc962e6e633b490b0fad58
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"input": ["Write the task_id into the file output.txt Shutdown"], "model":
+      "text-embedding-ada-002", "encoding_format": "base64"}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '130'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/embeddings
+  response:
+    body:
+      string: !!binary |
+        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
+        9fHnv1//x/xv//mP/wcAAP//AwDcKXHg4yAAAA==
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - private
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d5ca5dbce01232a-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 11 Jun 2023 20:36:43 GMT
+      Function-Execution-Id:
+      - gomh9lsooydz
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '20'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - f1e811462cfa4b6847c9e3aa3d570c14
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3000'
+      X-Ratelimit-Remaining-Requests:
+      - '2999'
+      X-Ratelimit-Reset-Requests:
+      - 20ms
+      X-Request-Id:
+      - b5e464e72307890778cad5fe778a3031
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"input": "instructing to write the task_id into a file named output.txt
+      and then shutdown.", "model": "text-embedding-ada-002", "encoding_format": "base64"}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '157'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/embeddings
+  response:
+    body:
+      string: !!binary |
+        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
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - private
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d5ca5e8dfebf22a-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 11 Jun 2023 20:36:45 GMT
+      Function-Execution-Id:
+      - gomhx5izoaz5
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '108'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - e43f0f427fae3080d46fa1a71cc67672;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3000'
+      X-Ratelimit-Remaining-Requests:
+      - '2999'
+      X-Ratelimit-Reset-Requests:
+      - 20ms
+      X-Request-Id:
+      - cbcfe418eb1065f9b471634c84421041
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
+      are Follow-Instructions-GPT, an AI designed to read the instructions_1.txt file
+      using the read_file method and follow the instructions in the file.\nYour decisions
+      must always be made independently without seeking user assistance. Play to your
+      strengths as an LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      Use the command read_file to read the instructions_1.txt file\n2. Follow the
+      instructions in the instructions_1.txt file\n\n\nConstraints:\n1. ~4000 word
+      limit for short term memory. Your short term memory is short, so immediately
+      save important information to files.\n2. If you are unsure how you previously
+      did something or want to recall past events, thinking about similar events will
+      help you remember.\n3. No user assistance\n4. Exclusively use the commands listed
+      below e.g. command_name\n\nCommands:\n1. analyze_code: Analyze Code, args: \"code\":
+      \"<full_code_string>\"\n2. execute_python_code: Create a Python file and execute
+      it, args: \"code\": \"<code>\", \"basename\": \"<basename>\"\n3. execute_python_file:
+      Execute Python File, args: \"filename\": \"<filename>\"\n4. append_to_file:
+      Append to file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n5.
+      delete_file: Delete file, args: \"filename\": \"<filename>\"\n6. list_files:
+      List Files in Directory, args: \"directory\": \"<directory>\"\n7. read_file:
+      Read a file, args: \"filename\": \"<filename>\"\n8. replace_in_file: Replace
+      text or code in a file, args: \"filename\": \"<filename>\", \"old_text\": \"<old_text>\",
+      \"new_text\": \"<new_text>\", \"occurrence_index\": \"<occurrence_index>\"\n9.
+      write_to_file: Write to file, args: \"filename\": \"<filename>\", \"text\":
+      \"<text>\"\n10. google: Google Search, args: \"query\": \"<query>\"\n11. improve_code:
+      Get Improved Code, args: \"suggestions\": \"<list_of_suggestions>\", \"code\":
+      \"<full_code_string>\"\n12. browse_website: Browse Website, args: \"url\": \"<url>\",
+      \"question\": \"<what_you_want_to_find_on_website>\"\n13. write_tests: Write
+      Tests, args: \"code\": \"<full_code_string>\", \"focus\": \"<list_of_focus_areas>\"\n14.
+      delete_agent: Delete GPT Agent, args: \"key\": \"<key>\"\n15. get_hyperlinks:
+      Get hyperlinks, args: \"url\": \"<url>\"\n16. get_text_summary: Get text summary,
+      args: \"url\": \"<url>\", \"question\": \"<question>\"\n17. list_agents: List
+      GPT Agents, args: () -> str\n18. message_agent: Message GPT Agent, args: \"key\":
+      \"<key>\", \"message\": \"<message>\"\n19. start_agent: Start GPT Agent, args:
+      \"name\": \"<name>\", \"task\": \"<short_task_desc>\", \"prompt\": \"<prompt>\"\n20.
+      task_complete: Task Complete (Shutdown), args: \"reason\": \"<reason>\"\n\nResources:\n1.
+      Internet access for searches and information gathering.\n2. Long Term memory
+      management.\n3. GPT-3.5 powered Agents for delegation of simple tasks.\n4. File
+      output.\n\nPerformance Evaluation:\n1. Continuously review and analyze your
+      actions to ensure you are performing to the best of your abilities.\n2. Constructively
+      self-criticize your big-picture behavior constantly.\n3. Reflect on past decisions
+      and strategies to refine your approach.\n4. Every command has a cost, so be
+      smart and efficient. Aim to complete tasks in the least number of steps.\n\nYou
+      should only respond in valid JSON matching the folllowing schema: \n{''$schema'':
+      ''http://json-schema.org/draft-07/schema#'', ''type'': ''object'', ''properties'':
+      {''thoughts'': {''type'': ''object'', ''properties'': {''text'': {''type'':
+      ''string''}, ''reasoning'': {''type'': ''string''}, ''plan'': {''type'': ''string''},
+      ''criticism'': {''type'': ''string''}, ''speak'': {''type'': ''string''}}, ''required'':
+      [''text'', ''reasoning'', ''plan'', ''criticism'', ''speak''], ''additionalProperties'':
+      False}, ''command'': {''type'': ''object'', ''properties'': {''name'': {''type'':
+      ''string''}, ''args'': {''type'': ''object''}}, ''required'': [''name'', ''args''],
+      ''additionalProperties'': False}}, ''required'': [''thoughts'', ''command''],
+      ''additionalProperties'': False}\n"}, {"role": "system", "content": "The current
+      time and date is Tue Jan  1 00:00:00 2000"}, {"role": "system", "content": "This
+      reminds you of these events from your past: \nI was created and received a command
+      to read \"instructions_1.txt\". The command returned a task ID of 2314 and instructed
+      me to read \"instructions_2.txt\". Based on the latest development, I used the
+      read_file command with the filename argument set to \"instructions_2.txt\".
+      The command returned that I should read the file \"instructions_3.txt\"."},
+      {"role": "user", "content": "Determine exactly one command to use, and respond
+      using the JSON schema specified previously:"}, {"role": "assistant", "content":
+      "{\n    \"thoughts\": {\n        \"text\": \"I will use the read_file command
+      to read the instructions_3.txt file.\",\n        \"reasoning\": \"The instructions_2.txt
+      file instructed me to read the instructions_3.txt file, so I will use the read_file
+      command to read it.\",\n        \"plan\": \"Use the read_file command with the
+      filename argument set to ''instructions_3.txt''.\",\n        \"criticism\":
+      \"There is no criticism for this plan.\",\n        \"speak\": \"I will use the
+      read_file command to read the instructions_3.txt file.\"\n    },\n    \"command\":
+      {\n        \"name\": \"read_file\",\n        \"args\": {\n            \"filename\":
+      \"instructions_3.txt\"\n        }\n    }\n}"}, {"role": "system", "content":
+      "Command read_file returned: Write the task_id into the file output.txt\nShutdown"},
+      {"role": "user", "content": "Determine exactly one command to use, and respond
+      using the JSON schema specified previously:"}, {"role": "assistant", "content":
+      "{\n    \"thoughts\": {\n        \"text\": \"I will use the write_to_file command
+      to write the task_id into the output.txt file.\",\n        \"reasoning\": \"The
+      read_file command returned a task_id that needs to be saved, so I will use the
+      write_to_file command to write it into the output.txt file.\",\n        \"plan\":
+      \"Use the write_to_file command with the filename argument set to ''output.txt''
+      and the text argument set to the task_id returned by the previous command.\",\n        \"criticism\":
+      \"There is no criticism for this plan.\",\n        \"speak\": \"I will use the
+      write_to_file command to write the task_id into the output.txt file.\"\n    },\n    \"command\":
+      {\n        \"name\": \"write_to_file\",\n        \"args\": {\n            \"filename\":
+      \"output.txt\",\n            \"text\": \"2314\"\n        }\n    }\n}"}, {"role":
+      "system", "content": "Command write_to_file returned: File written to successfully."},
+      {"role": "user", "content": "Determine exactly one command to use, and respond
+      using the JSON schema specified previously:"}, {"role": "assistant", "content":
+      "{\n    \"thoughts\": {\n        \"text\": \"I will use the read_file command
+      to read the instructions_3.txt file.\",\n        \"reasoning\": \"The instructions_3.txt
+      file may contain further instructions, so I will use the read_file command to
+      read it.\",\n        \"plan\": \"Use the read_file command with the filename
+      argument set to ''instructions_3.txt''.\",\n        \"criticism\": \"There is
+      no criticism for this plan.\",\n        \"speak\": \"I will use the read_file
+      command to read the instructions_3.txt file.\"\n    },\n    \"command\": {\n        \"name\":
+      \"read_file\",\n        \"args\": {\n            \"filename\": \"instructions_3.txt\"\n        }\n    }\n}"},
+      {"role": "system", "content": "Command read_file returned: Write the task_id
+      into the file output.txt\nShutdown"}, {"role": "user", "content": "Determine
+      exactly one command to use, and respond using the JSON schema specified previously:"}],
+      "temperature": 0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '7713'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA7RTS4/TMBC+51eMfNlLWvVBu6E39oBAqBJIuxfIqnKTaWyaeCJ7su1S5b8jx01f
+        KyE4cP0+f49MZg4RgNC5WIDIlOSsqsvB/bfl7PXDZPlgdx+/PE1mj/Zhuful6NPXZv5dxF5B65+Y
+        ca8aZlTVJbImE+jMomT0ruN5Mp+NZ8k46YiKciy9rKh5MB3OBtzYNQ1G09E4KBsnCxQLOEQAAKK2
+        VNW8Ytqicd7ufjKJA3XOvKCT+ZFlYlleEO9HSQTQhnaKdIYe/tE9Dlm+Hbqr+A60VHpESOe0Y2lY
+        xGcyI8NoukEcUuOhVLCiplDsUu8TwCOBe/ZgKj7DTpclNA6BFcLOasYV02qjS4SMqkqaHJgC0T1h
+        6bYrnYM2TB1ADdcND3nP4FXDVMSXWRalI6NNEQIfFYJFmV8nWOTGGsxBnvxZSQaDmDufv0Zw8gXz
+        GBzBv5XW/Ndd61KaUPPpj947zaqjPWpkhSBt0VRoGByyj747J91BV8ePDvf85uXlTE9jWL92eG3x
+        RVPj+uDbvpnVrDPtqtNsLYJ2YAhOFGzIAivtwH/drYOrUW7/4yqErDbuV/Lo82Yj/RBDjavcm7bS
+        FrfLHIj+PwSLc40r/e3uT6bjd33DruWxbGpacTystr8wsdFGO7UK2+yvzDHVpwMU2uS4FwsYdUAb
+        ATxHbfQbAAD//wMAdM6wZdQEAAA=
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d5ca6382de51101-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 11 Jun 2023 20:37:03 GMT
+      Function-Execution-Id:
+      - gomhlm6azmht
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '5305'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 59c2dbac80eec7d54cf5829695673a57;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '85918'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.721s
+      X-Request-Id:
+      - 3f03cb185506283d9af14236018f7e22
+    status:
+      code: 200
+      message: OK
 version: 1
