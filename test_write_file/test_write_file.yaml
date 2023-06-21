@@ -1180,4 +1180,2340 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
+      are File System Agent, an AI designed to manage a file system.\nYour decisions
+      must always be made independently without seeking user assistance. Play to your
+      strengths as an LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      Write ''Hello World'' into a file named \"hello_world.txt\".\n\n\nConstraints:\n1.
+      ~4000 word limit for short term memory. Your short term memory is short, so
+      immediately save important information to files.\n2. If you are unsure how you
+      previously did something or want to recall past events, thinking about similar
+      events will help you remember.\n3. No user assistance\n4. Exclusively use the
+      commands listed below e.g. command_name\n\nCommands:\n1. analyze_code: Analyze
+      Code, args: \"code\": \"<full_code_string>\"\n2. execute_python_code: Create
+      a Python file and execute it, args: \"code\": \"<code>\", \"basename\": \"<basename>\"\n3.
+      execute_python_file: Execute Python File, args: \"filename\": \"<filename>\"\n4.
+      append_to_file: Append to file, args: \"filename\": \"<filename>\", \"text\":
+      \"<text>\"\n5. delete_file: Delete file, args: \"filename\": \"<filename>\"\n6.
+      list_files: List Files in Directory, args: \"directory\": \"<directory>\"\n7.
+      read_file: Read a file, args: \"filename\": \"<filename>\"\n8. replace_in_file:
+      Replace text or code in a file, args: \"filename\": \"<filename>\", \"old_text\":
+      \"<old_text>\", \"new_text\": \"<new_text>\", \"occurrence_index\": \"<occurrence_index>\"\n9.
+      write_to_file: Write to file, args: \"filename\": \"<filename>\", \"text\":
+      \"<text>\"\n10. google: Google Search, args: \"query\": \"<query>\"\n11. improve_code:
+      Get Improved Code, args: \"suggestions\": \"<list_of_suggestions>\", \"code\":
+      \"<full_code_string>\"\n12. browse_website: Browse Website, args: \"url\": \"<url>\",
+      \"question\": \"<what_you_want_to_find_on_website>\"\n13. write_tests: Write
+      Tests, args: \"code\": \"<full_code_string>\", \"focus\": \"<list_of_focus_areas>\"\n14.
+      delete_agent: Delete GPT Agent, args: \"key\": \"<key>\"\n15. get_hyperlinks:
+      Get hyperlinks, args: \"url\": \"<url>\"\n16. get_text_summary: Get text summary,
+      args: \"url\": \"<url>\", \"question\": \"<question>\"\n17. list_agents: List
+      GPT Agents, args: () -> str\n18. message_agent: Message GPT Agent, args: \"key\":
+      \"<key>\", \"message\": \"<message>\"\n19. start_agent: Start GPT Agent, args:
+      \"name\": \"<name>\", \"task\": \"<short_task_desc>\", \"prompt\": \"<prompt>\"\n20.
+      task_complete: Task Complete (Shutdown), args: \"reason\": \"<reason>\"\n\nResources:\n1.
+      Internet access for searches and information gathering.\n2. Long Term memory
+      management.\n3. GPT-3.5 powered Agents for delegation of simple tasks.\n4. File
+      output.\n\nPerformance Evaluation:\n1. Continuously review and analyze your
+      actions to ensure you are performing to the best of your abilities.\n2. Constructively
+      self-criticize your big-picture behavior constantly.\n3. Reflect on past decisions
+      and strategies to refine your approach.\n4. Every command has a cost, so be
+      smart and efficient. Aim to complete tasks in the least number of steps.\n5.
+      Write all code to a file.\n\nYou should only respond in JSON format as described
+      below \nResponse Format: \n{\n    \"thoughts\": {\n        \"text\": \"thought\",\n        \"reasoning\":
+      \"reasoning\",\n        \"plan\": \"- short bulleted\\n- list that conveys\\n-
+      long-term plan\",\n        \"criticism\": \"constructive self-criticism\",\n        \"speak\":
+      \"thoughts summary to say to user\"\n    },\n    \"command\": {\n        \"name\":
+      \"command name\",\n        \"args\": {\n            \"arg name\": \"value\"\n        }\n    }\n}
+      \nEnsure the response can be parsed by Python json.loads"}, {"role": "system",
+      "content": "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role":
+      "user", "content": "Determine which next command to use, and respond using the
+      format specified above:"}], "temperature": 0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '4008'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA7RTTY/aMBC98ytGvuQCiA8BXc4V6kpdbZFaVVVZIW88JC6OJ7UnCyziv1eOk2U3
+        VdtTr+953rw3njn3AIRWYgkizSWnRWkGi09yfTe6X5vF6ttO33/8uTjOV/ti9Xzzfj0T/VBBjz8w
+        5bZqmFJRGmRNNtKpQ8kYVMfzd/PpdDJbjGqiIIUmlGUlD6bD2YAr90iD0XQ0jpWVlxmKJZx7AACi
+        dFSUvGXao/ViCTfjWT8y15ZXdjKaNCwTS3MlxuPxogdwieZy0ikG+Hv9OLYK5tC/6V6DjkxAhPRe
+        e5aWRf9KpmQZbT2H88YGaCM4pyrL2W+CTgQbAo8cwI24O0FG0oD2wAQHpxkh+YDGEHwlZ1QC2jKB
+        hJ02CFYWqCDJA789BH7IR06G8DlHKMgzeHZSZznvyB2kU3CQpyCsCDjXvmlTeQTOEZK635ZpG9QT
+        SKkopFVDuIWDNgYsogrvS0dPWsWa8DLYAGlVDYQsV+9ML6+GG9F/Hdqh9GS1zWLyW8jlU5CR5vSM
+        Uat09GiwqLUVMrpC24aq0+Fup1ONlsGTqcKPd5uURtqoP4Avf4/5p4H/e9ydnqnTrFPtizaYIpsw
+        eAzpTqC9r9DDQXMePyF47Gr4EuW+ra+HX/0/97Hxpd/uaSP525oGhejpjYeOdemy7oZHol2VKNHx
+        8UakexWvErVua8eN8Y29iObyLu0Jip222ufbuGXhDD1T+XKhQluFR7GEUQ1cegAPvUvvFwAAAP//
+        AwDJHC+/9AQAAA==
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d4b2c625e7129d0-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 09 Jun 2023 17:43:00 GMT
+      Function-Execution-Id:
+      - ktgz3q549ld5
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '10534'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - e8bef7211078878371e4bde38a7a43b3;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '86419'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.386s
+      X-Request-Id:
+      - c0345e3295af9d32143d194e0098d930
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
+      are File System Agent, an AI designed to manage a file system.\nYour decisions
+      must always be made independently without seeking user assistance. Play to your
+      strengths as an LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      Write ''Hello World'' into a file named \"hello_world.txt\".\n\n\nConstraints:\n1.
+      ~4000 word limit for short term memory. Your short term memory is short, so
+      immediately save important information to files.\n2. If you are unsure how you
+      previously did something or want to recall past events, thinking about similar
+      events will help you remember.\n3. No user assistance\n4. Exclusively use the
+      commands listed below e.g. command_name\n\nCommands:\n1. analyze_code: Analyze
+      Code, args: \"code\": \"<full_code_string>\"\n2. execute_python_code: Create
+      a Python file and execute it, args: \"code\": \"<code>\", \"basename\": \"<basename>\"\n3.
+      execute_python_file: Execute Python File, args: \"filename\": \"<filename>\"\n4.
+      append_to_file: Append to file, args: \"filename\": \"<filename>\", \"text\":
+      \"<text>\"\n5. delete_file: Delete file, args: \"filename\": \"<filename>\"\n6.
+      list_files: List Files in Directory, args: \"directory\": \"<directory>\"\n7.
+      read_file: Read a file, args: \"filename\": \"<filename>\"\n8. replace_in_file:
+      Replace text or code in a file, args: \"filename\": \"<filename>\", \"old_text\":
+      \"<old_text>\", \"new_text\": \"<new_text>\", \"occurrence_index\": \"<occurrence_index>\"\n9.
+      write_to_file: Write to file, args: \"filename\": \"<filename>\", \"text\":
+      \"<text>\"\n10. google: Google Search, args: \"query\": \"<query>\"\n11. improve_code:
+      Get Improved Code, args: \"suggestions\": \"<list_of_suggestions>\", \"code\":
+      \"<full_code_string>\"\n12. browse_website: Browse Website, args: \"url\": \"<url>\",
+      \"question\": \"<what_you_want_to_find_on_website>\"\n13. write_tests: Write
+      Tests, args: \"code\": \"<full_code_string>\", \"focus\": \"<list_of_focus_areas>\"\n14.
+      delete_agent: Delete GPT Agent, args: \"key\": \"<key>\"\n15. get_hyperlinks:
+      Get hyperlinks, args: \"url\": \"<url>\"\n16. get_text_summary: Get text summary,
+      args: \"url\": \"<url>\", \"question\": \"<question>\"\n17. list_agents: List
+      GPT Agents, args: () -> str\n18. message_agent: Message GPT Agent, args: \"key\":
+      \"<key>\", \"message\": \"<message>\"\n19. start_agent: Start GPT Agent, args:
+      \"name\": \"<name>\", \"task\": \"<short_task_desc>\", \"prompt\": \"<prompt>\"\n20.
+      task_complete: Task Complete (Shutdown), args: \"reason\": \"<reason>\"\n\nResources:\n1.
+      Internet access for searches and information gathering.\n2. Long Term memory
+      management.\n3. GPT-3.5 powered Agents for delegation of simple tasks.\n4. File
+      output.\n\nPerformance Evaluation:\n1. Continuously review and analyze your
+      actions to ensure you are performing to the best of your abilities.\n2. Constructively
+      self-criticize your big-picture behavior constantly.\n3. Reflect on past decisions
+      and strategies to refine your approach.\n4. Every command has a cost, so be
+      smart and efficient. Aim to complete tasks in the least number of steps.\n5.
+      Write all code to a file.\n\nYou should only respond in JSON format as described
+      below \nResponse Format: \n{\n    \"thoughts\": {\n        \"text\": \"thought\",\n        \"reasoning\":
+      \"reasoning\",\n        \"plan\": \"- short bulleted\\n- list that conveys\\n-
+      long-term plan\",\n        \"criticism\": \"constructive self-criticism\",\n        \"speak\":
+      \"thoughts summary to say to user\"\n    },\n    \"command\": {\n        \"name\":
+      \"command name\",\n        \"args\": {\n            \"arg name\": \"value\"\n        }\n    }\n}
+      \nEnsure the response can be parsed by Python json.loads"}, {"role": "system",
+      "content": "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role":
+      "system", "content": "This reminds you of these events from your past: \nI was
+      created"}, {"role": "user", "content": "Determine which next command to use,
+      and respond using the format specified above:"}, {"role": "assistant", "content":
+      "{\n    \"thoughts\": {\n        \"text\": \"My goal is to write ''Hello World''
+      into a file named ''hello_world.txt''. The most straightforward way to do this
+      is to use the ''write_to_file'' command. I will need to provide the filename
+      and the text to write to the file.\",\n        \"reasoning\": \"I have analyzed
+      the problem and determined the most efficient solution.\",\n        \"plan\":
+      \"- Use the ''write_to_file'' command to write ''Hello World'' to a file named
+      ''hello_world.txt''.\",\n        \"criticism\": \"I don''t see any issues with
+      this plan.\",\n        \"speak\": \"I will use the ''write_to_file'' command
+      to write ''Hello World'' to a file named ''hello_world.txt''.\"\n    },\n    \"command\":
+      {\n        \"name\": \"write_to_file\",\n        \"args\": {\n            \"filename\":
+      \"hello_world.txt\",\n            \"text\": \"Hello World\"\n        }\n    }\n}"},
+      {"role": "system", "content": "Command write_to_file returned: File written
+      to successfully."}, {"role": "user", "content": "Determine which next command
+      to use, and respond using the format specified above:"}], "temperature": 0,
+      "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '5224'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA6RTTVMbMQy951dofNlLkiEEksC5h2Y6Zeih5dAwGeNVsgavtbW0bIDJf+94vflo
+        aC/0+p7f05MsvfUAlM3VNShTaDFl5QbTW/1Nf5rw6HUVvtyFrze/1s3tj1c3vr16fFH9qKCHRzSy
+        Uw0NlZVDseQTbQJqweg6mswm4/H55eyiJUrK0UXZupLBeHg5kDo80OBsfDZKypr1GtU1vPUAAFQV
+        qKxkKfSEnqPdaDrrJ+pQ84i+uuhYIdHuiBhPz3sA25SuIGswwj/bx6lWTIf8R/kWDOQiojSzZdFe
+        VP9AGvKCvh3E28JHaKGkoHpdCC+iTwI7AjcSwYW6oQak0AJzKPQzQhOsCHrIPqNzBHcUXJ6BEGhY
+        WYfgdYk5ZEVkl01kh7KRrA9z4IJql8MzBrt6SaZSYJI1mqH7CtA+h5hWW8/tC0MhoBGIqYYwB6M9
+        1IwtlwXU+TJ6ZGCoLKNYCCLaadu2GWi1rzZcqP5xtwE1k7d+nVqeC1gGW1YU4hCj3f9ljg7ouQ54
+        cKgCPluqeR86unFtDDKvancasXLap3QD+P7B1t99yl+HYYIVayyX3TAgJ58JMCJo/wKWuUaGxkoB
+        UliGmOzUgyvUTzt9Y5378Hf9M3Mqt+3vVrkze7fJcR9Tkn3lk7A6rE8PIBHx7UF+EmSXoE3RhVn4
+        reoObru7PLWy3nKxTDsWr4+Fqv1hKutz3KhrOGuBbQ/gvrft/QYAAP//AwD2Atyq7AQAAA==
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d4b2cbb8f4f2335-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 09 Jun 2023 17:43:14 GMT
+      Function-Execution-Id:
+      - ktgz9rmqoex9
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '9779'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 8199340352b57b6d26d89031e8f08c2f;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '85930'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.713s
+      X-Request-Id:
+      - 0290521f85fd621f2f83e9a5ac5cf90f
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"input": ["Hello World"], "model": "text-embedding-ada-002", "encoding_format":
+      "base64"}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '90'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/embeddings
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA1R6Ww+ySrPm/fcrVtYt80VApJt1h5xPdqMo4mQyAUEBRY7dQO/s/z7Rd2fPzI0X
+        SAJUV9VzqPqPf/31199tVhf36e9//vr7XY3T3//jey1Pp/Tvf/76n//666+//vqP3+//d2fRZEWe
+        V5/n7/bfn9UnL5a///mL/+8r//emf/76O0uilkj73Y1N3MydwOFCCTV4+ZIteRgZ8JHKb7qfdl1E
+        BV3tIXj4W2ocjks9d93Cw7V7POmhfYoD1aLlDLfxm8OHC5x0Zt+PIpxzY8Xq2XswdpP9BjzUbYU2
+        oz9GpMKpA8ilfFHzfV2zUWgzFQgeDqkOOo6xAeMYitDIsfeEp2w5x5oHNPfzpp5/3tTkGhsydB4J
+        Iexj38G8C9w7BOL6oIZZt2xKa/EFhc5mSLbsD1gOz32hjG9Bwpb5yfURXXULzruFJzwx+HoVRzVQ
+        6qh4IGVQCn8uRzSDyXwp1FjhvaaYFBXs958WI+CLbMn0+wrlJFvRtgrsaM05vwKXUH6jlWXq0Lu9
+        /oT39RhhnxlyRPSo00BUoh02FF+Mll2bz0BpCh+tG9fN2HkZDAjBVUfriyuGZepgIzc+xgg2WhtN
+        SfhslVvPcoo3guXP5BWe4Y0XS4zfUs0m4ZAXUn9XemyAzPKZIKcV3CnSERvX140xh7kS2I9SjXHI
+        3GHm5OsIwm34oS7nx/VMgZqAKn1K9CxfLgOrTGkEhxJGFG3XHKxqURTgegQhaWr/CaiBo+fvPLFj
+        ULme4topoD7tENY34TNjHVhiRdWkHZLBAofpXEgBsIpEp8FeHLOVHEAMN/a0YHuJXF3EJy+ADe+J
+        1A8jjtHlGAZQCJKFnlvr7q+z4Tagwa8jtarWqUWZO91BAiQZ69utna0d43p4HmMVq/3FG1h7zwIo
+        Krc71XfC02efbWmAA10X7BdVEjEuZymEH7Emm3722UieXADKemb0YJ0ifezdRIOXPDEQbN7PmuXp
+        VQLCgc5IPghhzTzVCaFcwAsRX2DRZzwBB2ivTUtW+OrYS5dUTb4+KCGf/c3IBBgYARxb/YZtoO90
+        Zp4/BYAnp6KGKUnDPD/WCoLj5Ybth8P565LuWmifjx+qR8OQjfthT0BhNRDj98Uf1iLvCKwEGVAn
+        gQFj4FZ7YM+vFsbRJLGJIEJkW11sbFQ7w599dm5hOjQNDWLQ1Itg0AROewy+8errWdzo1uZb30SW
+        zhd9JSR3QKqlJj5k1ymix0wc4ZyC47ce14h+CFChzasjNardS1/f97CAmmWbZM6WvT40z0WD+55q
+        ZHvcCD5zr1CDwnXl8f7Ioahb19yAUqAbdD8kScaOGTfKr4f0xoaubdmo54IIqCYe6J6gnc4cSleQ
+        M+uOsbNNor4SsATsVPTwsS06fYU7vofDZXfE5nDp2ahf8AwxeQOqVU4OlhlaPOiulk3dHAxgmiHi
+        ZT1NyLc+dmBqE6LuhmllSEzHbTRvD6YHyzd3xthNw3o2LM/YBXnbITjkbc1OhgbhKhCT8J8l0Nuu
+        1FcZboiJtfG6HX71LpueldL9RpYj5pHRgoYeX1Cr3Ve/O7q+CAL905CXKSXDVCWggf5sWxTr/TNa
+        bp9wVPzOMLFbsQgs0SbVQHfQdWwepyRaNCtNgL+ePjRw8Ttj24fRQvtZBdTaC+bAr0CsYFm+T2Ts
+        5Tkic7c5w1v7gWh5VlewPPNbCr/9BFup+/DH7OOkv/6GNldrYUtZvWO5W+8eaZWh1FstKSXg9zcD
+        O8Cb9bUm0gmG9WoTyQ+HaJ1BdoftrqqpNzdj9tldUlnOmXGn8Xju9bWiDAJveRTUPAKVtaR7hXCb
+        eyX2w6gAbOhuT9jSx4MwW6nqNbhvWnDeRQpq7e0akUel9CB1LnuyQ7znj998hTPYXLBRxQOj27md
+        wZ7DFeEaC9ZTJA5QTuKcR5Kh6D7jcpCAaSYmti8J8UlrxRXc6lClbnyo9VESjmc4u82JqmHSZoye
+        IhlmykiwOZmZP3vvUwvRVhDpIT1CsGKVGLD2XxBJNb74TOu7BBorkqgjdZvsi4+iAjejiY2A3CKW
+        K4kHtIvoEbbsEOv08z2FbdqqNAvFq748z8MZxO2mo/t6s4nG+SFXO2cuGEUsR3pf2p8VHGeEsK7u
+        bgMTnXMDw7JpkLDZBmBRPxsJzMVtof481RlL0vcdcq2AcGDzL/ABSyzBejjv8cltMrAUH9+Rucg9
+        YLRdFdCPbm3B2r1liG87PqLeW9SgRMMOiclFzaZv/UC2egEO7GNQ85fp/QL4yXJsBs/nsMRpmuxU
+        lSa/fuCPpT9ycEVmjt2d2LDZfLcBWH0AiYC214HSelYVq0h1fLBOTF+vn04Dv3q1fZfP5re0T2CS
+        q1e0W/MDm/OjVcD8Ot7ogRvKaI0dTVLcjBfQ9osfvCTczruHiV4U1SEATDxqLWTg3WKjUE5sicSB
+        A+G1rtAmZG69eHuqwWlQdXyc4qO+bMq5gfGN9xH/xef5ctmJ0E+HDZpDoNbibLivH57TYDdq2Xzb
+        PQPl1++V8f5hw7zIGhSNh4i2neboVG2OnrIOw55IhlL7y3FLW/jNZ6zPrIjWreyh7RnkBdqYpgpY
+        PB1CkDwriR6qA9FpzvcWTC/yG8FeDrP51/9BX8rkFa1VxOz7TYRy+okQ75f77NuvnB25GzaqWPYc
+        RkXwV1BsqopibX8dVqM/GvLpeDphU9iPWX+K0wJmcoBoqqTmwOZlVUGMmU2Efl0H9qi0EPrcamFD
+        IWRYm3JMwLGNB8QqzDOWOod+98UzMvsvAsj0zBzoN/ILYwzKaHwkkgiNU86wq1tl1kM/EeGX/1AH
+        v4E/HrMohkn84P/gQx+LhACn/YRIwIqjL6bX9wAr6v5Xb4zm9QHCJ3I8Ii7Uy5YJJAScx7NKz0Wa
+        DusjtV/Ktx+h/oLcgdqeMEJSzi7VNm6XDTdtIUoOa4laG64GtOSsUC7CVkWL8bkDknBHC6yJV2KL
+        ol005zf4BByPj+Qu6bthQfdPDGKmTYRL0iybgq0SgFIwV5Kcule0ZlqXQGEqBLJ67lmfu+QyQudt
+        zOTH56Yle6sw4qcbIiPMo7kr9Rm8draND044MEazPYTnVdXwybi9dPqWXiu8ft5H7GZKpM/CsedA
+        ZWsJ/eJ/vfyePwPlQk2YvqN5P196Kaxnmx5v41afq8G3gKpOCcVImAELpjb95feXr6UDffXVCp8U
+        IRqsYjkwL8ccWNNYo2hWrWEFudTK0VBtqSW9B5+9bqiHUmw4WD1Pib/S6VbIzmmHKfaee3/LBdeT
+        PAZDjPhbtdbr4bCD4BjmLt0r6uCPFqsCwAqpwXrkMH0M9gWBCAYSen35Q2dG4QhTNXhhrXIUNh3V
+        ywxvt6KgNr3MEStxdf/TD7gv/2bprVwhlvoN9ke0A3QyLy+YssIl4nqqhuWlvFvIVicgXXzQfQaL
+        rbXr9omFzcen0ml9b2d4et5mjMplZD++DadHq1K1uu2ieb4GBTye+h4f5s3TX778Wo7nbYAPy7bV
+        WWnBBF5RSomguwSw+0XnwHrZqNS46/pQjaebA3vH87FzNl6AvvcnCWycJqLGblWyz2fbWdACpknt
+        7bGsZ6f0EvDjE9Iu2A6sfe9PUNkuHrUl12XLT59hWXxSrV6ageHOa4BiJjZS6I5m40g0S7lu7oye
+        AjsAKwYnS842Miabh1brbKdzq+ylRU5eaVv7i2B8Uti8soXALz6wb7+Rp8gpKaYmqJdUSEfoZPr4
+        J149/9hLULS6KzaL8jise6snP/2ByuVUZUt8fMUQf84qNh9Gx2YuD1Xlm+/kvhuraFn1JQSK8OmI
+        2uHUn1PRMmTldep/+OvPtiR68ALDD0berdfp2qohVMLVwwb1TH0SYv8Jl+slwZ7VP3WWD1AF3/fH
+        flN0w/y5gye8WEJJpI9vRUwrWQw/+fWK4JSVGfEk8wmXdcrwIX68o7V9wxZeMlTTIEfYZ+iUPuUf
+        H/72i6gy9/sAKJnloC1na9lM1/Qsm683oF++yKjQiimshu32D/4SGncprF+swA5+Z/6q74oVat7d
+        /unnbJLqPa9cbrqGONXaM0ambobT/gBQnvKC3jcJd4YMfNpv/LOhb5/PUWEKc1GEWJ2VXrZDP32L
+        5MV91eP93DZwm25U6oprXi/ZWZIgltoNVatPCVgQxQG8xuGJ5pls1vNVHmT5iD2X7s889VkmTDOo
+        qjSj3/jV1O1CT1FNK8X7dP3Uf/LPWAOJ4rjeDcSTDpXMbN1ApOnOYH0Mwwjf59z74r2hLwZsX3AN
+        5gK7drb4X/5R7IriXqC1cnK2UFGWoSwoMeGcawVGDTMefj5phgR5Y7DFViVZZi56E1h1NKO1H7Qg
+        0TZn7PmV46/Bexrl+rDm1MuCyl9eytT/wa/kaSvRJbcnFVyapqEHdXsC82WzJ1BTPZcIpv2pZ04/
+        8GAKNypZwzus6R3PqpKkokh9Epwyulfc4KtQPOx4E/NZeutmaOwdHk2/+k/CtgUSzw0UebDKSCw2
+        I/jpTa/OdZ2VSfgEs76niJ1rVs8zKhKYpLyIUYnOwxx4wQpqcTTwycfGQIEccHJ+UpMvvyM+CZf2
+        DP3DqFGjSOVhqP2gl0NimDSsHy5gLToioCChxrbFv+oxPl0JlNTEpmfFjzOWHDcpvJvNEcn+9sro
+        vWkteMmCGqNTP+jk9HCeoEjtO9Lk4z5ayMkR/+TP/jZe/fkiZj0sQXuh5hm52ZLW3Av2L+FAhqus
+        +jOvtxxM7HNM1bO3AWyKdwRebKJT1Fj3emwsv5C92Mywtj1Ifq81Kq+Ugr2i51PTonE/X1rw1T9U
+        d4SesVHd93ATcTH+1X8jCDsO8mY/ImA6KJqXiX/Cx/P1of509qKv/paBN0GFHpat4y8ujNTdV++S
+        3ftssNk8BwY0PSOlTn68D9VQxqK8rDT74i9Xj5fp3YC20XTsuILvzxbrA7hzcp8iZbTBrCWd/NMb
+        1NqfpmiVbm3607fY4iQWzSUPefBcR/rjw9FIThDJbc1XVLUKLiKq9OwBap5bqnMeBmN8epA/36uG
+        iZPx4sY35Aleta8+eGSza8IK2GJwwFmpu9FiN6SHby3qyK4PRjA/Qm2GZWEtJI7EeGDP/fMODyeM
+        iLQwbqC7YOQhiCqZal+/aRVHJ4A5R2/YeiUSI6NbG8qXn+CxDj4Da/BZhn6La6w+tSqa3WvSwts6
+        qEgqrpPeffUwGNv9DfvC289W5+4+wYj4LbW4Wq8X13Sd3fPxcJH8wfIwVzfCwWwjYVqMUMnWMsx5
+        8NX/VD2cN/5caM4Kv/oXu+GqgUU4XApop7xHUZKCaL4GjvGHL1/iMBwYnKMApl1mIiWyxmy+iFEP
+        g9L3cLCPzjpzu9BRvnwOq2NUZyuKTBlebnuNSLeH6S+nJVQhJQHG+rJDYPj6BdCbOAXvybJErGpO
+        TyDfVx6Jm2yoF3JSeUVzwgaB5/Poj2g7SmAduj22VHrx2aPyQgAkqNKAP2q6gIh+l9PEsHD41KqM
+        VU36BGX5OVGzvu2Gvr2uLYSOWVD/6j6y5VZUPdz3k4adkxX4f/gOL8lH6haFoS/zoVbh3LcxTqXt
+        IRKe+TGFx74KCH/uvYEeM45An5steipiKxP1XTyDrXnaEOYmtc/UvLZ++pVsjnEJFoIa8oe/f/uV
+        PoPwNkKzWe5IVl0ckRlEBWT3ycR2pzk+e5X8CLGZpeiLl9l4fgwNyKckxUG+2NkYj6X0wy8CK27j
+        T1KarfDSzjZFicJq0iFHlpdbtSM92Jj6cjzuZPj1T4hkpB4blg3UQCapE1l3pPOX8dX2oFsLj2y+
+        /HXc6VEKr0t/+eM3DepZUcFbd3wacZOjE97YENACYiCW3Xid7GJ0Aj//pf7ppyOx0C7ecx01twAM
+        5Ov/yfHh3RDaH1jdtKQisGjiPTWPk5RNY7a+lLJeGVUXUg9LNCkSsLavNz2btQMWwGkeSJLhQuRK
+        7tnC+U4FlUT+UKdpib/u5vAOurPUkLJs22zxsl0Am0M6Y/dq+j7d76gFK+wJFHk3z5ciBzz/+Js+
+        qGuwlNV0hi3NH9hCHKnnicUqCMzFJmKGaU0ft3sAQnRRaVCX24ylISDwTbcBYfv7Eaz6Ll5leZ+u
+        2PGZXvNZTULIk+0B74XPyZ+K4mLA0zE8ffVvxhj8vD35XakEKaWt1IscVhqcHr1KCDx+hlUAB/mP
+        //PtRxHZfaoE1spmQ9pCfkfTVw8rU35/EMGrPmzdK/AFRSMXsbVQL1qgJZ0gfhQ5VV/Xkz6cDA/C
+        Vbs/8SHK7vrysrIZXNXX8afv/XGN1Rl0nG2jpTRnffbeaftffuepmqL5ldQhvLVvSPUQ6WC5z7wM
+        CW0+5BfPFb0qDdxv1kJeX79unKBh/PxXehiUQl/pdCzgu9II9T44HVYnygpYV28FW5Z3yUZeXkXF
+        3bMVW2WV+PP2cHDkkylhqjr2J1pSzpkBe+IG5YqWDL/zgU+XOYSXL5eaVIrCQXdyeapfLJ/NMNg2
+        0Gnf4R8+MNdeGcKsHoY/+PXzm+D6iTZEsrenbP3h74M3bbRDxyNY8XYLwXVTMKyqvuhP2LOfcIq8
+        EutaVUVzh2kPo52VUTVbSn3WJUeFd7G/YHd5v9msasoTvpS7S3XaWBnrSur83p90X79k++XPf/zl
+        R1zf6nHZhC10Ru6EHVl4ZsLDKmPFcoiGePY4s8UqUyJ/+x3OHuY8TJx2usMHyUzEffNpKnn3Dipt
+        iKn99bNXj14LmA6vBt+5V5+xy8MPQcxfRpKvqZqJH1dqYbgrHNKWs+UznSpn0FzC6Bu/Aax1oyGg
+        3sCOmm/Zq8Xp+jZ+8yXytPfi8PUze1j7DSTy8yb7lIB6hSK0cmyNWy3bnsWNCqdB09F8nqQv3qiz
+        EsZBjVVlYwzM2eucAsFFJ798m2D+PMNN117x1ToGEauo08BN119pcDkpYD2YvgzfcTtgq2rbejHY
+        Wv2ZZ3zP5+tHVD3U/MX6zU/qJaC2A9TtI6dajUi0JGKR/uYHGPOb9zCHQHCgbskIm1uQ1dMmvBdQ
+        B8WKLboca0pWYYSZ63i0UMYPGKWxPsGuzayf3tZnqp5TSDX+QG89ffuM9LgHH5ffEuF9XaPl9z2n
+        hovI9mPgiHgq6yEXbkbq8NsPWESha+Elsqyvf3/I1kiQXrCNTxzauOk8EMkJwj/1iaJDHa1SKMcQ
+        3XNGzVvXDdveBQl8T91AtWdHwOxs1/ufeFlfok642ZPhdx5CVllPAFO4HMEclhKBG7uqx9rrQvCb
+        V3mXpQQf8SaNP776B49HLk9UORAFH+0yhflrlTgIjnv1hr1K9sCajDyEeXS90sMuLHXa8ogD0nGy
+        qOq/EJsaWHKKdswdIv78mld5i//gn+jkOSPp8WNAIoTdF88FfS3ykiio6M7UT+cnW8w9/wIcbkfC
+        SxGJumt7TuF7Ggby4+9L7IghDAP3QXYu1HTBlrwVtsR7kiVQL+Dnt8AhPUXUNG17WOmrToEYjhlN
+        fFbXS6uu4e7n73iOqQ7s6zcBt6y26OcHrhsukAEYaUbg+zH7i1WeCLi8MpNI5mll3VYWXnBVT5tv
+        vlcRe4SNB8f3VsKeuA8G8XbZB0pSClu8//XTRzKLSj3Ee/LQezXiwcye8HAFmHBFEoGloAuSnjRA
+        2FAHFWx1KsTQcccJCbNrREL/HmOA5P0VLfTc/df3f+fB2DeHpp6FxbVkrB92pDIIAz8+A1q1Uagv
+        vIdobL2IwIglKc1LWxmmYCsEsLLVBKP2M9XrunQjKLfHCO+f1RYsv+cdhILh4Plx/NmC4UmJfLZi
+        PxSv/pSOr1b++Q8OfM/DH3+M+YmFDy+/AdNwmBt48pvwO89V/LGt7Dt8UyEgg29ZgME5QzAW6wMp
+        p3jRhwl+Csjb/AHf6/KarRvcGUr7jDXy5ZsRMelbhf3xPGH8nU+vZ11u4XSJNWwrr96fnr5yghO8
+        aNR1by776qMG1McTRwPDPYP1rK89mOy1oL/36Wx1lmEBVQ2r966LmOb7IbhtNQ1b3/kSBbfBg9wl
+        JtSWRk3/4rUDzx+Oo/s5WMCacDfj5y+QSuw3YJJviQVMpu6RcrnxjFSJiqBw4y5k5s7naIbB5gUe
+        4+GFEX8RIyoJPPnjP1x99xwtfFvHUj37JdU89+wvDQOy/PdvK+A///XXX//rt2HQtHnx/i4GTMUy
+        /fu/VwX+nebpv3le/DcV/2wikDF9Fn//819LCH93Q9t00/+e2lfxGf/+5y/xz7bB31M7pe//5/K/
+        vs/6z3/9HwAAAP//AwCSly514SAAAA==
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - private
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d4b2d0c2ba91040-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 09 Jun 2023 17:43:17 GMT
+      Function-Execution-Id:
+      - ktgzi8520dp8
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '51'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 46d0d8de1b81bd22b612e37331d32924;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3000'
+      X-Ratelimit-Remaining-Requests:
+      - '2999'
+      X-Ratelimit-Reset-Requests:
+      - 20ms
+      X-Request-Id:
+      - f2bc870da99e4e0a045f1a9156cfdc14
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"input": "a simple greeting of \"Hello World.\"", "model": "text-embedding-ada-002",
+      "encoding_format": "base64"}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '114'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/embeddings
+  response:
+    body:
+      string: !!binary |
+        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
+        4SAAAA==
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - private
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d4b2d11cf22e259-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 09 Jun 2023 17:43:18 GMT
+      Function-Execution-Id:
+      - ktgz7sf3fhr8
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '290'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 24d53aafb466c2ab19455e24bbbfd98d
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3000'
+      X-Ratelimit-Remaining-Requests:
+      - '2999'
+      X-Ratelimit-Reset-Requests:
+      - 20ms
+      X-Request-Id:
+      - a5cc3c2ee1f80db071f6af4160e3cac4
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
+      are File System Agent, an AI designed to manage a file system.\nYour decisions
+      must always be made independently without seeking user assistance. Play to your
+      strengths as an LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      Write ''Hello World'' into a file named \"hello_world.txt\".\n\n\nConstraints:\n1.
+      ~4000 word limit for short term memory. Your short term memory is short, so
+      immediately save important information to files.\n2. If you are unsure how you
+      previously did something or want to recall past events, thinking about similar
+      events will help you remember.\n3. No user assistance\n4. Exclusively use the
+      commands listed below e.g. command_name\n\nCommands:\n1. analyze_code: Analyze
+      Code, args: \"code\": \"<full_code_string>\"\n2. execute_python_code: Create
+      a Python file and execute it, args: \"code\": \"<code>\", \"basename\": \"<basename>\"\n3.
+      execute_python_file: Execute Python File, args: \"filename\": \"<filename>\"\n4.
+      append_to_file: Append to file, args: \"filename\": \"<filename>\", \"text\":
+      \"<text>\"\n5. delete_file: Delete file, args: \"filename\": \"<filename>\"\n6.
+      list_files: List Files in Directory, args: \"directory\": \"<directory>\"\n7.
+      read_file: Read a file, args: \"filename\": \"<filename>\"\n8. replace_in_file:
+      Replace text or code in a file, args: \"filename\": \"<filename>\", \"old_text\":
+      \"<old_text>\", \"new_text\": \"<new_text>\", \"occurrence_index\": \"<occurrence_index>\"\n9.
+      write_to_file: Write to file, args: \"filename\": \"<filename>\", \"text\":
+      \"<text>\"\n10. google: Google Search, args: \"query\": \"<query>\"\n11. improve_code:
+      Get Improved Code, args: \"suggestions\": \"<list_of_suggestions>\", \"code\":
+      \"<full_code_string>\"\n12. browse_website: Browse Website, args: \"url\": \"<url>\",
+      \"question\": \"<what_you_want_to_find_on_website>\"\n13. write_tests: Write
+      Tests, args: \"code\": \"<full_code_string>\", \"focus\": \"<list_of_focus_areas>\"\n14.
+      delete_agent: Delete GPT Agent, args: \"key\": \"<key>\"\n15. get_hyperlinks:
+      Get hyperlinks, args: \"url\": \"<url>\"\n16. get_text_summary: Get text summary,
+      args: \"url\": \"<url>\", \"question\": \"<question>\"\n17. list_agents: List
+      GPT Agents, args: () -> str\n18. message_agent: Message GPT Agent, args: \"key\":
+      \"<key>\", \"message\": \"<message>\"\n19. start_agent: Start GPT Agent, args:
+      \"name\": \"<name>\", \"task\": \"<short_task_desc>\", \"prompt\": \"<prompt>\"\n20.
+      task_complete: Task Complete (Shutdown), args: \"reason\": \"<reason>\"\n\nResources:\n1.
+      Internet access for searches and information gathering.\n2. Long Term memory
+      management.\n3. GPT-3.5 powered Agents for delegation of simple tasks.\n4. File
+      output.\n\nPerformance Evaluation:\n1. Continuously review and analyze your
+      actions to ensure you are performing to the best of your abilities.\n2. Constructively
+      self-criticize your big-picture behavior constantly.\n3. Reflect on past decisions
+      and strategies to refine your approach.\n4. Every command has a cost, so be
+      smart and efficient. Aim to complete tasks in the least number of steps.\n5.
+      Write all code to a file.\n\nYou should only respond in JSON format as described
+      below \nResponse Format: \n{\n    \"thoughts\": {\n        \"text\": \"thought\",\n        \"reasoning\":
+      \"reasoning\",\n        \"plan\": \"- short bulleted\\n- list that conveys\\n-
+      long-term plan\",\n        \"criticism\": \"constructive self-criticism\",\n        \"speak\":
+      \"thoughts summary to say to user\"\n    },\n    \"command\": {\n        \"name\":
+      \"command name\",\n        \"args\": {\n            \"arg name\": \"value\"\n        }\n    }\n}
+      \nEnsure the response can be parsed by Python json.loads"}, {"role": "system",
+      "content": "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role":
+      "user", "content": "Determine exactly one command to use, and respond using
+      the format specified above:"}], "temperature": 0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '4009'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA7yUz27aQBDG7zzFaC++GMSfQAhP0Eg99JAqreoKLevBnrDesbxjoI1492q9EAJI
+        uVTKdb6dmd835uO1B6AoVwtQptRiqtr2778VL89/6yFuH380k7mWmXvafJ3+3D7cb/YqDR28ekEj
+        p66B4aq2KMQuyqZBLRimjmbz2WQ6m4/HnVBxjja0FbX0J4NpX9pmxf3hZDiKna3XBaoFvPYAAFTd
+        cFXLUniDzqsFPIzu0qicV57V8eSkCou2Z2E0upv3AA4RrmQyGMq/usdxVYBDf7G9KzZsQ0Vp78mL
+        dqLSs2jYCbruDq+ZC6VMScltUYrPwpxYPAq4l1DM1CPsyFpoPYKUCMmuIcGl8HJNFhMwXFXa5SAM
+        nQLJF7SW4ZkbmydAThg0hLfgdIU5JGXQl7ugD2QvySBT6fvVDWrPjlwR9z+VCKL9BsiDp3BHCPuM
+        drBC0Ka7LfkSc9iRlB9BDuDCDPlb+tAdvP+/jdpqFx304funHc80JGTIV6ePZ7i1OZR6i8F1HjF0
+        XaPLbznIeUGdA68/wk1h1Qp4cia66vhyRg+OBXBPXuAPSgqtJ1fcTCEPFTcIuF6TIXRy7cHXqDef
+        9+OLqw/pKRPHoTeRCBMi1QXFFbxuius0RSG8PY+44rgYcp3Ad55OtB3xETxzB3VM+eEUd7UmR75c
+        xiyFyHvh+u3fQJHLca8WMOwKhx7A796h9w8AAP//AwDFsz2fYAUAAA==
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d4d7c7dace48105-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 10 Jun 2023 00:27:12 GMT
+      Function-Execution-Id:
+      - nb7znga5o052
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '9372'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 3e64da1a2eb09a81dd015dff681a8f97
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '86419'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.387s
+      X-Request-Id:
+      - 195c581732d8fc73006c089c856373f6
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
+      are File System Agent, an AI designed to manage a file system.\nYour decisions
+      must always be made independently without seeking user assistance. Play to your
+      strengths as an LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      Write ''Hello World'' into a file named \"hello_world.txt\".\n\n\nConstraints:\n1.
+      ~4000 word limit for short term memory. Your short term memory is short, so
+      immediately save important information to files.\n2. If you are unsure how you
+      previously did something or want to recall past events, thinking about similar
+      events will help you remember.\n3. No user assistance\n4. Exclusively use the
+      commands listed below e.g. command_name\n\nCommands:\n1. analyze_code: Analyze
+      Code, args: \"code\": \"<full_code_string>\"\n2. execute_python_code: Create
+      a Python file and execute it, args: \"code\": \"<code>\", \"basename\": \"<basename>\"\n3.
+      execute_python_file: Execute Python File, args: \"filename\": \"<filename>\"\n4.
+      append_to_file: Append to file, args: \"filename\": \"<filename>\", \"text\":
+      \"<text>\"\n5. delete_file: Delete file, args: \"filename\": \"<filename>\"\n6.
+      list_files: List Files in Directory, args: \"directory\": \"<directory>\"\n7.
+      read_file: Read a file, args: \"filename\": \"<filename>\"\n8. replace_in_file:
+      Replace text or code in a file, args: \"filename\": \"<filename>\", \"old_text\":
+      \"<old_text>\", \"new_text\": \"<new_text>\", \"occurrence_index\": \"<occurrence_index>\"\n9.
+      write_to_file: Write to file, args: \"filename\": \"<filename>\", \"text\":
+      \"<text>\"\n10. google: Google Search, args: \"query\": \"<query>\"\n11. improve_code:
+      Get Improved Code, args: \"suggestions\": \"<list_of_suggestions>\", \"code\":
+      \"<full_code_string>\"\n12. browse_website: Browse Website, args: \"url\": \"<url>\",
+      \"question\": \"<what_you_want_to_find_on_website>\"\n13. write_tests: Write
+      Tests, args: \"code\": \"<full_code_string>\", \"focus\": \"<list_of_focus_areas>\"\n14.
+      delete_agent: Delete GPT Agent, args: \"key\": \"<key>\"\n15. get_hyperlinks:
+      Get hyperlinks, args: \"url\": \"<url>\"\n16. get_text_summary: Get text summary,
+      args: \"url\": \"<url>\", \"question\": \"<question>\"\n17. list_agents: List
+      GPT Agents, args: () -> str\n18. message_agent: Message GPT Agent, args: \"key\":
+      \"<key>\", \"message\": \"<message>\"\n19. start_agent: Start GPT Agent, args:
+      \"name\": \"<name>\", \"task\": \"<short_task_desc>\", \"prompt\": \"<prompt>\"\n20.
+      task_complete: Task Complete (Shutdown), args: \"reason\": \"<reason>\"\n\nResources:\n1.
+      Internet access for searches and information gathering.\n2. Long Term memory
+      management.\n3. GPT-3.5 powered Agents for delegation of simple tasks.\n4. File
+      output.\n\nPerformance Evaluation:\n1. Continuously review and analyze your
+      actions to ensure you are performing to the best of your abilities.\n2. Constructively
+      self-criticize your big-picture behavior constantly.\n3. Reflect on past decisions
+      and strategies to refine your approach.\n4. Every command has a cost, so be
+      smart and efficient. Aim to complete tasks in the least number of steps.\n5.
+      Write all code to a file.\n\nYou should only respond in JSON format as described
+      below \nResponse Format: \n{\n    \"thoughts\": {\n        \"text\": \"thought\",\n        \"reasoning\":
+      \"reasoning\",\n        \"plan\": \"- short bulleted\\n- list that conveys\\n-
+      long-term plan\",\n        \"criticism\": \"constructive self-criticism\",\n        \"speak\":
+      \"thoughts summary to say to user\"\n    },\n    \"command\": {\n        \"name\":
+      \"command name\",\n        \"args\": {\n            \"arg name\": \"value\"\n        }\n    }\n}
+      \nEnsure the response can be parsed by Python json.loads"}, {"role": "system",
+      "content": "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role":
+      "system", "content": "This reminds you of these events from your past: \nI was
+      created"}, {"role": "user", "content": "Determine exactly one command to use,
+      and respond using the format specified above:"}, {"role": "assistant", "content":
+      "{\n    \"thoughts\": {\n        \"text\": \"I will use the ''write_to_file''
+      command to write ''Hello World'' into a file named ''hello_world.txt''.\",\n        \"reasoning\":
+      \"The task is simple and can be accomplished with the ''write_to_file'' command.
+      I will use this command to write the text ''Hello World'' into a file named
+      ''hello_world.txt''.\",\n        \"plan\": \"- Use the ''write_to_file'' command
+      to write ''Hello World'' into a file named ''hello_world.txt''.\",\n        \"criticism\":
+      \"I could have used the ''append_to_file'' command instead of the ''write_to_file''
+      command, but since the file does not exist yet, using ''write_to_file'' is more
+      efficient.\",\n        \"speak\": \"I will use the ''write_to_file'' command
+      to write ''Hello World'' into a file named ''hello_world.txt''.\"\n    },\n    \"command\":
+      {\n        \"name\": \"write_to_file\",\n        \"args\": {\n            \"filename\":
+      \"hello_world.txt\",\n            \"text\": \"Hello World\"\n        }\n    }\n}"},
+      {"role": "system", "content": "Command write_to_file returned: File written
+      to successfully."}, {"role": "user", "content": "Determine exactly one command
+      to use, and respond using the format specified above:"}], "temperature": 0,
+      "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '5334'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA7RTwW7bMAy9+ysIXXJJgjRpsjTnHdphQAdsQ7DVQ6DKtK1WFg2JWbIF/vdBlp1k
+        abHL0Ot7fHyPEnlIAITOxAqEKiWrqjajd5+KJ21+T6fb9b2+W9+/V9/qD5n7+PmW99/FMCjo8QkV
+        96qxoqo2yJpspJVDyRi6Xi2Wi9l8sZxdt0RFGZogK2oezcbzEW/dI40ms8lVVG69LFCs4JAAAIja
+        UVXzhukZrQ/tppObYaROnmf0ct6xTCzNGTG7uU4AmpiuJK0wwA9tcfQK6dD/Zd+CjkxAhPRee5aW
+        xfBEKrKMtn2IQ2oDlAouaVuU7NPQJ4IdgXsOYCruYKeNga1H4BJh4FBmm1wbHICiqpI2AyYIaMt3
+        Lh4oj/UlGkObHTmTjXnPAwjacSqG53YOpSerbdF7WsS27090Ov8FXEr+RzvYSQ/dR0KbqK8Pc8Dg
+        NohgHUSDtnbnNDPa4KB5DP8542sT1UbaOMwIvr7p2ymnWSvtq2j3pUSHoD1YgiMFOTngUnvwjPVl
+        B1+jfH7b3452zbBfvK7Zi72zssKY5Oh8EVa64nJdIxFqT/KLIH2CNkUXJrWN6M6j6e9E5NpqX27i
+        QoZb8Uz18YyEthnuxQomLdAkAD+SJvkDAAD//wMAUkmsNZoEAAA=
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d4d7cc4cd482234-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 10 Jun 2023 00:27:21 GMT
+      Function-Execution-Id:
+      - nb7zpi7xqf1r
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '7270'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 1f46d8b52ae4911b197eda0d882e78f0;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '85933'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.711s
+      X-Request-Id:
+      - 5993d4afc98f79ed01fa7ed75a768b3a
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
+      are File System Agent, an AI designed to manage a file system.\nYour decisions
+      must always be made independently without seeking user assistance. Play to your
+      strengths as an LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      Write ''Hello World'' into a file named \"hello_world.txt\".\n\n\nConstraints:\n1.
+      ~4000 word limit for short term memory. Your short term memory is short, so
+      immediately save important information to files.\n2. If you are unsure how you
+      previously did something or want to recall past events, thinking about similar
+      events will help you remember.\n3. No user assistance\n4. Exclusively use the
+      commands listed below e.g. command_name\n\nCommands:\n1. analyze_code: Analyze
+      Code, args: \"code\": \"<full_code_string>\"\n2. execute_python_code: Create
+      a Python file and execute it, args: \"code\": \"<code>\", \"basename\": \"<basename>\"\n3.
+      execute_python_file: Execute Python File, args: \"filename\": \"<filename>\"\n4.
+      append_to_file: Append to file, args: \"filename\": \"<filename>\", \"text\":
+      \"<text>\"\n5. delete_file: Delete file, args: \"filename\": \"<filename>\"\n6.
+      list_files: List Files in Directory, args: \"directory\": \"<directory>\"\n7.
+      read_file: Read a file, args: \"filename\": \"<filename>\"\n8. replace_in_file:
+      Replace text or code in a file, args: \"filename\": \"<filename>\", \"old_text\":
+      \"<old_text>\", \"new_text\": \"<new_text>\", \"occurrence_index\": \"<occurrence_index>\"\n9.
+      write_to_file: Write to file, args: \"filename\": \"<filename>\", \"text\":
+      \"<text>\"\n10. google: Google Search, args: \"query\": \"<query>\"\n11. improve_code:
+      Get Improved Code, args: \"suggestions\": \"<list_of_suggestions>\", \"code\":
+      \"<full_code_string>\"\n12. browse_website: Browse Website, args: \"url\": \"<url>\",
+      \"question\": \"<what_you_want_to_find_on_website>\"\n13. write_tests: Write
+      Tests, args: \"code\": \"<full_code_string>\", \"focus\": \"<list_of_focus_areas>\"\n14.
+      delete_agent: Delete GPT Agent, args: \"key\": \"<key>\"\n15. get_hyperlinks:
+      Get hyperlinks, args: \"url\": \"<url>\"\n16. get_text_summary: Get text summary,
+      args: \"url\": \"<url>\", \"question\": \"<question>\"\n17. list_agents: List
+      GPT Agents, args: () -> str\n18. message_agent: Message GPT Agent, args: \"key\":
+      \"<key>\", \"message\": \"<message>\"\n19. start_agent: Start GPT Agent, args:
+      \"name\": \"<name>\", \"task\": \"<short_task_desc>\", \"prompt\": \"<prompt>\"\n20.
+      task_complete: Task Complete (Shutdown), args: \"reason\": \"<reason>\"\n\nResources:\n1.
+      Internet access for searches and information gathering.\n2. Long Term memory
+      management.\n3. GPT-3.5 powered Agents for delegation of simple tasks.\n4. File
+      output.\n\nPerformance Evaluation:\n1. Continuously review and analyze your
+      actions to ensure you are performing to the best of your abilities.\n2. Constructively
+      self-criticize your big-picture behavior constantly.\n3. Reflect on past decisions
+      and strategies to refine your approach. Do not repeat events from your past\n4.
+      Every command has a cost, so be smart and efficient. Aim to complete tasks in
+      the least number of steps.\n5. Write all code to a file.\n\nYou should only
+      respond in JSON format as described below \nResponse Format: \n{\n    \"thoughts\":
+      {\n        \"text\": \"thought\",\n        \"reasoning\": \"reasoning\",\n        \"plan\":
+      \"- short bulleted\\n- list that conveys\\n- long-term plan\",\n        \"criticism\":
+      \"constructive self-criticism\",\n        \"speak\": \"thoughts summary to say
+      to user\"\n    },\n    \"command\": {\n        \"name\": \"command name\",\n        \"args\":
+      {\n            \"arg name\": \"value\"\n        }\n    }\n} \nEnsure the response
+      can be parsed by Python json.loads"}, {"role": "system", "content": "The current
+      time and date is Tue Jan  1 00:00:00 2000"}, {"role": "user", "content": "Determine
+      exactly one command to use, and respond using the format specified above:"}],
+      "temperature": 0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '4045'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/test/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA7yTz47aQAzG7zyFNZdcAAW2sAsP0C3SHlppt61UKjQkhrhMxumMI1gh3r2aDH+W
+        UFVqD71+39j+2WPvOwCKcjUFlRVasrIyvftPs/unF/118nn2cTf5mT3mmZ+9Lx8n9fP4SXVDBC9/
+        YCanqH7GZWVQiG20M4daMGQdjB/GozQdDe8bo+QcTQhbV9K76496Ursl99K7dBAja6/XqKaw7wAA
+        qMpxWclCeIPWqylMhsNudC4lL+5w8HB0hUWbizEYvEs7AIcIVzBlGORvzeNYKsChv6reiI5NUJT2
+        nrxoK6p7MTO2graZw35ugzRXUnC9LsTPQ54oHg3cSRDnagZbMgZqjyAFQrJ1JLgQXqzIYAIZl6W2
+        OQhD40DyAY1h+MLO5AmQFQYN4S1YXWIOSRH8xTb4fdlJ0p+r7tvSDrVnS3Yd6z//oSj5hqlkL6Cr
+        ynHlSAvCih1IEVztN6A9kIA2hrceSryghibhzNeHVqtBDMy3yCEIra9deKjl/DoAofZkXoFytEIr
+        0kuD7Q4ro21srgcv/zbXv55q5kgoI1+eftUXXJv8923cNpwzerAcxuhQ56+AO/ICS1yxw4aQ7DpQ
+        kbQr+wr15v/tUix96J5W/Jj0ZsNDhkh1RdGC127dPo5onJYjpmhxXCVpH9Sbnk60DfERfG4P6ni0
+        h9P1qhVZ8sUinka4YC9cnY9bkc1xp6aQNsKhA/C9c+j8AgAA//8DABm8aREvBQAA
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d5b30e92f522cdd-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 11 Jun 2023 16:22:15 GMT
+      Function-Execution-Id:
+      - fc5x4gwxnsz1
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '8303'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 1eec5f39eca575c1e8117515acde94b7
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '86418'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.388s
+      X-Request-Id:
+      - 8a3c89cb549891c93ba5c646f5a3d06a
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
+      are File System Agent, an AI designed to manage a file system.\nYour decisions
+      must always be made independently without seeking user assistance. Play to your
+      strengths as an LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      Write ''Hello World'' into a file named \"hello_world.txt\".\n\n\nConstraints:\n1.
+      ~4000 word limit for short term memory. Your short term memory is short, so
+      immediately save important information to files.\n2. If you are unsure how you
+      previously did something or want to recall past events, thinking about similar
+      events will help you remember.\n3. No user assistance\n4. Exclusively use the
+      commands listed below e.g. command_name\n\nCommands:\n1. analyze_code: Analyze
+      Code, args: \"code\": \"<full_code_string>\"\n2. execute_python_code: Create
+      a Python file and execute it, args: \"code\": \"<code>\", \"basename\": \"<basename>\"\n3.
+      execute_python_file: Execute Python File, args: \"filename\": \"<filename>\"\n4.
+      append_to_file: Append to file, args: \"filename\": \"<filename>\", \"text\":
+      \"<text>\"\n5. delete_file: Delete file, args: \"filename\": \"<filename>\"\n6.
+      list_files: List Files in Directory, args: \"directory\": \"<directory>\"\n7.
+      read_file: Read a file, args: \"filename\": \"<filename>\"\n8. replace_in_file:
+      Replace text or code in a file, args: \"filename\": \"<filename>\", \"old_text\":
+      \"<old_text>\", \"new_text\": \"<new_text>\", \"occurrence_index\": \"<occurrence_index>\"\n9.
+      write_to_file: Write to file, args: \"filename\": \"<filename>\", \"text\":
+      \"<text>\"\n10. google: Google Search, args: \"query\": \"<query>\"\n11. improve_code:
+      Get Improved Code, args: \"suggestions\": \"<list_of_suggestions>\", \"code\":
+      \"<full_code_string>\"\n12. browse_website: Browse Website, args: \"url\": \"<url>\",
+      \"question\": \"<what_you_want_to_find_on_website>\"\n13. write_tests: Write
+      Tests, args: \"code\": \"<full_code_string>\", \"focus\": \"<list_of_focus_areas>\"\n14.
+      delete_agent: Delete GPT Agent, args: \"key\": \"<key>\"\n15. get_hyperlinks:
+      Get hyperlinks, args: \"url\": \"<url>\"\n16. get_text_summary: Get text summary,
+      args: \"url\": \"<url>\", \"question\": \"<question>\"\n17. list_agents: List
+      GPT Agents, args: () -> str\n18. message_agent: Message GPT Agent, args: \"key\":
+      \"<key>\", \"message\": \"<message>\"\n19. start_agent: Start GPT Agent, args:
+      \"name\": \"<name>\", \"task\": \"<short_task_desc>\", \"prompt\": \"<prompt>\"\n20.
+      task_complete: Task Complete (Shutdown), args: \"reason\": \"<reason>\"\n\nResources:\n1.
+      Internet access for searches and information gathering.\n2. Long Term memory
+      management.\n3. GPT-3.5 powered Agents for delegation of simple tasks.\n4. File
+      output.\n\nPerformance Evaluation:\n1. Continuously review and analyze your
+      actions to ensure you are performing to the best of your abilities.\n2. Constructively
+      self-criticize your big-picture behavior constantly.\n3. Reflect on past decisions
+      and strategies to refine your approach. Do not repeat events from your past\n4.
+      Every command has a cost, so be smart and efficient. Aim to complete tasks in
+      the least number of steps.\n5. Write all code to a file.\n\nYou should only
+      respond in JSON format as described below \nResponse Format: \n{\n    \"thoughts\":
+      {\n        \"text\": \"thought\",\n        \"reasoning\": \"reasoning\",\n        \"plan\":
+      \"- short bulleted\\n- list that conveys\\n- long-term plan\",\n        \"criticism\":
+      \"constructive self-criticism\",\n        \"speak\": \"thoughts summary to say
+      to user\"\n    },\n    \"command\": {\n        \"name\": \"command name\",\n        \"args\":
+      {\n            \"arg name\": \"value\"\n        }\n    }\n} \nEnsure the response
+      can be parsed by Python json.loads"}, {"role": "system", "content": "The current
+      time and date is Tue Jan  1 00:00:00 2000"}, {"role": "system", "content": "This
+      reminds you of these events from your past: \nI was created"}, {"role": "user",
+      "content": "Determine exactly one command to use, and respond using the format
+      specified above:"}, {"role": "assistant", "content": "{\n    \"thoughts\": {\n        \"text\":
+      \"I will use the ''write_to_file'' command to write ''Hello World'' into a file
+      named ''hello_world.txt''.\",\n        \"reasoning\": \"The ''write_to_file''
+      command is the most appropriate for this task as it allows me to write text
+      to a file. I will use the filename ''hello_world.txt'' to ensure that the file
+      is easily identifiable.\",\n        \"plan\": \"- Use the ''write_to_file''
+      command to write ''Hello World'' to a file named ''hello_world.txt''.\",\n        \"criticism\":
+      \"I should ensure that the file ''hello_world.txt'' does not already exist before
+      writing to it.\",\n        \"speak\": \"I will use the ''write_to_file'' command
+      to write ''Hello World'' into a file named ''hello_world.txt''.\"\n    },\n    \"command\":
+      {\n        \"name\": \"write_to_file\",\n        \"args\": {\n            \"filename\":
+      \"hello_world.txt\",\n            \"text\": \"Hello World\"\n        }\n    }\n}"},
+      {"role": "system", "content": "Command write_to_file returned: File written
+      to successfully."}, {"role": "user", "content": "Determine exactly one command
+      to use, and respond using the format specified above:"}], "temperature": 0,
+      "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '5321'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/test/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA8xUwW4TMRC971eMfMkliTYNaUtugFSRA6ggoEgERc7ubNbE9hh7VomI9t+R15um
+        DS3nXt/zm3lvNONDBiBUKeYgilpyYZweXX1aXN19uK1v37ib9dub7wu/+POtyfXvj5/fvRbDqKD1
+        Lyz4qBoXZJxGVmQTXXiUjLHq5PL6cpbns+l1RxgqUUfZxvFoOp6NuPFrGuXTfJKUTZAbFHM4ZAAA
+        wnkyjldMW7QhlrvIJ8NEnXqe6Itp3rNMLPUD3avpJANok7uaVIER/tE9Tr2iOwyP2negJx0RIUNQ
+        gaVlMTyRBVlG2w3isLQRWgquqdnUHJaxTgJ7AvccwaVYwE5pDU1A4Bph4FGWq0ppHEBBxkhbAhNE
+        tOP7LgGoSu9r1JpWO/K6HPOeBxC1EGUF2Up5A1xLhsH7+A7u4rsB7GSAnVfMaGN1xeOlGD7051EG
+        sspukskvzzhToTNhKDBI5zw5ryQjVOSB68jKsAUZQDFIrWkXwOCzeWTnfQxnI4mgleaprEyANjQe
+        U8gFSNOVVnbTV/ceC051zyI6LW1KN4KvL2v6hVesChXMcUVCTY0uH2X9T3vcq8AB1liRR5DMaBx3
+        I+mjVJ7ME22DQ7l9YVuZ/LXD40X13f85qLggyfq91bN00m/O7zARx/1K8jPnRwedi97M0raiv/v2
+        +AGISlkV6lU6nPgJBCZ3/z8IZUvciznkHdBmAD+zNvsLAAD//wMAcggYAXMFAAA=
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d5b312b9ef62db6-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 11 Jun 2023 16:22:26 GMT
+      Function-Execution-Id:
+      - fc5xq4e2i8k7
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '8552'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 033a35ed177e992440025333c57afceb
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '84391'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 3.738s
+      X-Request-Id:
+      - 2ffcf21df2494729216e6ece79ba292f
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages": [{"role": "system", "content": "You are File System Agent,
+      an AI designed to manage a file system.\nYour decisions must always be made
+      independently without seeking user assistance. Play to your strengths as an
+      LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      Write ''Hello World'' into a file named \"hello_world.txt\".\n\n\nConstraints:\n1.
+      ~4000 word limit for short term memory. Your short term memory is short, so
+      immediately save important information to files.\n2. If you are unsure how you
+      previously did something or want to recall past events, thinking about similar
+      events will help you remember.\n3. No user assistance\n4. Exclusively use the
+      commands listed below e.g. command_name\n\nCommands:\n1. execute_python_code:
+      Create a Python file and execute it, args: {''code'': {''type'': ''string'',
+      ''description'': ''The Python code to run'', ''required'': True}, ''name'':
+      {''type'': ''string'', ''description'': ''A name to be given to the python file'',
+      ''required'': True}}\n2. execute_python_file: Execute an existing Python file,
+      args: {''filename'': {''type'': ''string'', ''description'': ''The name of te
+      file to execute'', ''required'': True}}\n3. append_to_file: Append to file,
+      args: {''filename'': {''type'': ''string'', ''description'': ''The name of the
+      file to write to'', ''required'': True}, ''text'': {''type'': ''string'', ''description'':
+      ''The text to write to the file'', ''required'': True}}\n4. delete_file: Delete
+      file, args: {''filename'': {''type'': ''string'', ''description'': ''The name
+      of the file to delete'', ''required'': True}}\n5. list_files: List Files in
+      Directory, args: {''directory'': {''type'': ''string'', ''description'': ''The
+      directory to list files in'', ''required'': True}}\n6. read_file: Read an existing
+      file, args: {''filename'': {''type'': ''string'', ''description'': ''The path
+      of the file to read'', ''required'': True}}\n7. write_to_file: Write to file,
+      args: {''filename'': {''type'': ''string'', ''description'': ''The name of the
+      file to write to'', ''required'': True}, ''text'': {''type'': ''string'', ''description'':
+      ''The text to write to the file'', ''required'': True}}\n8. web_search: Search
+      the web, args: {''query'': {''type'': ''string'', ''description'': ''The search
+      query'', ''required'': True}}\n9. browse_website: Browse Website, args: {''url'':
+      {''type'': ''string'', ''description'': ''The URL to visit'', ''required'':
+      True}, ''question'': {''type'': ''string'', ''description'': ''What you want
+      to find on the website'', ''required'': True}}\n10. goals_accomplished: Goals
+      are accomplished and there is nothing left to do, args: {''reason'': {''type'':
+      ''string'', ''description'': ''A summary to the user of how the goals were accomplished'',
+      ''required'': True}}\n\nResources:\n1. Internet access for searches and information
+      gathering.\n2. Long Term memory management.\n3. GPT-3.5 powered Agents for delegation
+      of simple tasks.\n4. File output.\n\nPerformance Evaluation:\n1. Continuously
+      review and analyze your actions to ensure you are performing to the best of
+      your abilities.\n2. Constructively self-criticize your big-picture behavior
+      constantly.\n3. Reflect on past decisions and strategies to refine your approach.\n4.
+      Every command has a cost, so be smart and efficient. Aim to complete tasks in
+      the least number of steps.\n\nRespond with only valid JSON conforming to the
+      following schema: \n{''$schema'': ''http://json-schema.org/draft-07/schema#'',
+      ''type'': ''object'', ''properties'': {''thoughts'': {''type'': ''object'',
+      ''properties'': {''text'': {''type'': ''string'', ''description'': ''thoughts''},
+      ''reasoning'': {''type'': ''string''}, ''plan'': {''type'': ''string'', ''description'':
+      ''- short bulleted\\n- list that conveys\\n- long-term plan''}, ''criticism'':
+      {''type'': ''string'', ''description'': ''constructive self-criticism''}, ''speak'':
+      {''type'': ''string'', ''description'': ''thoughts summary to say to user''}},
+      ''required'': [''text'', ''reasoning'', ''plan'', ''criticism'', ''speak''],
+      ''additionalProperties'': False}, ''command'': {''type'': ''object'', ''properties'':
+      {''name'': {''type'': ''string''}, ''args'': {''type'': ''object''}}, ''required'':
+      [''name'', ''args''], ''additionalProperties'': False}}, ''required'': [''thoughts'',
+      ''command''], ''additionalProperties'': False}\n"}, {"role": "system", "content":
+      "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role": "user", "content":
+      "Determine exactly one command to use, and respond using the JSON schema specified
+      previously:"}], "model": "gpt-3.5-turbo", "temperature": 0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '4368'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA6yTTW/bMAyG7/4VhC6+JIGTZmmX8wY0KDoUK4atm4dAkRlbqywZEo2kCPzfB0lJ
+        7WSHDsOOfl9+PKTFQwLAZMGWwETFSdSNGl8/Pt7xu/uH+08f5y87xNnt++zDw9P3b583N4qNfIbZ
+        /EJBp6yJMHWjkKTR0RYWOaGvOl3cXGfTxXw+D0ZtClQ+rWxofDV5N6bWbsw4u8qmMbN1vES2hEMC
+        AMAaa+qG1mSeUTtfLpsvRtHqe/b2bJYdXTLE1SBvtlgkAF2kq4wU6OUfITj28nToztoH0RrlFcad
+        k464JjbqTWE0oQ6LOOQaIGdUmbasyOW+ipeCiHvyQs5WoBELIANxR8BhKxWC5jUWkFaolFnvjFXF
+        hPaUAtcF7KwkhPTWe/DVeylITQYkTWAFgmtoHQJVCGmIXZNZ+6opCFPXvgQZ4CJsTLoKqJJukrPR
+        Cc8id0ZLXV4yvlV2g4L7GEnAlTI7BzWezaZxF+fr5/C7gAg/QGgU17H7GL68PcyfDf51gQMGYSVJ
+        IV19uYYNguAWt63yX6hdaz0hJ1gBr6F1UpeBWBhrUVBPFNqHSG+H0aULPIT6FK5ehhSuQf58IthJ
+        pf7m5/7PfXiQbhRf87HF2WP2lSPfGc9gBG7L4fv3ko/oEy+oXlPPb2XAF6kAugCX644db7A7HSPb
+        Si1dtY5v2R+kI9O83iqTusA9W0IWhC4B+Jl0yW8AAAD//wMA2dGWqf8EAAA=
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d8c64890a2e8108-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Jun 2023 15:40:54 GMT
+      Function-Execution-Id:
+      - 34nv74q6wflf
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '9569'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 751396928dfba5f4aceb510491899a48
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '86413'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.39s
+      X-Request-Id:
+      - 93d3dc12a550a84d4e8e440d7fbc912c
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages": [{"role": "system", "content": "You are File System Agent,
+      an AI designed to manage a file system.\nYour decisions must always be made
+      independently without seeking user assistance. Play to your strengths as an
+      LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      Write ''Hello World'' into a file named \"hello_world.txt\".\n\n\nConstraints:\n1.
+      ~4000 word limit for short term memory. Your short term memory is short, so
+      immediately save important information to files.\n2. If you are unsure how you
+      previously did something or want to recall past events, thinking about similar
+      events will help you remember.\n3. No user assistance\n4. Exclusively use the
+      commands listed below e.g. command_name\n\nCommands:\n1. execute_python_code:
+      Create a Python file and execute it, args: {''code'': {''type'': ''string'',
+      ''description'': ''The Python code to run'', ''required'': True}, ''name'':
+      {''type'': ''string'', ''description'': ''A name to be given to the python file'',
+      ''required'': True}}\n2. execute_python_file: Execute an existing Python file,
+      args: {''filename'': {''type'': ''string'', ''description'': ''The name of te
+      file to execute'', ''required'': True}}\n3. append_to_file: Append to file,
+      args: {''filename'': {''type'': ''string'', ''description'': ''The name of the
+      file to write to'', ''required'': True}, ''text'': {''type'': ''string'', ''description'':
+      ''The text to write to the file'', ''required'': True}}\n4. delete_file: Delete
+      file, args: {''filename'': {''type'': ''string'', ''description'': ''The name
+      of the file to delete'', ''required'': True}}\n5. list_files: List Files in
+      Directory, args: {''directory'': {''type'': ''string'', ''description'': ''The
+      directory to list files in'', ''required'': True}}\n6. read_file: Read an existing
+      file, args: {''filename'': {''type'': ''string'', ''description'': ''The path
+      of the file to read'', ''required'': True}}\n7. write_to_file: Write to file,
+      args: {''filename'': {''type'': ''string'', ''description'': ''The name of the
+      file to write to'', ''required'': True}, ''text'': {''type'': ''string'', ''description'':
+      ''The text to write to the file'', ''required'': True}}\n8. web_search: Search
+      the web, args: {''query'': {''type'': ''string'', ''description'': ''The search
+      query'', ''required'': True}}\n9. browse_website: Browse Website, args: {''url'':
+      {''type'': ''string'', ''description'': ''The URL to visit'', ''required'':
+      True}, ''question'': {''type'': ''string'', ''description'': ''What you want
+      to find on the website'', ''required'': True}}\n10. goals_accomplished: Goals
+      are accomplished and there is nothing left to do, args: {''reason'': {''type'':
+      ''string'', ''description'': ''A summary to the user of how the goals were accomplished'',
+      ''required'': True}}\n\nResources:\n1. Internet access for searches and information
+      gathering.\n2. Long Term memory management.\n3. GPT-3.5 powered Agents for delegation
+      of simple tasks.\n4. File output.\n\nPerformance Evaluation:\n1. Continuously
+      review and analyze your actions to ensure you are performing to the best of
+      your abilities.\n2. Constructively self-criticize your big-picture behavior
+      constantly.\n3. Reflect on past decisions and strategies to refine your approach.\n4.
+      Every command has a cost, so be smart and efficient. Aim to complete tasks in
+      the least number of steps.\n\nRespond with only valid JSON conforming to the
+      following schema: \n{''$schema'': ''http://json-schema.org/draft-07/schema#'',
+      ''type'': ''object'', ''properties'': {''thoughts'': {''type'': ''object'',
+      ''properties'': {''text'': {''type'': ''string'', ''description'': ''thoughts''},
+      ''reasoning'': {''type'': ''string''}, ''plan'': {''type'': ''string'', ''description'':
+      ''- short bulleted\\n- list that conveys\\n- long-term plan''}, ''criticism'':
+      {''type'': ''string'', ''description'': ''constructive self-criticism''}, ''speak'':
+      {''type'': ''string'', ''description'': ''thoughts summary to say to user''}},
+      ''required'': [''text'', ''reasoning'', ''plan'', ''criticism'', ''speak''],
+      ''additionalProperties'': False}, ''command'': {''type'': ''object'', ''properties'':
+      {''name'': {''type'': ''string''}, ''args'': {''type'': ''object''}}, ''required'':
+      [''name'', ''args''], ''additionalProperties'': False}}, ''required'': [''thoughts'',
+      ''command''], ''additionalProperties'': False}\n"}, {"role": "system", "content":
+      "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role": "system",
+      "content": "This reminds you of these events from your past: \nI was created"},
+      {"role": "user", "content": "Determine exactly one command to use, and respond
+      using the JSON schema specified previously:"}, {"role": "assistant", "content":
+      "{\n  \"thoughts\": {\n    \"text\": \"I need to create a file named ''hello_world.txt''
+      and write ''Hello World'' into it. I can use the ''write_to_file'' command to
+      accomplish this.\",\n    \"reasoning\": \"I need to use the ''write_to_file''
+      command because it allows me to create a new file and write text to it.\",\n    \"plan\":
+      \"- Use the ''write_to_file'' command to create a new file named ''hello_world.txt''
+      and write ''Hello World'' into it.\",\n    \"criticism\": \"I need to be careful
+      to ensure that I am using the correct file name and that the text is written
+      correctly.\",\n    \"speak\": \"I will use the ''write_to_file'' command to
+      create a new file named ''hello_world.txt'' and write ''Hello World'' into it.\"\n  },\n  \"command\":
+      {\n    \"name\": \"write_to_file\",\n    \"args\": {\n      \"filename\": \"hello_world.txt\",\n      \"text\":
+      \"Hello World\"\n    }\n  }\n}"}, {"role": "system", "content": "Command write_to_file
+      returned: File written to successfully."}, {"role": "user", "content": "Determine
+      exactly one command to use, and respond using the JSON schema specified previously:"}],
+      "model": "gpt-3.5-turbo", "temperature": 0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '5605'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA7RTS4/aMBC+51eMfOECKEBhVxxbtV20l0qrqoemQsYZEncdO2tPFtpV/ns1Do+A
+        KnrqMTPzPfLN+C0BEDoXSxCqlKSq2ozunp4eX97j7w+PRfO5fvk0SafFQzP5gtOP9lUMGeE2P1HR
+        ETVWrqoNkna2ayuPkpBZJ4v7u3SyeLdIY6NyORqGFTWNZuP5iBq/caN0lk46ZBNkgWIJbwkAgKi9
+        q2pak3tGG5huNr0fdq2z5rk9TeeHLjmSpoebz2YJQNu5K51WyOXvcbjTYncYLuRj0TvDFSFD0IGk
+        JTE8N5WzhDYG8ZZZgExQ6ZqipJAxC5diEffEhUyswCLmQA5e0evtL6BSElCJMCjRGLfeOW/yMe1p
+        AFttEHYywCFOkDYHVpTahohRzntUBMw/hhUoaaEJ2PF5lPmaOQagXFUxmBxIFYPToQQqdRhnYnh0
+        6VEGZ7Utrq3eotygktzXBNIYtwtQIWN49OAxRhTAbUHGf+pr1kbaTm4EX287/yvjjeQY1g9Z0zm8
+        wQND4BtDBn0/ymvSSofqOoMNgpIet43hL7Sh8djxrkBW0Zy2xcVWTi5OO+Y9gQ7Hib5wqFE+H0V3
+        2ph/LfJ/xsGm2mF30AfJi3u2ssLO68lb71ekL/rnzyWeOIOuDHZ6AG2UzWwrDg+sPb40sdVWh3Ld
+        XSi/tkCuPj1EoW2Oe7GENBbaBOBH0iZ/AAAA//8DANj/kq7cBAAA
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d8c64efa96c1403-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 17 Jun 2023 15:41:08 GMT
+      Function-Execution-Id:
+      - pjwnjc60bb6l
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '7877'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 55f9ffa55614ecb77a18c493e583931f
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '84902'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 3.398s
+      X-Request-Id:
+      - 0b496cefb283b065426eee9bb0d9b47f
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages": [{"role": "system", "content": "You are File System Agent,
+      an AI designed to manage a file system.\nYour decisions must always be made
+      independently without seeking user assistance. Play to your strengths as an
+      LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      Write ''Hello World'' into a file named \"hello_world.txt\".\n\n\nConstraints:\n1.
+      ~4000 word limit for short term memory. Your short term memory is short, so
+      immediately save important information to files.\n2. If you are unsure how you
+      previously did something or want to recall past events, thinking about similar
+      events will help you remember.\n3. No user assistance\n4. Exclusively use the
+      commands listed below e.g. command_name\n\nCommands:\n1. execute_python_code:
+      Create a Python file and execute it, args: {''code'': {''type'': ''string'',
+      ''description'': ''The Python code to run'', ''required'': True}, ''name'':
+      {''type'': ''string'', ''description'': ''A name to be given to the python file'',
+      ''required'': True}}\n2. execute_python_file: Execute an existing Python file,
+      args: {''filename'': {''type'': ''string'', ''description'': ''The name of te
+      file to execute'', ''required'': True}}\n3. execute_shell: Execute Shell Command,
+      non-interactive commands only, args: {''command_line'': {''type'': ''string'',
+      ''description'': ''The command line to execute'', ''required'': True}}\n4. execute_shell_popen:
+      Execute Shell Command, non-interactive commands only, args: {''query'': {''type'':
+      ''string'', ''description'': ''The search query'', ''required'': True}}\n5.
+      append_to_file: Append to file, args: {''filename'': {''type'': ''string'',
+      ''description'': ''The name of the file to write to'', ''required'': True},
+      ''text'': {''type'': ''string'', ''description'': ''The text to write to the
+      file'', ''required'': True}}\n6. delete_file: Delete file, args: {''filename'':
+      {''type'': ''string'', ''description'': ''The name of the file to delete'',
+      ''required'': True}}\n7. list_files: List Files in Directory, args: {''directory'':
+      {''type'': ''string'', ''description'': ''The directory to list files in'',
+      ''required'': True}}\n8. read_file: Read an existing file, args: {''filename'':
+      {''type'': ''string'', ''description'': ''The path of the file to read'', ''required'':
+      True}}\n9. write_to_file: Write to file, args: {''filename'': {''type'': ''string'',
+      ''description'': ''The name of the file to write to'', ''required'': True},
+      ''text'': {''type'': ''string'', ''description'': ''The text to write to the
+      file'', ''required'': True}}\n10. google: Google Search, args: {''query'': {''type'':
+      ''string'', ''description'': ''The search query'', ''required'': True}}\n11.
+      web_search: Search the web, args: {''query'': {''type'': ''string'', ''description'':
+      ''The search query'', ''required'': True}}\n12. browse_website: Browse Website,
+      args: {''url'': {''type'': ''string'', ''description'': ''The URL to visit'',
+      ''required'': True}, ''question'': {''type'': ''string'', ''description'': ''What
+      you want to find on the website'', ''required'': True}}\n13. goals_accomplished:
+      Goals are accomplished and there is nothing left to do, args: {''reason'': {''type'':
+      ''string'', ''description'': ''A summary to the user of how the goals were accomplished'',
+      ''required'': True}}\n\nResources:\n1. Internet access for searches and information
+      gathering.\n2. Long Term memory management.\n3. GPT-3.5 powered Agents for delegation
+      of simple tasks.\n4. File output.\n\nPerformance Evaluation:\n1. Continuously
+      review and analyze your actions to ensure you are performing to the best of
+      your abilities.\n2. Constructively self-criticize your big-picture behavior
+      constantly.\n3. Reflect on past decisions and strategies to refine your approach.\n4.
+      Every command has a cost, so be smart and efficient. Aim to complete tasks in
+      the least number of steps.\n\nRespond with only valid JSON conforming to the
+      following schema: \n{''$schema'': ''http://json-schema.org/draft-07/schema#'',
+      ''type'': ''object'', ''properties'': {''thoughts'': {''type'': ''object'',
+      ''properties'': {''text'': {''type'': ''string'', ''description'': ''thoughts''},
+      ''reasoning'': {''type'': ''string''}, ''plan'': {''type'': ''string'', ''description'':
+      ''- short bulleted\\n- list that conveys\\n- long-term plan''}, ''criticism'':
+      {''type'': ''string'', ''description'': ''constructive self-criticism''}, ''speak'':
+      {''type'': ''string'', ''description'': ''thoughts summary to say to user''}},
+      ''required'': [''text'', ''reasoning'', ''plan'', ''criticism'', ''speak''],
+      ''additionalProperties'': False}, ''command'': {''type'': ''object'', ''properties'':
+      {''name'': {''type'': ''string''}, ''args'': {''type'': ''object''}}, ''required'':
+      [''name'', ''args''], ''additionalProperties'': False}}, ''required'': [''thoughts'',
+      ''command''], ''additionalProperties'': False}\n"}, {"role": "system", "content":
+      "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role": "user", "content":
+      "Determine exactly one command to use, and respond using the JSON schema specified
+      previously:"}], "model": "gpt-3.5-turbo", "temperature": 0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '4835'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA5xUXW8TMRB8z69Y3csVKYkSUpqSN4TUNgipAooQ4lDk2JvYjc972HskIbr/juxr
+        0g+FVuJ1d2dndtbrXQcgMyqbQCa1YFlWtjf+8ufz9dXlrw+f3s5v+OOFm36vBtfh3YW6vOWsGxE0
+        v0XJe1RfUllZZEOuTUuPgjF2HZ6dj4eno/HwPCVKUmgjbFlxb9R/0+Paz6k3GA2GLbIOYonZBHYd
+        AICs8lRWPGNaoQux3fBs0G1T95z36dfjfZaJhX2AOx0NOgBNq06TkRjDP1JxyxXVYXhEn4KebIxk
+        IgQTWLjWgbukJMfokhG7nDXVS80hn8AuZ9xwPoH8hmDtDSMU2RVaS/CNvFVFBsYxgYCFsQhOlKig
+        yHSsmK1jRZ83XGRdmMLaWAt1QGCNba8Z0yzhJJWlcKq/r1oYHxikRrkCs0iAVCesR6G2gBsTOHRB
+        OBXzhkERhgOJQouMMTzHBfmWzbglMIHhAwtrdM8LioDjUzMdVPXzLuQeRSBn3DJ6NQWp6dm+c5Qi
+        MhsGYS2tA5R4TxY9h4OrXVhrIzWYALgRku0W1lowTMEhJomKDjMJG+hF41Lv32QUCLcFSW5hjeSQ
+        BqmscHGGHrzfdzmyzycNi8L1YPpgEYcNpMzX8D/+HqGNAmXcpTShbJ0OmmqroBQrhFD75KIWTsWh
+        3RbQe/IBOBpWii2QlLWHdbv59CT+taMuhFpqEOGRkVI4R/Fdwd3fAOQTntEBU7IwVChWrbqX3/yz
+        Frx0Vv28iY60ndK5xtJIjRuUNeOs2rImN5OkMEoTftmedQpMIG8XlRSdHCF4VRTukeyTo8f9RHpE
+        5U3TZHcfTLP/abKFcSboWXst8bcJTNXhI8qMU7jJJjBIgaYD8LPTdP4CAAD//wMA2Jcvc9wFAAA=
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d9887d16991616e-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 19 Jun 2023 03:02:09 GMT
+      Function-Execution-Id:
+      - bvp6xd27haa4
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '10247'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 33e0d41531c8fcce2d0a067d13bc67ee;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '86412'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.392s
+      X-Request-Id:
+      - bee0f3ae3a27dc7a652b35f77babd0ff
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages": [{"role": "system", "content": "You are File System Agent,
+      an AI designed to manage a file system.\nYour decisions must always be made
+      independently without seeking user assistance. Play to your strengths as an
+      LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      Write ''Hello World'' into a file named \"hello_world.txt\".\n\n\nConstraints:\n1.
+      ~4000 word limit for short term memory. Your short term memory is short, so
+      immediately save important information to files.\n2. If you are unsure how you
+      previously did something or want to recall past events, thinking about similar
+      events will help you remember.\n3. No user assistance\n4. Exclusively use the
+      commands listed below e.g. command_name\n\nCommands:\n1. execute_python_code:
+      Create a Python file and execute it, args: {''code'': {''type'': ''string'',
+      ''description'': ''The Python code to run'', ''required'': True}, ''name'':
+      {''type'': ''string'', ''description'': ''A name to be given to the python file'',
+      ''required'': True}}\n2. execute_python_file: Execute an existing Python file,
+      args: {''filename'': {''type'': ''string'', ''description'': ''The name of te
+      file to execute'', ''required'': True}}\n3. execute_shell: Execute Shell Command,
+      non-interactive commands only, args: {''command_line'': {''type'': ''string'',
+      ''description'': ''The command line to execute'', ''required'': True}}\n4. execute_shell_popen:
+      Execute Shell Command, non-interactive commands only, args: {''query'': {''type'':
+      ''string'', ''description'': ''The search query'', ''required'': True}}\n5.
+      append_to_file: Append to file, args: {''filename'': {''type'': ''string'',
+      ''description'': ''The name of the file to write to'', ''required'': True},
+      ''text'': {''type'': ''string'', ''description'': ''The text to write to the
+      file'', ''required'': True}}\n6. delete_file: Delete file, args: {''filename'':
+      {''type'': ''string'', ''description'': ''The name of the file to delete'',
+      ''required'': True}}\n7. list_files: List Files in Directory, args: {''directory'':
+      {''type'': ''string'', ''description'': ''The directory to list files in'',
+      ''required'': True}}\n8. read_file: Read an existing file, args: {''filename'':
+      {''type'': ''string'', ''description'': ''The path of the file to read'', ''required'':
+      True}}\n9. write_to_file: Write to file, args: {''filename'': {''type'': ''string'',
+      ''description'': ''The name of the file to write to'', ''required'': True},
+      ''text'': {''type'': ''string'', ''description'': ''The text to write to the
+      file'', ''required'': True}}\n10. google: Google Search, args: {''query'': {''type'':
+      ''string'', ''description'': ''The search query'', ''required'': True}}\n11.
+      web_search: Search the web, args: {''query'': {''type'': ''string'', ''description'':
+      ''The search query'', ''required'': True}}\n12. browse_website: Browse Website,
+      args: {''url'': {''type'': ''string'', ''description'': ''The URL to visit'',
+      ''required'': True}, ''question'': {''type'': ''string'', ''description'': ''What
+      you want to find on the website'', ''required'': True}}\n13. goals_accomplished:
+      Goals are accomplished and there is nothing left to do, args: {''reason'': {''type'':
+      ''string'', ''description'': ''A summary to the user of how the goals were accomplished'',
+      ''required'': True}}\n\nResources:\n1. Internet access for searches and information
+      gathering.\n2. Long Term memory management.\n3. GPT-3.5 powered Agents for delegation
+      of simple tasks.\n4. File output.\n\nPerformance Evaluation:\n1. Continuously
+      review and analyze your actions to ensure you are performing to the best of
+      your abilities.\n2. Constructively self-criticize your big-picture behavior
+      constantly.\n3. Reflect on past decisions and strategies to refine your approach.\n4.
+      Every command has a cost, so be smart and efficient. Aim to complete tasks in
+      the least number of steps.\n\nRespond with only valid JSON conforming to the
+      following schema: \n{''$schema'': ''http://json-schema.org/draft-07/schema#'',
+      ''type'': ''object'', ''properties'': {''thoughts'': {''type'': ''object'',
+      ''properties'': {''text'': {''type'': ''string'', ''description'': ''thoughts''},
+      ''reasoning'': {''type'': ''string''}, ''plan'': {''type'': ''string'', ''description'':
+      ''- short bulleted\\n- list that conveys\\n- long-term plan''}, ''criticism'':
+      {''type'': ''string'', ''description'': ''constructive self-criticism''}, ''speak'':
+      {''type'': ''string'', ''description'': ''thoughts summary to say to user''}},
+      ''required'': [''text'', ''reasoning'', ''plan'', ''criticism'', ''speak''],
+      ''additionalProperties'': False}, ''command'': {''type'': ''object'', ''properties'':
+      {''name'': {''type'': ''string''}, ''args'': {''type'': ''object''}}, ''required'':
+      [''name'', ''args''], ''additionalProperties'': False}}, ''required'': [''thoughts'',
+      ''command''], ''additionalProperties'': False}\n"}, {"role": "system", "content":
+      "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role": "system",
+      "content": "This reminds you of these events from your past: \nI was created"},
+      {"role": "user", "content": "Determine exactly one command to use, and respond
+      using the JSON schema specified previously:"}, {"role": "assistant", "content":
+      "{''thoughts'': {''text'': ''To write \"Hello World\" into a file named \"hello_world.txt\",
+      I will use the write_to_file command. I will first check if the file already
+      exists, and if it does, I will delete it before writing to it. I will then use
+      the write_to_file command to write \"Hello World\" to the file.'', ''reasoning'':
+      ''I chose the write_to_file command because it allows me to write text to a
+      file, which is exactly what I need to do. I will also check if the file already
+      exists to avoid any conflicts.'', ''plan'': ''- Check if \"hello_world.txt\"
+      already exists\\n- If it does, delete it\\n- Use write_to_file command to write
+      \"Hello World\" to \"hello_world.txt\"'', ''criticism'': ''I should make sure
+      to handle any errors that may occur when using the write_to_file command, such
+      as if the file cannot be created or written to.'', ''speak'': ''I will use the
+      write_to_file command to write \"Hello World\" to a file named \"hello_world.txt\".''},
+      ''command'': {''name'': ''execute_python_code'', ''args'': {''code'': ''delete_file(\"hello_world.txt\")\\nwrite_to_file(\"hello_world.txt\",
+      \"Hello World\")\\n''}}}"}, {"role": "system", "content": "Command execute_python_code
+      returned: Error: execute_python_code() missing 1 required positional argument:
+      ''basename''"}, {"role": "user", "content": "Determine exactly one command to
+      use, and respond using the JSON schema specified previously:"}], "model": "gpt-3.5-turbo",
+      "temperature": 0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '6349'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA7xUS48TMQy+91dYuQxI7ahLFxb1BlxY8RACLUgwqEoTT5PdTDxKPEzLqv8dJbNT
+        Cqp4Hbjasb+HHd9OAITVYglCGcmqad3s4t3Xt7p98uJ6fWVfXz8Nj+bPz82rj+/P3s9ffhTTVEHr
+        a1Q8VpWKmtYhW/JDWgWUjKnr2aPHF2fni4vFIica0uhS2abl2aJ8OOMurGk2X8zPhsouyg2KJdxO
+        AABEG6hpecV0gz6mdg/nuVHCOGB+Ty8enN9lmVi6o7rHDy4mAPuBnSGrMIU/5ccDVmKH8Qf4HAzk
+        UkTIGG1k6VlMvycVeUafjbgt2FC3MRyLJdwWjFsullBcQm+dgy4isEHALaqOcdXu2JBfKdIIippG
+        eg1M0AfLCJV4js4RfKDgdCVSQkJtHYKXDWqohEn5VZ/yJW+5EiXcAdU2RAZlUN2ArTNmrpQuoNQ7
+        wK2NHKeQAG0NlkETxulYrtEhYwqvsaaAmZH1m8TB8gGFDfo/1TQsA0h4k/MDHTaSB7XxlNxTCosp
+        FAFlJG/9ZrBWGfoDDmtUMnG1DNI56iM0eEzM67F8pJjKp9AbqwzYCLiVit0O+kT6EjxiFqbp4Id0
+        kX5rep7jF7IapN+BIl87qzhmYa2TPmmawbOxywkPfmpYVX4Gl0dDPEwvZ67i/5pNUqDSoigbm2E0
+        0VDnNDTyBiF2IRtupNfJFb8DDIFCHKAauQNSqgvQD2uV9+3XQ51C7JQBGUe/jwUo6T2lDb7Tp4HC
+        2Exnu2OL8ubvv+e/2PXbn1vsk3sDSD4d6WnidoJM4i7DZjgxObCEwjYtBQZK+1BV3tZAsWwlm3JY
+        k3snUO8vq8qnE0axDNjQFzz5aujYWzZALfpTb6ZQib4S99Ms6rFrXWZD7v3kR+qXJIwK86PVUcsV
+        0yrZVba7Yr/fi7tLux9Prqitt9GshjuQzm5kag8XWVivcSuWMM+B/QTg82Q/+QYAAP//AwD3321V
+        5QYAAA==
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d98882feb54871d-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 19 Jun 2023 03:02:28 GMT
+      Function-Execution-Id:
+      - bvp6waie98gx
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '14357'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 7e5dc00233556d271d7ffa0693e9d12e;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '85920'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.72s
+      X-Request-Id:
+      - 07af9d0fd3072331a2563f698e0eaaf9
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages": [{"role": "system", "content": "You are File System Agent,
+      an AI designed to manage a file system.\nYour decisions must always be made
+      independently without seeking user assistance. Play to your strengths as an
+      LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      Write ''Hello World'' into a file named \"hello_world.txt\".\n\n\nConstraints:\n1.
+      ~4000 word limit for short term memory. Your short term memory is short, so
+      immediately save important information to files.\n2. If you are unsure how you
+      previously did something or want to recall past events, thinking about similar
+      events will help you remember.\n3. No user assistance\n4. Exclusively use the
+      commands listed below e.g. command_name\n\nCommands:\n1. execute_python_code:
+      Create a Python file and execute it, args: {''code'': {''type'': ''string'',
+      ''description'': ''The Python code to run'', ''required'': True}, ''name'':
+      {''type'': ''string'', ''description'': ''A name to be given to the python file'',
+      ''required'': True}}\n2. execute_python_file: Execute an existing Python file,
+      args: {''filename'': {''type'': ''string'', ''description'': ''The name of te
+      file to execute'', ''required'': True}}\n3. execute_shell: Execute Shell Command,
+      non-interactive commands only, args: {''command_line'': {''type'': ''string'',
+      ''description'': ''The command line to execute'', ''required'': True}}\n4. execute_shell_popen:
+      Execute Shell Command, non-interactive commands only, args: {''query'': {''type'':
+      ''string'', ''description'': ''The search query'', ''required'': True}}\n5.
+      append_to_file: Append to file, args: {''filename'': {''type'': ''string'',
+      ''description'': ''The name of the file to write to'', ''required'': True},
+      ''text'': {''type'': ''string'', ''description'': ''The text to write to the
+      file'', ''required'': True}}\n6. delete_file: Delete file, args: {''filename'':
+      {''type'': ''string'', ''description'': ''The name of the file to delete'',
+      ''required'': True}}\n7. list_files: List Files in Directory, args: {''directory'':
+      {''type'': ''string'', ''description'': ''The directory to list files in'',
+      ''required'': True}}\n8. read_file: Read an existing file, args: {''filename'':
+      {''type'': ''string'', ''description'': ''The path of the file to read'', ''required'':
+      True}}\n9. write_to_file: Write to file, args: {''filename'': {''type'': ''string'',
+      ''description'': ''The name of the file to write to'', ''required'': True},
+      ''text'': {''type'': ''string'', ''description'': ''The text to write to the
+      file'', ''required'': True}}\n10. google: Google Search, args: {''query'': {''type'':
+      ''string'', ''description'': ''The search query'', ''required'': True}}\n11.
+      web_search: Search the web, args: {''query'': {''type'': ''string'', ''description'':
+      ''The search query'', ''required'': True}}\n12. browse_website: Browse Website,
+      args: {''url'': {''type'': ''string'', ''description'': ''The URL to visit'',
+      ''required'': True}, ''question'': {''type'': ''string'', ''description'': ''What
+      you want to find on the website'', ''required'': True}}\n13. goals_accomplished:
+      Goals are accomplished and there is nothing left to do, args: {''reason'': {''type'':
+      ''string'', ''description'': ''A summary to the user of how the goals were accomplished'',
+      ''required'': True}}\n\nResources:\n1. Internet access for searches and information
+      gathering.\n2. Long Term memory management.\n3. GPT-3.5 powered Agents for delegation
+      of simple tasks.\n4. File output.\n\nPerformance Evaluation:\n1. Continuously
+      review and analyze your actions to ensure you are performing to the best of
+      your abilities.\n2. Constructively self-criticize your big-picture behavior
+      constantly.\n3. Reflect on past decisions and strategies to refine your approach.\n4.
+      Every command has a cost, so be smart and efficient. Aim to complete tasks in
+      the least number of steps.\n\nRespond with only valid JSON conforming to the
+      following schema: \n{''$schema'': ''http://json-schema.org/draft-07/schema#'',
+      ''type'': ''object'', ''properties'': {''thoughts'': {''type'': ''object'',
+      ''properties'': {''text'': {''type'': ''string'', ''description'': ''thoughts''},
+      ''reasoning'': {''type'': ''string''}, ''plan'': {''type'': ''string'', ''description'':
+      ''- short bulleted\\n- list that conveys\\n- long-term plan''}, ''criticism'':
+      {''type'': ''string'', ''description'': ''constructive self-criticism''}, ''speak'':
+      {''type'': ''string'', ''description'': ''thoughts summary to say to user''}},
+      ''required'': [''text'', ''reasoning'', ''plan'', ''criticism'', ''speak''],
+      ''additionalProperties'': False}, ''command'': {''type'': ''object'', ''properties'':
+      {''name'': {''type'': ''string''}, ''args'': {''type'': ''object''}}, ''required'':
+      [''name'', ''args''], ''additionalProperties'': False}}, ''required'': [''thoughts'',
+      ''command''], ''additionalProperties'': False}\n"}, {"role": "system", "content":
+      "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role": "system",
+      "content": "This reminds you of these events from your past: \nI was created"},
+      {"role": "user", "content": "Determine exactly one command to use, and respond
+      using the JSON schema specified previously:"}, {"role": "assistant", "content":
+      "{''thoughts'': {''text'': ''To write \"Hello World\" into a file named \"hello_world.txt\",
+      I will use the write_to_file command. I will first check if the file already
+      exists, and if it does, I will delete it before writing to it. I will then use
+      the write_to_file command to write \"Hello World\" to the file.'', ''reasoning'':
+      ''I chose the write_to_file command because it allows me to write text to a
+      file, which is exactly what I need to do. I will also check if the file already
+      exists to avoid any conflicts.'', ''plan'': ''- Check if \"hello_world.txt\"
+      already exists\\n- If it does, delete it\\n- Use write_to_file command to write
+      \"Hello World\" to \"hello_world.txt\"'', ''criticism'': ''I should make sure
+      to handle any errors that may occur when using the write_to_file command, such
+      as if the file cannot be created or written to.'', ''speak'': ''I will use the
+      write_to_file command to write \"Hello World\" to a file named \"hello_world.txt\".''},
+      ''command'': {''name'': ''execute_python_code'', ''args'': {''code'': ''delete_file(\"hello_world.txt\")\\nwrite_to_file(\"hello_world.txt\",
+      \"Hello World\")\\n''}}}"}, {"role": "system", "content": "Command execute_python_code
+      returned: Error: execute_python_code() missing 1 required positional argument:
+      ''name''"}, {"role": "user", "content": "Determine exactly one command to use,
+      and respond using the JSON schema specified previously:"}], "model": "gpt-3.5-turbo",
+      "temperature": 0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '6345'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA5xUwW4aMRC98xWjvWwqAYImFMSxPaRcWlUNiqpSIWMP2MHrWdmzXbaIf6/sDZBE
+        NJF6nZk3780bj/cdgMyobAqZ1IJlUdre+Puf6nb+9cvH+Xr88O3+dj5Qd+HHcNUoVcusGxG0ekDJ
+        R1RfUlFaZEOuTUuPgjF2HX6YjIc3o9FgkhIFKbQRtim5d90f9bjyK+oNrgfDFlkFscFsCvsOAEBW
+        eipKXjJt0YXYbjS47rapM+c5/X4yfMwysbBPcOPJTQfg0KrTZCTG8M9U3HJFdRie0aegJxsjmQjB
+        BBaOs+45KckxumTEPmdN1UZzyKewzxl3nE8hvyOovWGERfYZrSW4J2/VIgPjmEDA2lgEJwpUsMh0
+        rFjWsaLPO15kXZhBbayFKiCwxrbXkmmZcJKKQjjVP1atjQ8MUqPcglknQKoT1qNQDeDOBA5dEE7F
+        vGFQhOFEotAiYwyvcE2+ZTNuA0xg+MTCGt3rgiLg8tRMJ1X9vAu5RxHIGbeJXs1Aanq17wqliMyG
+        QVhLdYACz2TRczi52oVaG6nBBMCdkGwbqLVgmIFDTBIVnWYSNtCbxqXev8koEK4BSW5tjeSQBimt
+        cHGGHnw6drmwzxcNFwvXg9mTRZw2kDLz8D/+XqCNAmXcpTShaJ0OmiqroBBbhFD55KIWTsWhXQPo
+        PfkAHA0rRAMkZeWhbjefnsS/dtSFUEkNIjwzUgrnKL4rePwbgHzCMzpgShaGEsW2Vff2m3/VgrfO
+        qp8foiNtp3SusTRS4w5lxbgsG9bklpIURmnCb9qzToEp5O2ikqKrCwTvFgv3TPbVxeN+IT2iIttR
+        TNvhCe7YrV82+eFwyB4/osPxR8rWxpmgl+1VxV8pMJWnDyszTuEum8IgBQ4dgF+dQ+cvAAAA//8D
+        APx/4mwEBgAA
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d98b381da0c1230-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 19 Jun 2023 03:31:59 GMT
+      Function-Execution-Id:
+      - bvp6hfsnctfx
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '10985'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 1ae7cd1537b25ef879d2281a0913c37a;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '85921'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.719s
+      X-Request-Id:
+      - 3dd54b9b89d9e89ce1c413451cbb9612
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages": [{"role": "system", "content": "You are File System Agent,
+      an AI designed to manage a file system.\nYour decisions must always be made
+      independently without seeking user assistance. Play to your strengths as an
+      LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      Write ''Hello World'' into a file named \"hello_world.txt\".\n\n\nConstraints:\n1.
+      ~4000 word limit for short term memory. Your short term memory is short, so
+      immediately save important information to files.\n2. If you are unsure how you
+      previously did something or want to recall past events, thinking about similar
+      events will help you remember.\n3. No user assistance\n4. Exclusively use the
+      commands listed below e.g. command_name\n\nCommands:\n1. execute_python_code:
+      Creates a Python file and executes it, args: {''code'': {''type'': ''string'',
+      ''description'': ''The Python code to run'', ''required'': True}, ''name'':
+      {''type'': ''string'', ''description'': ''A name to be given to the python file'',
+      ''required'': True}}\n2. execute_python_file: Executes an existing Python file,
+      args: {''filename'': {''type'': ''string'', ''description'': ''The name of te
+      file to execute'', ''required'': True}}\n3. execute_shell: Executes a Shell
+      Command, non-interactive commands only, args: {''command_line'': {''type'':
+      ''string'', ''description'': ''The command line to execute'', ''required'':
+      True}}\n4. execute_shell_popen: Executes a Shell Command, non-interactive commands
+      only, args: {''query'': {''type'': ''string'', ''description'': ''The search
+      query'', ''required'': True}}\n5. append_to_file: Appends to a file, args: {''filename'':
+      {''type'': ''string'', ''description'': ''The name of the file to write to'',
+      ''required'': True}, ''text'': {''type'': ''string'', ''description'': ''The
+      text to write to the file'', ''required'': True}}\n6. delete_file: Deletes a
+      file, args: {''filename'': {''type'': ''string'', ''description'': ''The name
+      of the file to delete'', ''required'': True}}\n7. list_files: Lists Files in
+      a Directory, args: {''directory'': {''type'': ''string'', ''description'': ''The
+      directory to list files in'', ''required'': True}}\n8. read_file: Read an existing
+      file, args: {''filename'': {''type'': ''string'', ''description'': ''The path
+      of the file to read'', ''required'': True}}\n9. write_to_file: Writes to a file,
+      args: {''filename'': {''type'': ''string'', ''description'': ''The name of the
+      file to write to'', ''required'': True}, ''text'': {''type'': ''string'', ''description'':
+      ''The text to write to the file'', ''required'': True}}\n10. google: Google
+      Search, args: {''query'': {''type'': ''string'', ''description'': ''The search
+      query'', ''required'': True}}\n11. web_search: Searches the web, args: {''query'':
+      {''type'': ''string'', ''description'': ''The search query'', ''required'':
+      True}}\n12. browse_website: Browses a Website, args: {''url'': {''type'': ''string'',
+      ''description'': ''The URL to visit'', ''required'': True}, ''question'': {''type'':
+      ''string'', ''description'': ''What you want to find on the website'', ''required'':
+      True}}\n13. goals_accomplished: Goals are accomplished and there is nothing
+      left to do, args: {''reason'': {''type'': ''string'', ''description'': ''A summary
+      to the user of how the goals were accomplished'', ''required'': True}}\n\nResources:\n1.
+      Internet access for searches and information gathering.\n2. Long Term memory
+      management.\n3. GPT-3.5 powered Agents for delegation of simple tasks.\n4. File
+      output.\n\nPerformance Evaluation:\n1. Continuously review and analyze your
+      actions to ensure you are performing to the best of your abilities.\n2. Constructively
+      self-criticize your big-picture behavior constantly.\n3. Reflect on past decisions
+      and strategies to refine your approach.\n4. Every command has a cost, so be
+      smart and efficient. Aim to complete tasks in the least number of steps.\n\nRespond
+      with only valid JSON conforming to the following schema: \n{''$schema'': ''http://json-schema.org/draft-07/schema#'',
+      ''type'': ''object'', ''properties'': {''thoughts'': {''type'': ''object'',
+      ''properties'': {''text'': {''type'': ''string'', ''description'': ''thoughts''},
+      ''reasoning'': {''type'': ''string''}, ''plan'': {''type'': ''string'', ''description'':
+      ''- short bulleted\\n- list that conveys\\n- long-term plan''}, ''criticism'':
+      {''type'': ''string'', ''description'': ''constructive self-criticism''}, ''speak'':
+      {''type'': ''string'', ''description'': ''thoughts summary to say to user''}},
+      ''required'': [''text'', ''reasoning'', ''plan'', ''criticism'', ''speak''],
+      ''additionalProperties'': False}, ''command'': {''type'': ''object'', ''properties'':
+      {''name'': {''type'': ''string''}, ''args'': {''type'': ''object''}}, ''required'':
+      [''name'', ''args''], ''additionalProperties'': False}}, ''required'': [''thoughts'',
+      ''command''], ''additionalProperties'': False}\n"}, {"role": "system", "content":
+      "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role": "user", "content":
+      "Determine exactly one command to use, and respond using the JSON schema specified
+      previously:"}], "model": "gpt-3.5-turbo", "temperature": 0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '4861'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA6yTTY/TMBCG7/0VI196aat+aOm2N4SQtsCBwyIk6Kpyk2njreOJ7AktVPnvaOx+
+        pKxAIHGK9I7feR9PPMcOgDK5moPKCs1ZWdn+9PH96/t3G1tO1/ru48Q8L6Y/6g8L+vblzcNb1RMH
+        rZ8x47NrkFFZWWRDLpUzj5pRuo5e3U/H48lkOo6FknK0YttW3J8M7vpc+zX1h5PhKDnroLeo5nDs
+        AACoylNZ8Ypphy5Iu9F02Eula+a1PB7PTlUm1rblm8xmHYAm0RVkMhT5azycsoQOw018FD1ZUZQO
+        wQTWjlXvWszIMbo4iOPSASwVF1RvCw5L6SJSFPHAIizVI8HeG0boPqC1BJ/J27wLxjGBho2xCE6X
+        mEO3kPpqL/UBH7jbgwXsjbVQBwQuELqx0YppJbYuZFSW2uXABGn+8VRsKXKKFUlo5JThwVL1zowe
+        dSBn3PYE+ocEE2KfkgKDripPlTeStyEPXEhVhx3oAIZBW0v7ACW2uDQ43L8gu1CBcaAhGLe1CIGx
+        amNWVrtE2IdPfz2JVuJvxtsiuf01LwaVecMmM6FMGAtwiDELXai9EGmGBegSarlDJMzIe8z4ShDj
+        4snLTzIB1iiG0/bIGNre3MiH/Pc2TKhQ784g//g8/sNQBKPppZd/Crh5+NI30d3QtC6g/ba9KyLJ
+        iavxF6aL9XavWnSJCqCJcEvXqNO+NufFVRvjTChW6cnL8gam6rLXyrgcD2oOwyg0HYCnTtP5CQAA
+        //8DAI2cFHIrBQAA
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7da0207e1b5e10e3-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 20 Jun 2023 01:09:42 GMT
+      Function-Execution-Id:
+      - ltprman665w9
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '9826'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - dd6b79f4830d53623937a37a14e5af2c;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '86415'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.39s
+      X-Request-Id:
+      - 58cd36ae62235b2e96fb02a0291c3679
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages": [{"role": "system", "content": "You are File System Agent,
+      an AI designed to manage a file system.\nYour decisions must always be made
+      independently without seeking user assistance. Play to your strengths as an
+      LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      Write ''Hello World'' into a file named \"hello_world.txt\".\n\n\nConstraints:\n1.
+      ~4000 word limit for short term memory. Your short term memory is short, so
+      immediately save important information to files.\n2. If you are unsure how you
+      previously did something or want to recall past events, thinking about similar
+      events will help you remember.\n3. No user assistance\n4. Exclusively use the
+      commands listed below e.g. command_name\n\nCommands:\n1. execute_python_code:
+      Creates a Python file and executes it, args: {''code'': {''type'': ''string'',
+      ''description'': ''The Python code to run'', ''required'': True}, ''name'':
+      {''type'': ''string'', ''description'': ''A name to be given to the python file'',
+      ''required'': True}}\n2. execute_python_file: Executes an existing Python file,
+      args: {''filename'': {''type'': ''string'', ''description'': ''The name of te
+      file to execute'', ''required'': True}}\n3. execute_shell: Executes a Shell
+      Command, non-interactive commands only, args: {''command_line'': {''type'':
+      ''string'', ''description'': ''The command line to execute'', ''required'':
+      True}}\n4. execute_shell_popen: Executes a Shell Command, non-interactive commands
+      only, args: {''query'': {''type'': ''string'', ''description'': ''The search
+      query'', ''required'': True}}\n5. append_to_file: Appends to a file, args: {''filename'':
+      {''type'': ''string'', ''description'': ''The name of the file to write to'',
+      ''required'': True}, ''text'': {''type'': ''string'', ''description'': ''The
+      text to write to the file'', ''required'': True}}\n6. delete_file: Deletes a
+      file, args: {''filename'': {''type'': ''string'', ''description'': ''The name
+      of the file to delete'', ''required'': True}}\n7. list_files: Lists Files in
+      a Directory, args: {''directory'': {''type'': ''string'', ''description'': ''The
+      directory to list files in'', ''required'': True}}\n8. read_file: Read an existing
+      file, args: {''filename'': {''type'': ''string'', ''description'': ''The path
+      of the file to read'', ''required'': True}}\n9. write_to_file: Writes to a file,
+      args: {''filename'': {''type'': ''string'', ''description'': ''The name of the
+      file to write to'', ''required'': True}, ''text'': {''type'': ''string'', ''description'':
+      ''The text to write to the file'', ''required'': True}}\n10. google: Google
+      Search, args: {''query'': {''type'': ''string'', ''description'': ''The search
+      query'', ''required'': True}}\n11. web_search: Searches the web, args: {''query'':
+      {''type'': ''string'', ''description'': ''The search query'', ''required'':
+      True}}\n12. browse_website: Browses a Website, args: {''url'': {''type'': ''string'',
+      ''description'': ''The URL to visit'', ''required'': True}, ''question'': {''type'':
+      ''string'', ''description'': ''What you want to find on the website'', ''required'':
+      True}}\n13. goals_accomplished: Goals are accomplished and there is nothing
+      left to do, args: {''reason'': {''type'': ''string'', ''description'': ''A summary
+      to the user of how the goals were accomplished'', ''required'': True}}\n\nResources:\n1.
+      Internet access for searches and information gathering.\n2. Long Term memory
+      management.\n3. GPT-3.5 powered Agents for delegation of simple tasks.\n4. File
+      output.\n\nPerformance Evaluation:\n1. Continuously review and analyze your
+      actions to ensure you are performing to the best of your abilities.\n2. Constructively
+      self-criticize your big-picture behavior constantly.\n3. Reflect on past decisions
+      and strategies to refine your approach.\n4. Every command has a cost, so be
+      smart and efficient. Aim to complete tasks in the least number of steps.\n\nRespond
+      with only valid JSON conforming to the following schema: \n{''$schema'': ''http://json-schema.org/draft-07/schema#'',
+      ''type'': ''object'', ''properties'': {''thoughts'': {''type'': ''object'',
+      ''properties'': {''text'': {''type'': ''string'', ''description'': ''thoughts''},
+      ''reasoning'': {''type'': ''string''}, ''plan'': {''type'': ''string'', ''description'':
+      ''- short bulleted\\n- list that conveys\\n- long-term plan''}, ''criticism'':
+      {''type'': ''string'', ''description'': ''constructive self-criticism''}, ''speak'':
+      {''type'': ''string'', ''description'': ''thoughts summary to say to user''}},
+      ''required'': [''text'', ''reasoning'', ''plan'', ''criticism'', ''speak''],
+      ''additionalProperties'': False}, ''command'': {''type'': ''object'', ''properties'':
+      {''name'': {''type'': ''string''}, ''args'': {''type'': ''object''}}, ''required'':
+      [''name'', ''args''], ''additionalProperties'': False}}, ''required'': [''thoughts'',
+      ''command''], ''additionalProperties'': False}\n"}, {"role": "system", "content":
+      "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role": "system",
+      "content": "This reminds you of these events from your past: \nI was created"},
+      {"role": "user", "content": "Determine exactly one command to use, and respond
+      using the JSON schema specified previously:"}, {"role": "assistant", "content":
+      "{\n  \"thoughts\": {\n    \"text\": \"To write ''Hello World'' into a file
+      named ''hello_world.txt'', I will use the ''write_to_file'' command to create
+      the file and write the text to it.\",\n    \"reasoning\": \"The ''write_to_file''
+      command is the most appropriate for this task as it allows me to create a new
+      file and write text to it in a single step.\",\n    \"plan\": \"- Use the ''write_to_file''
+      command to create a new file named ''hello_world.txt'' and write ''Hello World''
+      to it.\",\n    \"criticism\": \"I need to ensure that I am using the correct
+      file name and that the file is being created in the correct directory.\",\n    \"speak\":
+      \"I will use the ''write_to_file'' command to create a new file named ''hello_world.txt''
+      and write ''Hello World'' to it.\"\n  },\n  \"command\": {\n    \"name\": \"write_to_file\",\n    \"args\":
+      {\n      \"filename\": \"hello_world.txt\",\n      \"text\": \"Hello World\"\n    }\n  }\n}"},
+      {"role": "system", "content": "Command write_to_file returned: File written
+      to successfully."}, {"role": "user", "content": "Determine exactly one command
+      to use, and respond using the JSON schema specified previously:"}], "model":
+      "gpt-3.5-turbo", "temperature": 0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '6142'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA7STTY/TMBCG7/kVI196Sat+QFv1thJIVCvgsnysCKpcZ5qYdezInpCuqvx3ZDtt
+        swsIIcF13nn9PjPJnBIAJnO2ASZKTqKq1Xh1d3vz/vbjvni3FtoeXi8/3zfCvM1f2ZtVwVLvMPtv
+        KOjsmghT1QpJGh1lYZET+ldny/VqPl8s1usgVCZH5W1FTePF5OWYGrs34+liOovOxvEC2QZOCQAA
+        q62patqReUDt/HMvlrM0StfMqzyfrXqVDHE18C1X6wSgi3SlkQJ9+UtojlmeDt2T+FC0RvkK485J
+        R1wTS6+iMJpQh0WcMg2QMSpNU5TkMv+KL4UiHskXMnZnALVrLAKVnIBKhINUCC130G8NuM6D4F1B
+        aK0kQg1kQFIKW2ilUtA4DG0jizzf+VdGIExVBbsBXw16z+jAHGJ/iUqZXWusyid0pFEgmGQsPeNa
+        5M5oqYue+TchgYIrZVqo0Ed+RysPj3+crFd/PR4IYy0KUo9DolpxHWHG8OGfzh2YhuABQROX2sHo
+        jbfAJ28ZDXmElSSFdFWE2oJGDOnDj7sFXgUcqYueKIx2zb3s4jlr6Kg4iRJa3/PTmoYwrkb+cAb5
+        D7/GX63IQ3VpvIU+8skpaF5hZL2wDUbhthheji/5jqvpGWDMA+hCbKY71t9mdz5SdpBaunIX/2l/
+        qI5MfblhJnWOR7aBaSh0CcDXpEt+AAAA//8DAFzqOxgXBQAA
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7da020e4dbd61125-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 20 Jun 2023 01:09:59 GMT
+      Function-Execution-Id:
+      - ltprobj62ifm
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '10284'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 3e61ca593728e520231bb7cf8a0dcb9c;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '85936'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.708s
+      X-Request-Id:
+      - 66897b679e6656b9f673de71552ecee4
+    status:
+      code: 200
+      message: OK
 version: 1
