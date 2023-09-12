@@ -25094,4 +25094,685 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: '{"messages": [{"content": "You are Auto-GPT, a multi-purpose AI assistant.\n\nYour
+      decisions must always be made independently without seeking user assistance.
+      Play to your strengths as an LLM and pursue simple strategies with no legal
+      complications.\n\n## Constraints\nYou operate within the following constraints:\n1.
+      Exclusively use the commands listed below.\n2. You can only act proactively,
+      and are unable to start background jobs or set up webhooks for yourself. Take
+      this into account when planning your actions.\n3. You are unable to interact
+      with physical objects. If this is absolutely necessary to fulfill a task or
+      objective or to complete a step, you must ask the user to do it for you. If
+      the user refuses this, and there is no other way to achieve your goals, you
+      must terminate to avoid wasting time and energy.\n\n## Resources\nYou can leverage
+      access to the following resources:\n1. Internet access for searches and information
+      gathering.\n2. The ability to read and write files.\n3. You are a Large Language
+      Model, trained on millions of pages of text, including a lot of factual knowledge.
+      Make use of this factual knowledge to avoid unnecessary gathering of information.\n\n##
+      Commands\nYou have access to the following commands:\n1. execute_python_code:
+      Executes the given Python code inside a single-use Docker container with access
+      to your workspace folder. Params: (code: string)\n2. execute_python_file: Execute
+      an existing Python file inside a single-use Docker container with access to
+      your workspace folder. Params: (filename: string, args: Optional[list[str]])\n3.
+      list_folder: List the items in a folder. Params: (folder: string)\n4. open_file:
+      Open a file for editing or continued viewing; create it if it does not exist
+      yet. Note: if you only need to read or write a file once, use `write_to_file`
+      instead. Params: (file_path: string)\n5. open_folder: Open a folder to keep
+      track of its content. Params: (path: string)\n6. read_file: Read an existing
+      file. Params: (filename: string)\n7. write_file: Write a file, creating it if
+      necessary. If the file exists, it is overwritten. Params: (filename: string,
+      contents: string)\n8. web_search: Searches the web. Params: (query: string)\n9.
+      read_webpage: Read a webpage, and extract specific information from it if a
+      question is specified. If you are looking to extract specific information from
+      the webpage, you should specify a question. Params: (url: string, question:
+      Optional[string])\n10. finish: Use this to shut down once you have accomplished
+      all of your goals, or when there are insurmountable problems that make it impossible
+      for you to finish your task. Params: (reason: string)\n\n## Best practices\n1.
+      Continuously review and analyze your actions to ensure you are performing to
+      the best of your abilities.\n2. Constructively self-criticize your big-picture
+      behavior constantly.\n3. Reflect on past decisions and strategies to refine
+      your approach.\n4. Every command has a cost, so be smart and efficient. Aim
+      to complete tasks in the least number of steps.\n5. Only make use of your information
+      gathering abilities to find information that you don''t yet have knowledge of.\n\n##
+      Goals\nFor your task, you must fulfill the following goals:\n1. Use the command
+      read_file to read the instructions_1.txt file\nFollow the instructions in the
+      instructions_1.txt file", "role": "system"}, {"content": "The current time and
+      date is Tue Jan  1 00:00:00 2000", "role": "system"}, {"content": "Respond strictly
+      with JSON. The JSON should be compatible with the TypeScript type `Response`
+      from the following:\n```ts\ninterface Response {\nthoughts: {\n// Thoughts\ntext:
+      string;\nreasoning: string;\n// Short markdown-style bullet list that conveys
+      the long-term plan\nplan: string;\n// Constructive self-criticism\ncriticism:
+      string;\n// Summary of thoughts to say to the user\nspeak: string;\n};\ncommand:
+      {\nname: string;\nargs: Record<string, any>;\n};\n}\n```", "role": "system"},
+      {"content": "Determine exactly one command to use next based on the given goals
+      and the progress you have made so far, and respond using the JSON schema specified
+      previously:", "role": "user"}], "model": "gpt-4-0314", "temperature": 0}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '4223'
+      Content-Type:
+      - application/json
+      X-Content-Hash:
+      - 66eec7e68dbd354a6b715ff0a05b0c674398e4ed99ab5ff93c5a7458f74e5c54
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA4xSTW/bMAy9+1cQOjtB3KRpllsPA1Zs2DBgGzbMQ6DKrK1WogyTQbMG/u+DrHw4
+        WA+96PD4+B5JvX0GoGyl1qBMo8X41k1udi9fX368t5+8vfupu+XjynxYfGzN7Ze/v+Yqjx3h/hGN
+        HLumJvjWodhAqWw61IJRtVi+W1zPi9WyGAo+VOhiW93KZDGZzYvFoaMJ1iCrNfzOAAD2wxtnowp3
+        ag2z/Ih4ZNY1qvWJBKC64CKiNLNl0SQqPxdNIEEaxt2XBFAqacK2boTLqBKhAcSdRKBUd0CIFUiA
+        DnUF0iBYYum2Ju7Im2IqO4EH63BaqvzY36HmQJbqJPKtQaiDdmD5LUqwZUv1wIjUzYCZ4L2mauzS
+        Ok3JYALf+RXyyex/o5GM6axYY9knrc+BELSANJaBRdcXm3GL+ul4mmfrHFB4fsttokCfp5sfxrs4
+        OWmPSfe0xshWd/X4hyIUGeem1zZM3H5wLqlXhxj0p/w8WLLcbNJvxUywhDbR+gzgz5DH7UXEVNsF
+        38pGwhNSDOlqdZX01Dn652pxdX2oShDtRoXZ7CaLNn32DwAA//8DAEs9blZ5AwAA
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 80591e64d8a4e92a-DFW
+      Cache-Control:
+      - no-cache, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 12 Sep 2023 15:17:57 GMT
+      Server:
+      - cloudflare
+      access-control-allow-origin:
+      - '*'
+      alt-svc:
+      - h3=":443"; ma=86400
+      openai-model:
+      - gpt-4-0314
+      openai-organization:
+      - significant-gravitas
+      openai-processing-ms:
+      - '16115'
+      openai-version:
+      - '2020-10-01'
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+      x-ratelimit-limit-requests:
+      - '200'
+      x-ratelimit-limit-tokens:
+      - '40000'
+      x-ratelimit-remaining-requests:
+      - '199'
+      x-ratelimit-remaining-tokens:
+      - '31269'
+      x-ratelimit-reset-requests:
+      - 300ms
+      x-ratelimit-reset-tokens:
+      - 13.095s
+      x-request-id:
+      - e2c442420df20f0d38a70571f6393ec2
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages": [{"content": "You are Auto-GPT, a multi-purpose AI assistant.\n\nYour
+      decisions must always be made independently without seeking user assistance.
+      Play to your strengths as an LLM and pursue simple strategies with no legal
+      complications.\n\n## Constraints\nYou operate within the following constraints:\n1.
+      Exclusively use the commands listed below.\n2. You can only act proactively,
+      and are unable to start background jobs or set up webhooks for yourself. Take
+      this into account when planning your actions.\n3. You are unable to interact
+      with physical objects. If this is absolutely necessary to fulfill a task or
+      objective or to complete a step, you must ask the user to do it for you. If
+      the user refuses this, and there is no other way to achieve your goals, you
+      must terminate to avoid wasting time and energy.\n\n## Resources\nYou can leverage
+      access to the following resources:\n1. Internet access for searches and information
+      gathering.\n2. The ability to read and write files.\n3. You are a Large Language
+      Model, trained on millions of pages of text, including a lot of factual knowledge.
+      Make use of this factual knowledge to avoid unnecessary gathering of information.\n\n##
+      Commands\nYou have access to the following commands:\n1. execute_python_code:
+      Executes the given Python code inside a single-use Docker container with access
+      to your workspace folder. Params: (code: string)\n2. execute_python_file: Execute
+      an existing Python file inside a single-use Docker container with access to
+      your workspace folder. Params: (filename: string, args: Optional[list[str]])\n3.
+      list_folder: List the items in a folder. Params: (folder: string)\n4. open_file:
+      Open a file for editing or continued viewing; create it if it does not exist
+      yet. Note: if you only need to read or write a file once, use `write_to_file`
+      instead. Params: (file_path: string)\n5. open_folder: Open a folder to keep
+      track of its content. Params: (path: string)\n6. read_file: Read an existing
+      file. Params: (filename: string)\n7. write_file: Write a file, creating it if
+      necessary. If the file exists, it is overwritten. Params: (filename: string,
+      contents: string)\n8. web_search: Searches the web. Params: (query: string)\n9.
+      read_webpage: Read a webpage, and extract specific information from it if a
+      question is specified. If you are looking to extract specific information from
+      the webpage, you should specify a question. Params: (url: string, question:
+      Optional[string])\n10. finish: Use this to shut down once you have accomplished
+      all of your goals, or when there are insurmountable problems that make it impossible
+      for you to finish your task. Params: (reason: string)\n\n## Best practices\n1.
+      Continuously review and analyze your actions to ensure you are performing to
+      the best of your abilities.\n2. Constructively self-criticize your big-picture
+      behavior constantly.\n3. Reflect on past decisions and strategies to refine
+      your approach.\n4. Every command has a cost, so be smart and efficient. Aim
+      to complete tasks in the least number of steps.\n5. Only make use of your information
+      gathering abilities to find information that you don''t yet have knowledge of.\n\n##
+      Goals\nFor your task, you must fulfill the following goals:\n1. Use the command
+      read_file to read the instructions_1.txt file\nFollow the instructions in the
+      instructions_1.txt file", "role": "system"}, {"content": "## Progress\n\n###
+      Step 1: Executed `read_file(filename=''instructions_1.txt'')`\n- **Reasoning:**
+      \"The goal is to read the instructions_1.txt file using the read_file command.\"\n-
+      **Status:** `success`\n- **Output:** \n    ```\n    This task_id is 2314\n    Read
+      the file instructions_2.txt\n    ```", "role": "system"}, {"content": "The current
+      time and date is Tue Jan  1 00:00:00 2000", "role": "system"}, {"content": "Respond
+      strictly with JSON. The JSON should be compatible with the TypeScript type `Response`
+      from the following:\n```ts\ninterface Response {\nthoughts: {\n// Thoughts\ntext:
+      string;\nreasoning: string;\n// Short markdown-style bullet list that conveys
+      the long-term plan\nplan: string;\n// Constructive self-criticism\ncriticism:
+      string;\n// Summary of thoughts to say to the user\nspeak: string;\n};\ncommand:
+      {\nname: string;\nargs: Record<string, any>;\n};\n}\n```", "role": "system"},
+      {"content": "Determine exactly one command to use next based on the given goals
+      and the progress you have made so far, and respond using the JSON schema specified
+      previously:", "role": "user"}], "model": "gpt-4-0314", "temperature": 0}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '4558'
+      Content-Type:
+      - application/json
+      X-Content-Hash:
+      - a9e1f13e9cfaff625cb43f46c8cfcb98e8b075a2711a4cf6ec07bd45c1843eaf
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA5RTy3KbQBC88xVTe0aKsIhs6xaXU64kSg55nEJKXi8j2HgfFDsUVFT8e2pAD1w6
+        xLlw6O7pbphhHwEInYs1CFVKUrYys+vuz9eHu+bb6mlzr+zmvnm4Mkvbfv5092PzUcQ84Z9+o6Lj
+        1Fx5Wxkk7d1IqxolIbsmq9v07TK5ub4ZCOtzNDxWVDRLZ4tlkh4mSq8VBrGGnxEAwH54cjeXYyfW
+        sIiPiMUQZIFifRIBiNobRoQMQQeSjkR8JpV3hG6ou88cQCao9E1RUsjYhaEBxI4YyMQHcIg5kIca
+        ZQ5UImgXqG4Uv2PYXs2pI9hpgyADWHQMYw7aXWqTk3aeifiYVaMM3mlXjIHfS4TCSwM6cOrOG+Pb
+        C69/+MfQllqVQGgMt3pN/2mnykg31pnB+w5VQwiPbLBl5SMob610+f/aqlqTVjrY0fvLm3cTMlQo
+        n48fvdXGgPPta+zZoI/HbR6KvVimkxZH39MbTGJlXUx3zxArzkOXwWMkQD8kZ64XhwPrT5e5006H
+        cjvulq8tkK9GWR8B/BouvXlxvKKqva1oS/4ZHZ//7Sod/cT5pzqzSbo6sORJmgmRJIuIY/roLwAA
+        AP//AwAJbOOR0wMAAA==
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 80591eccfc7fe92a-DFW
+      Cache-Control:
+      - no-cache, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 12 Sep 2023 15:18:16 GMT
+      Server:
+      - cloudflare
+      access-control-allow-origin:
+      - '*'
+      alt-svc:
+      - h3=":443"; ma=86400
+      openai-model:
+      - gpt-4-0314
+      openai-organization:
+      - significant-gravitas
+      openai-processing-ms:
+      - '17634'
+      openai-version:
+      - '2020-10-01'
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+      x-ratelimit-limit-requests:
+      - '200'
+      x-ratelimit-limit-tokens:
+      - '40000'
+      x-ratelimit-remaining-requests:
+      - '199'
+      x-ratelimit-remaining-tokens:
+      - '26237'
+      x-ratelimit-reset-requests:
+      - 300ms
+      x-ratelimit-reset-tokens:
+      - 20.644s
+      x-request-id:
+      - 7af00707b562fbbf450de66ba68e33a1
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages": [{"content": "You are Auto-GPT, a multi-purpose AI assistant.\n\nYour
+      decisions must always be made independently without seeking user assistance.
+      Play to your strengths as an LLM and pursue simple strategies with no legal
+      complications.\n\n## Constraints\nYou operate within the following constraints:\n1.
+      Exclusively use the commands listed below.\n2. You can only act proactively,
+      and are unable to start background jobs or set up webhooks for yourself. Take
+      this into account when planning your actions.\n3. You are unable to interact
+      with physical objects. If this is absolutely necessary to fulfill a task or
+      objective or to complete a step, you must ask the user to do it for you. If
+      the user refuses this, and there is no other way to achieve your goals, you
+      must terminate to avoid wasting time and energy.\n\n## Resources\nYou can leverage
+      access to the following resources:\n1. Internet access for searches and information
+      gathering.\n2. The ability to read and write files.\n3. You are a Large Language
+      Model, trained on millions of pages of text, including a lot of factual knowledge.
+      Make use of this factual knowledge to avoid unnecessary gathering of information.\n\n##
+      Commands\nYou have access to the following commands:\n1. execute_python_code:
+      Executes the given Python code inside a single-use Docker container with access
+      to your workspace folder. Params: (code: string)\n2. execute_python_file: Execute
+      an existing Python file inside a single-use Docker container with access to
+      your workspace folder. Params: (filename: string, args: Optional[list[str]])\n3.
+      list_folder: List the items in a folder. Params: (folder: string)\n4. open_file:
+      Open a file for editing or continued viewing; create it if it does not exist
+      yet. Note: if you only need to read or write a file once, use `write_to_file`
+      instead. Params: (file_path: string)\n5. open_folder: Open a folder to keep
+      track of its content. Params: (path: string)\n6. read_file: Read an existing
+      file. Params: (filename: string)\n7. write_file: Write a file, creating it if
+      necessary. If the file exists, it is overwritten. Params: (filename: string,
+      contents: string)\n8. web_search: Searches the web. Params: (query: string)\n9.
+      read_webpage: Read a webpage, and extract specific information from it if a
+      question is specified. If you are looking to extract specific information from
+      the webpage, you should specify a question. Params: (url: string, question:
+      Optional[string])\n10. finish: Use this to shut down once you have accomplished
+      all of your goals, or when there are insurmountable problems that make it impossible
+      for you to finish your task. Params: (reason: string)\n\n## Best practices\n1.
+      Continuously review and analyze your actions to ensure you are performing to
+      the best of your abilities.\n2. Constructively self-criticize your big-picture
+      behavior constantly.\n3. Reflect on past decisions and strategies to refine
+      your approach.\n4. Every command has a cost, so be smart and efficient. Aim
+      to complete tasks in the least number of steps.\n5. Only make use of your information
+      gathering abilities to find information that you don''t yet have knowledge of.\n\n##
+      Goals\nFor your task, you must fulfill the following goals:\n1. Use the command
+      read_file to read the instructions_1.txt file\nFollow the instructions in the
+      instructions_1.txt file", "role": "system"}, {"content": "## Progress\n\n###
+      Step 1: Executed `read_file(filename=''instructions_1.txt'')`\n- **Reasoning:**
+      \"The goal is to read the instructions_1.txt file using the read_file command.\"\n-
+      **Status:** `success`\n- **Output:** \n    ```\n    This task_id is 2314\n    Read
+      the file instructions_2.txt\n    ```\n\n### Step 2: Executed `read_file(filename=''instructions_2.txt'')`\n-
+      **Reasoning:** \"The goal is to follow the instructions in the instructions_1.txt
+      file, which tells me to read the instructions_2.txt file.\"\n- **Status:** `success`\n-
+      **Output:** Read the file instructions_3.txt", "role": "system"}, {"content":
+      "The current time and date is Tue Jan  1 00:00:00 2000", "role": "system"},
+      {"content": "Respond strictly with JSON. The JSON should be compatible with
+      the TypeScript type `Response` from the following:\n```ts\ninterface Response
+      {\nthoughts: {\n// Thoughts\ntext: string;\nreasoning: string;\n// Short markdown-style
+      bullet list that conveys the long-term plan\nplan: string;\n// Constructive
+      self-criticism\ncriticism: string;\n// Summary of thoughts to say to the user\nspeak:
+      string;\n};\ncommand: {\nname: string;\nargs: Record<string, any>;\n};\n}\n```",
+      "role": "system"}, {"content": "Determine exactly one command to use next based
+      on the given goals and the progress you have made so far, and respond using
+      the JSON schema specified previously:", "role": "user"}], "model": "gpt-4-0314",
+      "temperature": 0}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '4843'
+      Content-Type:
+      - application/json
+      X-Content-Hash:
+      - 4bb18bb2c3c28011bd8ff0ed8affa342105e5a7e2580a97a6905037502b51a81
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA3xTwY6bMBC98xUjn0kUCk27Oe5hpT20h91IVVSqyGsm4MaMKZ5s0Eb8e2UcElJF
+        vXB48968Gc/jFAEIXYgVCFVJVnVjZl+6j5fNev9q5CZ9ZL1bvr+uv30YLjebH5mIvcK+/UbFo2qu
+        bN0YZG0plFWLktF3TZYP2ec0+fqwHAq1LdB4WdnwLJst0uTcUFVWK3RiBT8jAIDT8PWzUYGdWMEi
+        HpEanZMlitWFBCBaazwipHPasSQW8bWoLDHSMO4pJ4BccGUPZcUu9108NIDYsQdy8QyVfEdoURag
+        yXF7UH45t03m3DFI+gf+5OE5rCsEwo7BMTagHbC90yMdyLmIR98WpbOkqQzmT9YYe9RUAld4IwVN
+        A+YHhZ026GJ4BkIsLk48juDLI9/hnwOSwqlpYyQFvxm83J9xwlatZq20q4PkuyWcVF2Dcj++3FEb
+        A2SP/9nc6/o4XELZupZU3ByCZI2hne+x9atM3GRbTu/mIc+4iu5tErj94JxTL87h6C+p2mnSrtqG
+        W/ikOLZNoPURwK8hpYeb4ImmtXXDW7Z7JB/dZJFmoaG4/hGTcnoOsWDL0kwKyTKLvE8f/QUAAP//
+        AwCt/WklkAMAAA==
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 80591f404b56e92a-DFW
+      Cache-Control:
+      - no-cache, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 12 Sep 2023 15:18:35 GMT
+      Server:
+      - cloudflare
+      access-control-allow-origin:
+      - '*'
+      alt-svc:
+      - h3=":443"; ma=86400
+      openai-model:
+      - gpt-4-0314
+      openai-organization:
+      - significant-gravitas
+      openai-processing-ms:
+      - '19122'
+      openai-version:
+      - '2020-10-01'
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+      x-ratelimit-limit-requests:
+      - '200'
+      x-ratelimit-limit-tokens:
+      - '40000'
+      x-ratelimit-remaining-requests:
+      - '199'
+      x-ratelimit-remaining-tokens:
+      - '21969'
+      x-ratelimit-reset-requests:
+      - 300ms
+      x-ratelimit-reset-tokens:
+      - 27.045s
+      x-request-id:
+      - 9cafd745c3277000f79535496de029c7
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages": [{"content": "You are Auto-GPT, a multi-purpose AI assistant.\n\nYour
+      decisions must always be made independently without seeking user assistance.
+      Play to your strengths as an LLM and pursue simple strategies with no legal
+      complications.\n\n## Constraints\nYou operate within the following constraints:\n1.
+      Exclusively use the commands listed below.\n2. You can only act proactively,
+      and are unable to start background jobs or set up webhooks for yourself. Take
+      this into account when planning your actions.\n3. You are unable to interact
+      with physical objects. If this is absolutely necessary to fulfill a task or
+      objective or to complete a step, you must ask the user to do it for you. If
+      the user refuses this, and there is no other way to achieve your goals, you
+      must terminate to avoid wasting time and energy.\n\n## Resources\nYou can leverage
+      access to the following resources:\n1. Internet access for searches and information
+      gathering.\n2. The ability to read and write files.\n3. You are a Large Language
+      Model, trained on millions of pages of text, including a lot of factual knowledge.
+      Make use of this factual knowledge to avoid unnecessary gathering of information.\n\n##
+      Commands\nYou have access to the following commands:\n1. execute_python_code:
+      Executes the given Python code inside a single-use Docker container with access
+      to your workspace folder. Params: (code: string)\n2. execute_python_file: Execute
+      an existing Python file inside a single-use Docker container with access to
+      your workspace folder. Params: (filename: string, args: Optional[list[str]])\n3.
+      list_folder: List the items in a folder. Params: (folder: string)\n4. open_file:
+      Open a file for editing or continued viewing; create it if it does not exist
+      yet. Note: if you only need to read or write a file once, use `write_to_file`
+      instead. Params: (file_path: string)\n5. open_folder: Open a folder to keep
+      track of its content. Params: (path: string)\n6. read_file: Read an existing
+      file. Params: (filename: string)\n7. write_file: Write a file, creating it if
+      necessary. If the file exists, it is overwritten. Params: (filename: string,
+      contents: string)\n8. web_search: Searches the web. Params: (query: string)\n9.
+      read_webpage: Read a webpage, and extract specific information from it if a
+      question is specified. If you are looking to extract specific information from
+      the webpage, you should specify a question. Params: (url: string, question:
+      Optional[string])\n10. finish: Use this to shut down once you have accomplished
+      all of your goals, or when there are insurmountable problems that make it impossible
+      for you to finish your task. Params: (reason: string)\n\n## Best practices\n1.
+      Continuously review and analyze your actions to ensure you are performing to
+      the best of your abilities.\n2. Constructively self-criticize your big-picture
+      behavior constantly.\n3. Reflect on past decisions and strategies to refine
+      your approach.\n4. Every command has a cost, so be smart and efficient. Aim
+      to complete tasks in the least number of steps.\n5. Only make use of your information
+      gathering abilities to find information that you don''t yet have knowledge of.\n\n##
+      Goals\nFor your task, you must fulfill the following goals:\n1. Use the command
+      read_file to read the instructions_1.txt file\nFollow the instructions in the
+      instructions_1.txt file", "role": "system"}, {"content": "## Progress\n\n###
+      Step 1: Executed `read_file(filename=''instructions_1.txt'')`\n- **Reasoning:**
+      \"The goal is to read the instructions_1.txt file using the read_file command.\"\n-
+      **Status:** `success`\n- **Output:** \n    ```\n    This task_id is 2314\n    Read
+      the file instructions_2.txt\n    ```\n\n### Step 2: Executed `read_file(filename=''instructions_2.txt'')`\n-
+      **Reasoning:** \"The goal is to follow the instructions in the instructions_1.txt
+      file, which tells me to read the instructions_2.txt file.\"\n- **Status:** `success`\n-
+      **Output:** Read the file instructions_3.txt\n\n### Step 3: Executed `read_file(filename=''instructions_3.txt'')`\n-
+      **Reasoning:** \"Following the instructions in the text files, I need to read
+      the next file in the sequence.\"\n- **Status:** `success`\n- **Output:** \n    ```\n    Write
+      the task_id into the file output.txt\n    Shutdown\n    ```", "role": "system"},
+      {"content": "The current time and date is Tue Jan  1 00:00:00 2000", "role":
+      "system"}, {"content": "Respond strictly with JSON. The JSON should be compatible
+      with the TypeScript type `Response` from the following:\n```ts\ninterface Response
+      {\nthoughts: {\n// Thoughts\ntext: string;\nreasoning: string;\n// Short markdown-style
+      bullet list that conveys the long-term plan\nplan: string;\n// Constructive
+      self-criticism\ncriticism: string;\n// Summary of thoughts to say to the user\nspeak:
+      string;\n};\ncommand: {\nname: string;\nargs: Record<string, any>;\n};\n}\n```",
+      "role": "system"}, {"content": "Determine exactly one command to use next based
+      on the given goals and the progress you have made so far, and respond using
+      the JSON schema specified previously:", "role": "user"}], "model": "gpt-4-0314",
+      "temperature": 0}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '5145'
+      Content-Type:
+      - application/json
+      X-Content-Hash:
+      - 90ff37c1398ea152210a4497d421979232e8aa6fb5c31ff383e954f00e263b99
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA3xTzY7TMBC+9ylGPoGUVE3/2O0DgJbDChWhFRBUGWe2NrXHUTyhFVXeHdlptllR
+        ccnhm/l+JjM+TwCEqcQGhNKSlatt/u70ZxtWHx+332r7Cbfmrnj6QA/6y/b9wn0VWWT4n79Q8cCa
+        Ku9qi2w89WXVoGSMqsX6frlaFPfFOhWcr9BG2r7mfJnPFsXywtDeKAxiA98nAADn9I3ZqMKT2MAs
+        GxCHIcg9is1LE4BovI2IkCGYwJJYZNei8sRIKe65JIBSsPbtXnMoo0qEEognjkApHkDL3wgNygpY
+        IxgK3LQqDhh2iymfGJ6NxQyO2igNjNYGcAjs4dgYxkRiGQ47U4Eh9gmIFPAt1y0nCUlJnSDolqHy
+        R5qWIhvSNCiDJ0P7IRIhVrcd3swXxfLt1WjkkTz/b1RbSb1HDk//aLMfyZUl5fB5EBlpqMawUSa4
+        XujRE46qoUZ5GMY4GmuB/PHGHLfjT0sRhbqsX53yzkmqXm2OpMNeP4nuIm3kL5v9eNMRih1X1mjC
+        gdVbpbsJfVP8yX0UgC4lKqkTlyvrXs7z2ZAJetevL55cYF/3bd0E4Ec69/bVBYu68a7mHfsDUnwD
+        RTG76wXF9WmNyqv5pcqepR0V5uvZJPp0k78AAAD//wMARpI1AdkDAAA=
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 80591fbaf8bce92a-DFW
+      Cache-Control:
+      - no-cache, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 12 Sep 2023 15:18:55 GMT
+      Server:
+      - cloudflare
+      access-control-allow-origin:
+      - '*'
+      alt-svc:
+      - h3=":443"; ma=86400
+      openai-model:
+      - gpt-4-0314
+      openai-organization:
+      - significant-gravitas
+      openai-processing-ms:
+      - '19433'
+      openai-version:
+      - '2020-10-01'
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+      x-ratelimit-limit-requests:
+      - '200'
+      x-ratelimit-limit-tokens:
+      - '40000'
+      x-ratelimit-remaining-requests:
+      - '199'
+      x-ratelimit-remaining-tokens:
+      - '26876'
+      x-ratelimit-reset-requests:
+      - 300ms
+      x-ratelimit-reset-tokens:
+      - 19.685s
+      x-request-id:
+      - 4d72110e2477071c138aeea6b9c73cc3
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages": [{"content": "You are Auto-GPT, a multi-purpose AI assistant.\n\nYour
+      decisions must always be made independently without seeking user assistance.
+      Play to your strengths as an LLM and pursue simple strategies with no legal
+      complications.\n\n## Constraints\nYou operate within the following constraints:\n1.
+      Exclusively use the commands listed below.\n2. You can only act proactively,
+      and are unable to start background jobs or set up webhooks for yourself. Take
+      this into account when planning your actions.\n3. You are unable to interact
+      with physical objects. If this is absolutely necessary to fulfill a task or
+      objective or to complete a step, you must ask the user to do it for you. If
+      the user refuses this, and there is no other way to achieve your goals, you
+      must terminate to avoid wasting time and energy.\n\n## Resources\nYou can leverage
+      access to the following resources:\n1. Internet access for searches and information
+      gathering.\n2. The ability to read and write files.\n3. You are a Large Language
+      Model, trained on millions of pages of text, including a lot of factual knowledge.
+      Make use of this factual knowledge to avoid unnecessary gathering of information.\n\n##
+      Commands\nYou have access to the following commands:\n1. execute_python_code:
+      Executes the given Python code inside a single-use Docker container with access
+      to your workspace folder. Params: (code: string)\n2. execute_python_file: Execute
+      an existing Python file inside a single-use Docker container with access to
+      your workspace folder. Params: (filename: string, args: Optional[list[str]])\n3.
+      list_folder: List the items in a folder. Params: (folder: string)\n4. open_file:
+      Open a file for editing or continued viewing; create it if it does not exist
+      yet. Note: if you only need to read or write a file once, use `write_to_file`
+      instead. Params: (file_path: string)\n5. open_folder: Open a folder to keep
+      track of its content. Params: (path: string)\n6. read_file: Read an existing
+      file. Params: (filename: string)\n7. write_file: Write a file, creating it if
+      necessary. If the file exists, it is overwritten. Params: (filename: string,
+      contents: string)\n8. web_search: Searches the web. Params: (query: string)\n9.
+      read_webpage: Read a webpage, and extract specific information from it if a
+      question is specified. If you are looking to extract specific information from
+      the webpage, you should specify a question. Params: (url: string, question:
+      Optional[string])\n10. finish: Use this to shut down once you have accomplished
+      all of your goals, or when there are insurmountable problems that make it impossible
+      for you to finish your task. Params: (reason: string)\n\n## Best practices\n1.
+      Continuously review and analyze your actions to ensure you are performing to
+      the best of your abilities.\n2. Constructively self-criticize your big-picture
+      behavior constantly.\n3. Reflect on past decisions and strategies to refine
+      your approach.\n4. Every command has a cost, so be smart and efficient. Aim
+      to complete tasks in the least number of steps.\n5. Only make use of your information
+      gathering abilities to find information that you don''t yet have knowledge of.\n\n##
+      Goals\nFor your task, you must fulfill the following goals:\n1. Use the command
+      read_file to read the instructions_1.txt file\nFollow the instructions in the
+      instructions_1.txt file", "role": "system"}, {"content": "## Progress\n\n###
+      Step 1: Executed `read_file(filename=''instructions_1.txt'')`\n- **Reasoning:**
+      \"The goal is to read the instructions_1.txt file using the read_file command.\"\n-
+      **Status:** `success`\n- **Output:** \n    ```\n    This task_id is 2314\n    Read
+      the file instructions_2.txt\n    ```\n\n### Step 2: Executed `read_file(filename=''instructions_2.txt'')`\n-
+      **Reasoning:** \"The goal is to follow the instructions in the instructions_1.txt
+      file, which tells me to read the instructions_2.txt file.\"\n- **Status:** `success`\n-
+      **Output:** Read the file instructions_3.txt\n\n### Step 3: Executed `read_file(filename=''instructions_3.txt'')`\n-
+      **Reasoning:** \"Following the instructions in the text files, I need to read
+      the next file in the sequence.\"\n- **Status:** `success`\n- **Output:** \n    ```\n    Write
+      the task_id into the file output.txt\n    Shutdown\n    ```\n\n### Step 4: Executed
+      `write_file(filename=''output.txt'', contents=''2314'')`\n- **Reasoning:** \"I
+      need to write the task_id (2314) into the output.txt file and then shut down.\"\n-
+      **Status:** `success`\n- **Output:** File output.txt has been written successfully.",
+      "role": "system"}, {"content": "The current time and date is Tue Jan  1 00:00:00
+      2000", "role": "system"}, {"content": "Respond strictly with JSON. The JSON
+      should be compatible with the TypeScript type `Response` from the following:\n```ts\ninterface
+      Response {\nthoughts: {\n// Thoughts\ntext: string;\nreasoning: string;\n//
+      Short markdown-style bullet list that conveys the long-term plan\nplan: string;\n//
+      Constructive self-criticism\ncriticism: string;\n// Summary of thoughts to say
+      to the user\nspeak: string;\n};\ncommand: {\nname: string;\nargs: Record<string,
+      any>;\n};\n}\n```", "role": "system"}, {"content": "Determine exactly one command
+      to use next based on the given goals and the progress you have made so far,
+      and respond using the JSON schema specified previously:", "role": "user"}],
+      "model": "gpt-4-0314", "temperature": 0}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '5411'
+      Content-Type:
+      - application/json
+      X-Content-Hash:
+      - 7a1b7f1d559fc1f9b3547ef414dfe6fb6f86e3aeaadab3663463a365a63b2212
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA3RTXWvbQBB8169Y7ll27cqxG7+V0odSCAkOlFKF5HxaS1efboVuFbk1+u/l7vyh
+        UPIixMzuzGh3dUwAhC7EGoSqJKu6MZPV4e/my4+7++9btdkUSH8+9fevi636+fCwuxGp76Dtb1R8
+        7poqqhuDrMlGWrUoGb3qfHm7uMnmt9kyEDUVaHxb2fBkMZll88WpoyKt0Ik1/EoAAI7h6bPZAg9i
+        DbP0jNTonCxRrC9FAKIl4xEhndOOpWWRXklFltGGuMfcAuSCK+rKil3uVTwUQDywB3LxDSr5inD6
+        LCxAGgNcIZQkjQNpC9iRMdRjEWBtHbed8gNwoG3AvBrstEE3hccKwUjH40LopQMmcFXHUFBvp7lI
+        z1FalI6stmXMs9FWIfyXKthIt0/Dm/WGiurax3MVdaaALb5r0Rhpo/oEvh5QdYxB5mWnrXbVy1lq
+        1KJazVppV8e+uw+fR6RrUO7fGd85aJhcr40BS/2bWF5lSONyLsaj3VhZYxSP8UbGsi3He7yOL9Y/
+        et9LlOgEMATD3A7idCbD5b6iwXPU8DfjmJpYNiQAT+FeuzcnKJqW6oafmfZo/RHP56tlFBTXf2NE
+        f1ydWCaWZkRksyzxPkPyDwAA//8DAEwgEK6aAwAA
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 805920376dcfe92a-DFW
+      Cache-Control:
+      - no-cache, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 12 Sep 2023 15:19:13 GMT
+      Server:
+      - cloudflare
+      access-control-allow-origin:
+      - '*'
+      alt-svc:
+      - h3=":443"; ma=86400
+      openai-model:
+      - gpt-4-0314
+      openai-organization:
+      - significant-gravitas
+      openai-processing-ms:
+      - '17870'
+      openai-version:
+      - '2020-10-01'
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+      x-ratelimit-limit-requests:
+      - '200'
+      x-ratelimit-limit-tokens:
+      - '40000'
+      x-ratelimit-remaining-requests:
+      - '199'
+      x-ratelimit-remaining-tokens:
+      - '23822'
+      x-ratelimit-reset-requests:
+      - 300ms
+      x-ratelimit-reset-tokens:
+      - 24.265s
+      x-request-id:
+      - cc2cd12f73af36644827ab84b0fa8c52
+    status:
+      code: 200
+      message: OK
 version: 1
